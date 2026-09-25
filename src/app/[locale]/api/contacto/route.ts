@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getTranslations } from "next-intl/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Logo principal con letras para el pie del correo
-const LOGO_TEXT_URL = "https://medionmx.com/title.png";
+// Configuración de variables globales
+const BRAND_NAME = "Vultra";
+const BRAND_URL = "https://vultra.com.mx";
+const BRAND_LOGO = "https://vexora.com.mx/title.png";
+const BRAND_BANNER = "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const SUPPORT_EMAIL = "atencion@mark-vera.com";
+const SENDER_EMAIL = `${BRAND_NAME} <${SUPPORT_EMAIL}>`;
+const PRIMARY_COLOR = "#7052ff";
+const BG_GRADIENT_START = "#7052ff";
+const BG_GRADIENT_END = "#613be7";
 
 function escapeHtml(value: string) {
   return value
@@ -15,10 +24,242 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
+function formatMessage(value: string) {
+  return escapeHtml(value).replace(/\n/g, "<br />");
+}
+
+function shell(content: string, footerContent: string) {
+  return `
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <title>${BRAND_NAME}</title>
+      </head>
+      <body
+        style="
+          margin:0;
+          padding:0;
+          background-color:${BG_GRADIENT_START};
+          font-family: 'Inter', Arial, Helvetica, sans-serif;
+          color:#334155;
+        "
+      >
+        <table
+          role="presentation"
+          width="100%"
+          border="0"
+          cellspacing="0"
+          cellpadding="0"
+          style="
+            background: linear-gradient(135deg, ${BG_GRADIENT_START} 0%, ${BG_GRADIENT_END} 100%);
+            padding: 40px 16px;
+          "
+        >
+          <tr>
+            <td align="center">
+              <table
+                role="presentation"
+                width="100%"
+                border="0"
+                cellspacing="0"
+                cellpadding="0"
+                style="
+                  max-width: 600px;
+                  width: 100%;
+                  border-collapse: separate;
+                  border-spacing: 0;
+                "
+              >
+                <!-- Logo -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <a href="${BRAND_URL}" style="text-decoration:none;">
+                      <img
+                        src="${BRAND_LOGO}"
+                        alt="${BRAND_NAME}"
+                        style="display: block; max-width: 160px; height: auto; border: 0;"
+                      />
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Tarjeta Blanca Central -->
+                <tr>
+                  <td
+                    style="
+                      background: #ffffff;
+                      border-radius: 16px;
+                      overflow: hidden;
+                      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                    "
+                  >
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                      ${content}
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Footer -->
+                ${footerContent}
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  `;
+}
+
+function heroBlock(pretitle: string, title: string, subtitle: string) {
+  return `
+    <!-- Banner Image -->
+    <tr>
+      <td style="padding: 0; line-height: 0;">
+        <img
+          src="${BRAND_BANNER}"
+          alt="Banner ${BRAND_NAME}"
+          style="width: 100%; height: auto; display: block; border: 0;"
+        />
+      </td>
+    </tr>
+    <!-- Títulos -->
+    <tr>
+      <td style="padding: 32px 32px 16px 32px;">
+        <p
+          style="
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: ${PRIMARY_COLOR};
+          "
+        >
+          ${escapeHtml(pretitle)}
+        </p>
+        <h1
+          style="
+            margin: 0 0 12px 0;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #0f172a;
+          "
+        >
+          ${escapeHtml(title)}
+        </h1>
+        <p
+          style="
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #64748b;
+          "
+        >
+          ${escapeHtml(subtitle)}
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
+function sectionStart() {
+  return `
+    <tr>
+      <td style="padding: 0 32px 32px 32px;">
+  `;
+}
+
+function sectionEnd() {
+  return `
+      </td>
+    </tr>
+  `;
+}
+
+function footerBlock(tagline: string, rights: string) {
+  return `
+    <tr>
+      <td style="padding: 32px 16px 0 16px; text-align: center;">
+        <p
+          style="
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+          "
+        >
+          ${escapeHtml(tagline)}
+        </p>
+        <p
+          style="
+            margin: 8px 0 0 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+          "
+        >
+          ${escapeHtml(rights)}
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
+function infoGrid(items: { label: string; value: string; href?: string }[]) {
+  const cells = items
+    .map(
+      (item) => `
+      <td valign="top" style="padding: 0 16px 16px 0; min-width: 150px;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
+          <p
+            style="
+              margin: 0 0 4px 0;
+              font-size: 11px;
+              line-height: 1;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              font-weight: 700;
+              color: #64748b;
+            "
+          >
+            ${escapeHtml(item.label)}
+          </p>
+          ${
+            item.href
+              ? `<a href="${escapeHtml(item.href)}" style="font-size: 15px; line-height: 1.4; color: #0f172a; text-decoration: none; font-weight: 600; display: block; word-break: break-all;">${escapeHtml(item.value)}</a>`
+              : `<p style="margin: 0; font-size: 15px; line-height: 1.4; color: #0f172a; font-weight: 600; word-break: break-all;">${escapeHtml(item.value)}</p>`
+          }
+        </div>
+      </td>
+    `
+    )
+    .join("");
+
+  return `
+    <table
+      role="presentation"
+      width="100%"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      style="margin-top: 24px;"
+    >
+      <tr>
+        ${cells}
+      </tr>
+    </table>
+  `;
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { nombre, email, mensaje } = body;
+    const { locale, nombre, email, mensaje } = body;
+
+    const t = await getTranslations({ locale, namespace: "Emails.contactEmail" });
 
     if (!nombre || !email || !mensaje) {
       return NextResponse.json(
@@ -27,507 +268,162 @@ export async function POST(req: Request) {
       );
     }
 
-    const safeNombre = escapeHtml(String(nombre));
-    const safeEmail = escapeHtml(String(email));
-    const safeMensaje = escapeHtml(String(mensaje)).replace(/\n/g, "<br>");
+    const rawNombre = String(nombre).trim();
+    const rawEmail = String(email).trim();
+    const rawMensaje = String(mensaje).trim();
 
-    const card = `
-      <table
-        width="100%"
-        border="0"
-        cellspacing="0"
-        cellpadding="0"
-        style="
-          max-width: 680px;
-          margin: 0 auto;
-          background: #ffffff;
-          border: 1px solid #f1e6ff;
-          border-radius: 28px;
-          overflow: hidden;
-          box-shadow: 0 18px 50px rgba(168, 85, 247, 0.10);
-        "
-      >
-        <tr>
-          <td style="height: 8px; background: #c026d3; font-size: 0; line-height: 0;">&nbsp;</td>
-        </tr>
+    const safeNombre = escapeHtml(rawNombre);
+    const safeMessage = formatMessage(rawMensaje);
 
-        <tr>
-          <td style="padding: 28px 32px 0 32px;">
-            <table
-              width="100%"
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="
-                background: #faf5ff;
-                border: 1px solid #e9d5ff;
-                border-radius: 22px;
-              "
-            >
-              <tr>
-                <td style="padding: 24px 24px 20px 24px; text-align: center;">
-                  <div
-                    style="
-                      display: inline-block;
-                      padding: 10px 14px;
-                      border-radius: 999px;
-                      background: #ffffff;
-                      border: 1px solid #f5d0fe;
-                      color: #7e22ce;
-                      font-size: 11px;
-                      font-weight: 700;
-                      letter-spacing: 0.18em;
-                      text-transform: uppercase;
-                      margin-bottom: 16px;
-                    "
-                  >
-                    Medion MX
-                  </div>
+    const footerContent = footerBlock(
+      t("footerTagline", { brandName: BRAND_NAME }),
+      t("footerRights", { year: new Date().getFullYear(), brandName: BRAND_NAME })
+    );
 
-                  <h1
-                    style="
-                      margin: 0;
-                      font-size: 24px;
-                      line-height: 1.2;
-                      color: #2e1065;
-                      font-weight: 800;
-                      letter-spacing: -0.03em;
-                    "
-                  >
-                    Nuevo mensaje recibido
-                  </h1>
+    const internalHtml = shell(
+      `
+      ${heroBlock(
+        t("internalHeroPretitle"),
+        t("internalHeroTitle"),
+        t("internalHeroSubtitle")
+      )}
 
-                  <p
-                    style="
-                      margin: 10px 0 0 0;
-                      font-size: 14px;
-                      line-height: 1.7;
-                      color: #6b4d7a;
-                    "
-                  >
-                    Hemos recibido una nueva consulta desde el formulario web.
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-    `;
+      ${sectionStart()}
+        ${infoGrid([
+          { label: t("labelName"), value: rawNombre },
+          { label: t("labelEmail"), value: rawEmail, href: `mailto:${rawEmail}` },
+        ])}
 
-    const footer = `
-        <tr>
-          <td style="padding: 0 32px 28px 32px;">
-            <table
-              width="100%"
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="
-                margin-top: 20px;
-                background: #fcf7ff;
-                border: 1px solid #f3e8ff;
-                border-radius: 20px;
-              "
-            >
-              <tr>
-                <td style="padding: 18px 20px; text-align: center;">
-                  <img
-                    src="${LOGO_TEXT_URL}"
-                    alt="Medion MX"
-                    style="
-                      width: 170px;
-                      max-width: 100%;
-                      height: auto;
-                      display: block;
-                      margin: 0 auto 12px auto;
-                    "
-                  />
-
-                  <p
-                    style="
-                      margin: 0;
-                      font-size: 11px;
-                      line-height: 1.6;
-                      color: #8b6f95;
-                    "
-                  >
-                    Medion MX &copy; 2026. Todos los derechos reservados.<br>
-                    Si necesitas ayuda, escribe a hello@medionmx.com
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    `;
-
-    const htmlNegocio = `
-      <!DOCTYPE html>
-      <html>
-        <body
+        <div
           style="
-            margin: 0;
-            padding: 0;
-            background: #fcf7ff;
-            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 16px;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
           "
         >
-          <table
-            width="100%"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-            style="background: #fcf7ff; padding: 36px 16px;"
+          <p
+            style="
+              margin: 0 0 12px 0;
+              font-size: 12px;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              font-weight: 700;
+              color: ${PRIMARY_COLOR};
+            "
           >
-            <tr>
-              <td align="center">
-                ${card}
+            ${escapeHtml(t("clientMessageTitle"))}
+          </p>
+          <p
+            style="
+              margin: 0;
+              font-size: 15px;
+              line-height: 1.7;
+              color: #334155;
+            "
+          >
+            ${safeMessage}
+          </p>
+        </div>
 
-                <table
-                  width="100%"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
-                    max-width: 680px;
-                    margin: 0 auto;
-                    background: #ffffff;
-                    border-left: 1px solid #f1e6ff;
-                    border-right: 1px solid #f1e6ff;
-                  "
-                >
-                  <tr>
-                    <td style="padding: 0 32px 20px 32px;">
-                      <div
-                        style="
-                          background: #ffffff;
-                          border: 1px solid #f3e8ff;
-                          border-radius: 22px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 16px 18px;
-                            background: #fff1f7;
-                            border-bottom: 1px solid #f3e8ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              letter-spacing: 0.14em;
-                              text-transform: uppercase;
-                              color: #be185d;
-                            "
-                          >
-                            Consulta de contacto
-                          </p>
-                        </div>
-
-                        <div style="padding: 20px 18px;">
-                          <table
-                            width="100%"
-                            border="0"
-                            cellspacing="0"
-                            cellpadding="0"
-                          >
-                            <tr>
-                              <td
-                                style="
-                                  padding: 10px 0;
-                                  width: 26%;
-                                  font-size: 12px;
-                                  font-weight: 700;
-                                  color: #8b6f95;
-                                "
-                              >
-                                Nombre
-                              </td>
-                              <td
-                                style="
-                                  padding: 10px 0;
-                                  font-size: 14px;
-                                  color: #2e1065;
-                                  font-weight: 600;
-                                "
-                              >
-                                ${safeNombre}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                style="
-                                  padding: 10px 0;
-                                  width: 26%;
-                                  font-size: 12px;
-                                  font-weight: 700;
-                                  color: #8b6f95;
-                                  border-top: 1px solid #f3e8ff;
-                                "
-                              >
-                                Email
-                              </td>
-                              <td
-                                style="
-                                  padding: 10px 0;
-                                  font-size: 14px;
-                                  color: #7e22ce;
-                                  font-weight: 600;
-                                  border-top: 1px solid #f3e8ff;
-                                "
-                              >
-                                <a
-                                  href="mailto:${safeEmail}"
-                                  style="color: #7e22ce; text-decoration: none;"
-                                >
-                                  ${safeEmail}
-                                </a>
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 28px 32px;">
-                      <div
-                        style="
-                          background: #fcf7ff;
-                          border: 1px solid #e9d5ff;
-                          border-radius: 22px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 16px 18px;
-                            background: #faf5ff;
-                            border-bottom: 1px solid #e9d5ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              letter-spacing: 0.14em;
-                              text-transform: uppercase;
-                              color: #7e22ce;
-                            "
-                          >
-                            Mensaje
-                          </p>
-                        </div>
-
-                        <div style="padding: 18px;">
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 14px;
-                              line-height: 1.8;
-                              color: #3b2b4d;
-                              white-space: normal;
-                            "
-                          >
-                            ${safeMensaje}
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-
-                ${footer}
-              </td>
-            </tr>
-          </table>
-        </body>
-      </html>
-    `;
-
-    const htmlUsuario = `
-      <!DOCTYPE html>
-      <html>
-        <body
+        <div
           style="
-            margin: 0;
-            padding: 0;
-            background: #fcf7ff;
-            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 24px;
+            padding: 16px;
+            background: rgba(112, 82, 255, 0.05);
+            border-left: 4px solid ${PRIMARY_COLOR};
+            border-radius: 4px;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.6;
           "
         >
-          <table
-            width="100%"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-            style="background: #fcf7ff; padding: 36px 16px;"
+          ${escapeHtml(t("internalFollowUpNotice", { email: rawEmail }))}
+        </div>
+      ${sectionEnd()}
+    `,
+      footerContent
+    );
+
+    const userHtml = shell(
+      `
+      ${heroBlock(
+        t("userHeroPretitle"),
+        t("userHeroTitle"),
+        t("userHeroSubtitle")
+      )}
+
+      ${sectionStart()}
+        <p
+          style="
+            margin: 0 0 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #334155;
+          "
+        >
+          ${escapeHtml(t("userGreeting", { name: safeNombre }))}
+          <br /><br />
+          ${escapeHtml(t("userBodyText"))}
+        </p>
+
+        ${infoGrid([
+          { label: t("labelRegisteredEmail"), value: rawEmail, href: `mailto:${rawEmail}` },
+          { label: t("labelSite"), value: BRAND_NAME, href: BRAND_URL },
+        ])}
+
+        <div
+          style="
+            margin-top: 24px;
+            text-align: center;
+          "
+        >
+          <a
+            href="${BRAND_URL}"
+            style="
+              display: inline-block;
+              padding: 14px 28px;
+              background-color: ${PRIMARY_COLOR};
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 15px;
+              font-weight: 600;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(112, 82, 255, 0.3);
+            "
           >
-            <tr>
-              <td align="center">
-                ${card}
-
-                <table
-                  width="100%"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
-                    max-width: 680px;
-                    margin: 0 auto;
-                    background: #ffffff;
-                    border-left: 1px solid #f1e6ff;
-                    border-right: 1px solid #f1e6ff;
-                  "
-                >
-                  <tr>
-                    <td style="padding: 0 32px 20px 32px;">
-                      <div
-                        style="
-                          background: linear-gradient(180deg, #ffffff 0%, #fff7fb 100%);
-                          border: 1px solid #f3e8ff;
-                          border-radius: 22px;
-                          padding: 28px 24px;
-                          text-align: center;
-                        "
-                      >
-                        <div
-                          style="
-                            width: 56px;
-                            height: 56px;
-                            border-radius: 16px;
-                            background: #faf5ff;
-                            border: 1px solid #e9d5ff;
-                            display: inline-block;
-                            line-height: 56px;
-                            margin-bottom: 18px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-size: 28px;
-                              color: #7e22ce;
-                              font-weight: 700;
-                            "
-                          >
-                            ✓
-                          </span>
-                        </div>
-
-                        <h2
-                          style="
-                            margin: 0 0 10px 0;
-                            font-size: 24px;
-                            line-height: 1.2;
-                            color: #2e1065;
-                            font-weight: 800;
-                            letter-spacing: -0.03em;
-                          "
-                        >
-                          ¡Hola, ${safeNombre}!
-                        </h2>
-
-                        <p
-                          style="
-                            margin: 0 auto;
-                            max-width: 500px;
-                            font-size: 15px;
-                            line-height: 1.8;
-                            color: #4b3a42;
-                          "
-                        >
-                          Hemos recibido tu mensaje correctamente. Nuestro equipo lo revisará para darte una respuesta lo antes posible.
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 28px 32px;">
-                      <div
-                        style="
-                          background: #fcf7ff;
-                          border: 1px solid #e9d5ff;
-                          border-radius: 22px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 16px 18px;
-                            background: #faf5ff;
-                            border-bottom: 1px solid #e9d5ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              letter-spacing: 0.14em;
-                              text-transform: uppercase;
-                              color: #7e22ce;
-                            "
-                          >
-                            Copia de tu mensaje
-                          </p>
-                        </div>
-
-                        <div style="padding: 18px;">
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 14px;
-                              line-height: 1.8;
-                              color: #3b2b4d;
-                              font-style: italic;
-                              white-space: normal;
-                            "
-                          >
-                            ${safeMensaje}
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-
-                ${footer}
-              </td>
-            </tr>
-          </table>
-        </body>
-      </html>
-    `;
+            ${escapeHtml(t("buttonBackToSite"))}
+          </a>
+        </div>
+      ${sectionEnd()}
+    `,
+      footerContent
+    );
 
     await Promise.all([
       resend.emails.send({
-        from: "Medion MX <hello@medionmx.com>",
-        to: ["hello@medionmx.com"],
-        replyTo: email,
-        subject: `Nuevo Mensaje Web: ${nombre}`,
-        html: htmlNegocio,
+        from: SENDER_EMAIL,
+        to: [SUPPORT_EMAIL],
+        subject: t("internalSubject", { name: rawNombre }),
+        html: internalHtml,
       }),
       resend.emails.send({
-        from: "Medion MX <hello@medionmx.com>",
-        to: [email],
-        subject: "Hemos recibido tu mensaje - Medion MX",
-        html: htmlUsuario,
+        from: SENDER_EMAIL,
+        to: [rawEmail],
+        subject: t("userSubject", { brandName: BRAND_NAME }),
+        html: userHtml,
       }),
     ]);
 
     return NextResponse.json({ success: true });
   } catch (error: any) {
-    console.error("❌ Error enviando los correos:", error);
+    console.error("Error al procesar el envío de correos:", error);
 
     return NextResponse.json(
-      { error: error?.message || "Error al procesar la solicitud" },
+      {
+        error: error?.message || "Error al procesar la solicitud",
+      },
       { status: 500 }
     );
   }

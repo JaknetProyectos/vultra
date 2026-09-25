@@ -1,376 +1,414 @@
 {
-  "header": {
-    "logoAlt": "Logotipo",
-    "titleAlt": "Cintillo",
-    "cart": "Carrito",
-    "openMenu": "Mostrar menú",
-    "closeMenu": "Esconder menú",
-    "nav": {
-      "home": "Inicio",
-      "about": "Quiénes Somos",
-      "store": "Tienda",
-      "contact": "Contacto"
-    }
-  },
   "cartPage": {
-    "breadcrumb": {
-      "home": "Inicio",
-      "summary": "1. Lista",
-      "shippingPayment": "2. Entrega y Métodos de Pago"
-    },
-    "success": {
-      "title": "¡Transacción Realizada con Éxito!",
-      "description": "Su pago ha sido autorizado. El surtido de sus consumibles médicos ha comenzado para su posterior despacho.",
-      "paymentReference": "Referencia de Pago:",
-      "paidAmount": "Monto Liquidado:",
-      "transactionStatus": "Estatus del Movimiento:",
-      "approved": "APROBADA",
-      "backToCatalog": "Regresar a la Tienda"
-    },
-    "empty": {
-      "title": "Tu cesta de compra no tiene productos",
-      "description": "No se detectaron herramientas médicas elegidas en tu sesión actual.",
-      "goToStore": "Explorar Tienda"
-    },
-    "order": {
-      "title": "Bienes en tu solicitud",
-      "clear": "Remover Productos"
-    },
-    "financial": {
-      "title": "Resumen Estadístico",
-      "couponPlaceholder": "Código de descuento",
-      "applyCoupon": "Aplicar",
-      "appliedCoupon": "Cupón {code} (-{discount}%)",
-      "remove": "Quitar",
-      "couponInvalid": "La clave de descuento es errónea o se encuentra vencida.",
-      "subtotal": "Subtotal de Materiales:",
-      "discount": "Descuento Concedido:",
-      "netTotal": "Cifra Final a Liquidar:",
-      "tax": "IVA {tax}"
-    },
-    "actions": {
-      "proceedToPayment": "Avanzar al Pago",
-      "processing": "Comprobando Liquidez a través de Keycop...",
-      "payAmount": "Abonar {amount}",
-      "backToCart": "Modificar solicitud / Insertar código"
-    },
-    "errors": {
-      "declined": "El movimiento fue denegado por el banco emisor.",
-      "connection": "Se experimentó una falla de red con el procesador de pagos."
-    },
-    "metadata": {
-      "couponApplied": "Clave promocional introducida",
-      "standardSale": "Transacción electrónica común"
-    },
-    "form": {
-      "buyerTitle": "Datos del Comprador / Facturación",
-      "addressTitle": "Información de Entrega y Logística",
-      "paymentTitle": "Pasarela de Cobro Encriptada",
-      "firstName": "Nombre completo *",
-      "lastName": "Apellidos completos *",
-      "email": "Correo electrónico *",
-      "phone": "Teléfono Móvil (10 posiciones) *",
-      "company": "Razón Social / Sanatorio o Consultorio (Opcional)",
-      "streetAddress": "Vía Pública, Número Exterior e Interior *",
-      "streetAddressPlaceholder": "Avenida Universidad 450, Interior 4",
-      "neighborhood": "Asentamiento / Referencias de ubicación (Opcional)",
-      "neighborhoodPlaceholder": "Colonia Vértiz Narvarte",
-      "city": "Municipio o Demarcación *",
-      "state": "Estado / Provincia *",
-      "statePlaceholder": "Ciudad de México",
-      "postalCode": "Distrito Postal *",
-      "country": "Nación",
-      "mexico": "México (MX)",
-      "cardNumber": "Numeración de la Tarjeta (Visa / Mastercard) *",
-      "cardNumberPlaceholder": "4152 0000 0000 0000",
-      "cardHolderName": "Titular de la Tarjeta Bancaria *",
-      "cardHolderPlaceholder": "Tal como aparece impreso",
-      "expiryMonth": "Mes de Expiración (MM) *",
-      "expiryMonthPlaceholder": "05",
-      "expiryYear": "Año de Expiración (AA) *",
-      "expiryYearPlaceholder": "29",
-      "cvv": "Código de Verificación (CVV) *",
-      "cvvPlaceholder": "•••"
-    },
-    "security": {
-      "note": "Transacción resguardada con altos estándares"
-    },
-    "images": {
-      "octanoAlt": "Keycop",
-      "securePaymentAlt": "Cobro seguro"
-    }
+    "emptyTitle": "El carrito está vacío",
+    "emptyDescription": "Aún no has sumado ningún servicio de diseño o consultoría a tu carrito. ¡Inspírate y dale nueva vida a tus espacios!",
+    "exploreServices": "Ver Servicios",
+    "title": "Tu Carrito de Compras",
+    "itemsSelected": "Seleccionaste {count} {itemLabel}",
+    "service": "servicio",
+    "services": "servicios",
+    "badgeInteriorism": "Vultra",
+    "defaultServiceTitle": "Servicio a la medida",
+    "variantLabel": "Opción / Plan",
+    "assignedTo": "Asignado a",
+    "decreaseQuantity": "Restar cantidad",
+    "increaseQuantity": "Sumar cantidad",
+    "subtotal": "Subtotal",
+    "removeService": "Quitar servicio",
+    "summaryTitle": "Detalle del pedido",
+    "taxesFees": "Cargos e Impuestos",
+    "calculatedAtCheckout": "Se calcula al pagar",
+    "estimatedTotal": "Monto estimado",
+    "proceedToCheckout": "Continuar al Pago",
+    "securityNotice": "Proceso de compra seguro. Podrás ingresar tu cupón en el siguiente paso."
   },
-  "contactPage": {
-    "hero": {
-      "title": "Hallemos la opción ideal para tu establecimiento.",
-      "description": "Nuestros asesores te auxiliarán con cotizaciones, soporte de fábrica, stock de productos y un servicio meticuloso para tu consultorio."
+  "checkoutPage": {
+    "emptyTitle": "Sin elementos para procesar",
+    "emptyDescription": "Regresa al carrito y añade servicios antes de realizar el pago.",
+    "returnToCart": "Regresar al Carrito",
+    "secureBadge": "Procesamiento Seguro 256-bit",
+    "optional": "Opcional",
+    "defaultServiceTitle": "Servicio",
+    "summaryTitle": "Resumen de la Orden",
+    "qtyLabel": "Cant.",
+    "couponLabel": "¿Cuentas con un cupón?",
+    "couponPlaceholder": "Ejemplo: PRO10",
+    "applyCoupon": "Validar",
+    "couponAppliedBadge": "Se aplicó el cupón {code}",
+    "removeCoupon": "Eliminar",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "totalToPay": "Monto final",
+    "processingPayment": "Procesando la transacción...",
+    "payButton": "Abonar {amount} MXN",
+    "termsNotice": "Al hacer clic confirmas la aceptación de nuestras políticas y condiciones.",
+    "notesLabel": "Instrucciones del proyecto",
+    "notesPlaceholder": "Notas relevantes para tu diseñador o arquitecto...",
+    "contactSection": {
+      "title": "Información de Contacto",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "email": "Dirección de Correo",
+      "phone": "Teléfono",
+      "company": "Empresa",
+      "companyPlaceholder": "Nombre de tu estudio o empresa"
     },
-    "info": {
-      "visit": {
-        "title": "Acude a nuestras oficinas",
-        "subtitle": "Dirección central",
-        "address1": "Avenida Jaime Balmes 11,",
-        "address2": "Depto 15A Edificio A Piso 1",
-        "address3": "Colonia Polanco I Sección",
-        "address4": "Demarcación Miguel Hidalgo",
-        "address5": "Código Postal 11510, CDMX"
-      },
-      "call": {
-        "title": "Vía telefónica",
-        "subtitle": "Atención a tu medida"
-      },
-      "email": {
-        "title": "Correos",
-        "subtitle": "Respuesta rápida"
+    "addressSection": {
+      "title": "Domicilio",
+      "street": "Calle y Número",
+      "suite": "Colonia, Interior o Depto.",
+      "city": "Ciudad",
+      "state": "Estado / Provincia",
+      "zip": "Código Postal",
+      "country": "País",
+      "countries": {
+        "MX": "México (MX)",
+        "US": "Estados Unidos (US)",
+        "ES": "España (ES)"
       }
     },
-    "form": {
-      "title": "Mándanos un mensaje",
-      "description": "Detállanos lo que requieres y nuestro personal te contactará con un presupuesto o la asesoría que ameritas.",
-      "fullName": "Nombre completo",
-      "fullNamePlaceholder": "Escribe tu nombre",
-      "email": "E-mail de contacto",
-      "emailPlaceholder": "usuario@correo.com",
-      "message": "Mensaje",
-      "messagePlaceholder": "¿De qué manera te apoyamos?",
-      "submit": "Enviar Datos",
-      "sending": "Enviando correspondencia..."
+    "paymentSection": {
+      "title": "Datos del Pago",
+      "cardName": "Titular de la tarjeta",
+      "cardNamePlaceholder": "Nombre grabado en el plástico",
+      "cardNumber": "Número de tarjeta",
+      "cardMonth": "Mes Exp. (MM)",
+      "cardYear": "Año Exp. (AA)",
+      "cvv": "CVV"
     },
-    "success": {
-      "title": "¡Información enviada!",
-      "description": "Valoramos tu interés. Nuestros especialistas revisarán tu mensaje y te contactarán a la brevedad."
-    },
-    "errors": {
-      "unexpected": "Ocurrió un error inesperado al procesar tus datos."
-    },
-    "map": {
-      "title": "Nuestra localización",
-      "subtitle": "Polanco · CDMX",
-      "iframeTitle": "Mapa interactivo de CentroMédicoAvanza"
+    "toasts": {
+      "enterCoupon": "Introduce un código promocional",
+      "couponApplied": "Cupón \"{code}\" ingresado con éxito",
+      "invalidCoupon": "El código es incorrecto o venció",
+      "emptyCart": "Tu carrito no contiene elementos",
+      "paymentDeclined": "El pago no fue autorizado.",
+      "paymentSuccess": "Pago confirmado. Orden #{orderId}",
+      "paymentError": "Surgió un error al procesar la orden"
     }
   },
-  "about": {
-    "images": {
-      "medicalProfessionalAlt": "Profesional de la medicina"
+  "header": {
+    "logoAlt": "Logo de Vultra",
+    "titleAlt": "Título de Vultra",
+    "cart": "Carrito",
+    "openMenu": "Abrir menú",
+    "packages": "Paquetes",
+    "nav": {
+      "home": "PRINCIPAL",
+      "about": "CONÓCENOS",
+      "services": "OFERTA",
+      "contact": "INFORMACIÓN"
     },
-    "whyChooseUs": {
-      "title": "Donde el servicio superior brinda certeza",
-      "description1": "En el sector de la salud no cabe la improvisación. Cada recurso, insumo y aditamento empleado repercute directamente en la recuperación, eficacia y valoración clínica.",
-      "description2": "Somos un equipo dedicado al suministro de instrumental clínico y médico, enfocado en ofrecer soluciones fiables que se incorporan de manera ideal en hospitales, sanatorios y consultorios.",
-      "description3": "Nuestra misión excede el intercambio mercantil: anhelamos convertirnos en una base de certidumbre para nuestros compradores, facilitando sus procesos cotidianos con productos de primer nivel.",
-      "button": "Solicitar asesoría técnica"
-    },
-    "hero": {
-      "badge": "Acreditación que certifica cada uno de nuestros productos",
-      "title": "Acreditación que certifica cada uno de nuestros productos",
-      "description1": "Funcionamos como proveedores enfocados en surtir insumos hospitalarios y de diagnóstico, seleccionados bajo estrictos parámetros de resistencia y operatividad.",
-      "description2": "Comprendemos lo crucial que es contar con insumos confiables en entornos donde la rapidez es vital. Por ello, cimentamos nuestra operación en:",
-      "button": "Ver la Tienda"
-    },
-    "strategicPartner": {
-      "title": "Más que un mero proveedor, deseamos convertirnos en tu aliado estratégico.",
-      "description1": "Motivos para preferirnos: Pocas compañías entienden las exigencias del ramo de la salud. Nosotros sí.",
-      "description2": "Filtro especializado de herramientas: Seleccionamos únicamente insumos que cumplen cabalmente con las normas de uso y salud.",
-      "description3": "Compromiso con las entregas: Agilizamos los canales de envío para que cuentes con tus pedidos de forma puntual.",
-      "description4": "Soporte inmediato: Entendemos las emergencias sanitarias. Actuamos con celeridad y efectividad.",
-      "description5": "Fidelidad y consistencia: Construimos relaciones de largo plazo basadas en la seriedad y la calidad.",
-      "button": "Hablar con un Especialista"
-    },
-    "results": {
-      "title": "Nos enfocamos en tus objetivos, no solo en la comercialización",
-      "description1": "Sabemos que las instituciones no solo compran herramientas, sino el respaldo de que su clínica o sanatorio marche de manera fluida, ininterrumpida y protegida.",
-      "description2": "Por esta razón, nuestro servicio tiene como fin otorgar beneficios comprobables:",
-      "items": {
-        "item1": "Reducción de contratiempos logísticos",
-        "item2": "Mejora del control de stock interno",
-        "item3": "Absoluta certeza en el abastecimiento",
-        "item4": "Confianza plena en cada solicitud efectuada"
-      },
-      "description3": "Nos alineamos a tus metas cotidianas para constituir un colaborador que aporte valor concreto, desmarcándonos de la figura de un distribuidor tradicional.",
-      "button": "Hablar con un Especialista"
-    },
-    "contact": {
-      "title": "Estamos a tu disposición para ayudarte",
-      "description1": "Si buscas un proveedor comprometido, con conocimiento de la industria y procesos de distribución ágiles, estás en el lugar correcto.",
-      "phone": "Línea de contacto: +52 1 55 2583 6217",
-      "description2": "Atención directa para cotizaciones, dudas técnicas y pedidos especiales.",
-      "button": "Contáctanos"
+    "services": {
+      "title": "Servicios",
+      "description": "Explora nuestro catálogo de soluciones."
     }
   },
-  "customPlan": {
-    "imageAlt": "Logotipo",
-    "hero": {
-      "badge": "Módulo de Cotizaciones Particulares y Cobros",
-      "title": "Módulo de Cotizaciones Particulares y Cobros",
-      "description": "Por favor, acceda a esta sección únicamente si cuenta con una clave de seguimiento provista por el personal de Medion MX."
+  "hero": {
+    "badge": "Somos Vultra",
+    "title": {
+      "first": "Desarrollo",
+      "highlight": "inteligente",
+      "last": "para software y aplicaciones"
     },
-    "authorized": {
-      "title": "Convenio Particular Certificado",
-      "description": "Los montos introducidos en esta sección deben coincidir plenamente con la cifra final neta que pactó previamente con su ejecutivo."
-    },
-    "form": {
-      "quoteLabel": "Número de Seguimiento / Cotización Emitida",
-      "quotePlaceholder": "Por ejemplo: CMA-2026-894",
-      "amountLabel": "Monto Total (Con Impuestos Incluidos)"
-    },
-    "errors": {
-      "quoteRequired": "Resulta indispensable ingresar la clave de cotización brindada por su asesor.",
-      "invalidAmount": "La cifra global introducida debe ser mayor a $0.00 MXN."
-    },
-    "product": {
-      "name": "Orden Especial - Presupuesto #{quote}",
-      "description": "Bienes médicos validados previamente con el departamento de ventas bajo el número #{quote}."
-    },
-    "infoText": {
-      "before": "Al hacer clic en el botón inferior, se añadirá una partida personalizada a su carrito con el concepto de ",
-      "after": " preparada para ser pagada."
-    },
-    "buttons": {
-      "adding": "Agregando concepto particular...",
-      "addToCart": "Sumar al Carrito de Compra"
-    }
+    "description": "Creamos soluciones digitales modernas, escalables y diseñadas para automatizar procesos, optimizar operaciones y acelerar tu crecimiento.",
+    "imageAlt": "Equipo de desarrollo de software trabajando"
   },
-  "store": {
-    "hero": {
-      "badge": "Equipamiento para profesionales",
-      "title": "Material médico avalado y con alta eficiencia",
-      "description": "Consulte consumibles para el área de la salud elegidos con criterios de durabilidad y confiabilidad para clínicas, sanatorios y consultorios."
-    },
-    "filters": {
-      "title": "Filtros específicos",
-      "subtitle": "Segmenta tus opciones",
-      "clear": "Limpiar",
-      "categories": "Categorías",
-      "allCategories": "Todas las áreas",
-      "priceRange": "Rango de costos",
-      "min": "Mín",
-      "max": "Máx"
-    },
-    "search": {
-      "placeholder": "Buscar insumos, categorías o material clínico...",
-      "button": "Buscar"
-    },
-    "sort": {
-      "name": "Orden alfabético (A-Z)",
-      "priceAsc": "Precio: menor a mayor",
-      "priceDesc": "Precio: mayor a menor",
-      "newest": "Ingresos más recientes"
-    },
-    "results": {
-      "showing": "Mostrando",
-      "of": "de un total de",
-      "products": "productos"
-    },
-    "empty": {
-      "title": "No se encontraron resultados",
-      "description": "Intenta modificando los criterios de búsqueda o restableciendo los filtros para visualizar opciones.",
-      "button": "Restablecer filtros"
-    },
-    "product": {
-      "noImage": "Sin foto disponible",
-      "new": "Nuevo",
-      "featured": "Destacado",
-      "price": "Precio",
-      "viewDetail": "Detalles"
-    },
-    "pagination": {
-      "previous": "Previo",
-      "next": "Siguiente"
-    },
-    "tax": "MXN + IVA"
+  "servicesSection": {
+    "badge": "Lo que ofrecemos",
+    "title": "Nuestros servicios",
+    "viewAll": "Ver Todos Los Servicios",
+    "viewService": "Ver servicio",
+    "previous": "Anterior",
+    "next": "Siguiente"
   },
-  "productDetail": {
-    "loadingTitle": "Cargando especificaciones",
-    "loadingDescription": "Estamos recopilando los datos técnicos de este artículo.",
-    "notFoundTitle": "No se localizó el artículo",
-    "notFoundDescription": "El material consultado no cuenta con stock o el enlace ingresado es incorrecto.",
-    "backToStore": "Regresar a la tienda",
-    "breadcrumbStore": "Tienda",
-    "noImage": "Imagen de muestra no disponible",
-    "new": "Nuevo",
-    "featured": "Destacado",
-    "price": "Precio",
-    "description": "Especificaciones del producto",
-    "featureQuality": "Respaldo médico",
-    "featureQualityDesc": "Insumos verificados mediante rigurosos controles de calidad y normativas sanitarias.",
-    "featureShipping": "Envío resguardado",
-    "featureShippingDesc": "Empaque y traslado profesional para asegurar la integridad de cada paquete.",
-    "featureSupport": "Atención especializada",
-    "featureSupportDesc": "Asistencia directa para centros hospitalarios, laboratorios y especialistas.",
-    "added": "Agregado exitosamente",
-    "addToCart": "Añadir a la cesta",
-    "cartQuantityText": "Has seleccionado",
-    "cartQuantityUnits": "unidad(es) de este material en tu carrito.",
-    "relatedTitle": "Productos sugeridos",
-    "relatedDescription": "Otras opciones dentro de la misma categoría de insumos.",
-    "viewAll": "Ver todo el stock",
-    "noRelatedTitle": "Sin opciones relacionadas",
-    "noRelatedDescription": "Por el momento no contamos con otros artículos en este rubro.",
-    "viewDetail": "Ver información",
-    "tax": "MXN + IVA"
+  "whyUs": {
+    "badge": "Lo que nos distingue",
+    "title": "Lo que nos distingue",
+    "description": "Contamos con un equipo de profesionales de vasta experiencia en el desarrollo de software.",
+    "cta": "Sobre Nosotros",
+    "imageAlt": "Equipo feliz de Vultra",
+    "distinguishingFeatures": [
+      "Soporte continuo",
+      "Mantenemos tus sistemas operativos",
+      "Soluciones diseñadas para escalar con tu negocio."
+    ]
   },
-  "home": {
-    "hero": {
-      "title": "Donde el servicio experto transmite confianza",
-      "description": "Somos una empresa enfocada en la distribución de materiales médicos y hospitalarios, validados a través de estrictas revisiones de calidad y desempeño.",
-      "imageAlt": "Especialista médica de la salud"
-    },
-    "products": {
-      "title": "Calidad demostrada en cada producto",
-      "description": "Consumibles médicos y quirúrgicos seleccionados de forma estricta por su desempeño y altos estándares.",
-      "button": "Explorar Tienda"
-    },
-    "payment": {
-      "title": "Cobros personalizados",
-      "description": "Determinados equipos requieren un presupuesto a la medida debido a sus propiedades, volumen de adquisición o condiciones particulares.",
-      "contactButton": "Contáctanos",
-      "payButton": "Pagar",
-      "imageAlt": "Personal de servicio técnico"
-    },
-    "contact": {
-      "title": "Estamos listos para atenderte",
-      "description": "Si buscas un distribuidor serio, con enfoque profesional y dinámicos periodos de entrega, cuenta con nuestro apoyo.",
-      "phoneDescription": "Línea de atención para solicitar presupuestos, orientación y servicio postventa.",
-      "button": "Contáctanos",
-      "imageAlt": "Médico de guardia"
-    }
+  "pricing": {
+    "badge": "Nuestra Oferta",
+    "title": "PAQUETES",
+    "popular": "Popular",
+    "moreInfo": "Más Información",
+    "viewAll": "Ver Todos Los Paquetes",
+    "tax": "+ IVA"
   },
-  "features": {
-    "badge": "Opciones de salud especializadas",
-    "title": "Las herramientas que te ofrecemos",
-    "description": "Contamos con un catálogo diseñado para cubrir las distintas demandas en el ejercicio médico diario.",
-    "subtitle": "Nuestros insumos se enfocan en:",
-    "items": [
-      "Soportar los procesos sanitarios y el control diario",
-      "Garantizar condiciones de higiene, resguardo y seguimiento",
-      "Agilizar los procesos de los médicos y del personal de enfermería",
-      "Optimizar los tiempos de reacción y cuidado del paciente"
-    ],
-    "footer": "Cada elemento ha sido estructurado para integrarse sin problemas a tus actividades cotidianas."
+  "ctaSection": {
+    "badge": "Transformación digital",
+    "title": "Conviértete en una empresa digital",
+    "description": "Nos esforzamos por entender y satisfacer las necesidades tecnológicas de cada cliente, ofreciendo servicios personalizados y resultados excepcionales.",
+    "button": "Nuestros Servicios",
+    "imageAlt": "Profesional con laptop"
   },
   "footer": {
-    "title": "Contáctanos",
-    "address": {
-      "title": "Sede principal",
-      "line1": "Avenida Jaime Balmes 11,",
-      "line2": "Depto 15A Edificio A Piso 1",
-      "line3": "Colonia Polanco I Sección, Demarcación Miguel Hidalgo",
-      "line4": "Código Postal 11510, Ciudad de México"
+    "about": {
+      "badge": "Sobre nosotros",
+      "description": "Desarrollamos software y aplicaciones personalizadas con enfoque en rendimiento, automatización y escalabilidad."
     },
-    "support": {
-      "title": "Soporte al cliente",
-      "phone": "Central telefónica",
-      "email": "Correo electrónico",
-      "description": "Comunicación directa para cotizaciones, orientación técnica y estado de pedidos."
+    "titles": {
+      "navigation": "Navegación",
+      "services": "Servicios",
+      "legal": "Legal",
+      "contact": "Contacto"
     },
-    "payments": {
-      "title": "Canales de pago aceptados"
+    "navigation": {
+      "about": "Nosotros",
+      "services": "Nuestros servicios",
+      "packages": "Paquetes",
+      "contact": "Contáctanos"
+    },
+    "services": {
+      "mobileApps": "Apps móviles",
+      "customSoftware": "Software a medida",
+      "systemIntegration": "Integración de Sistemas",
+      "techConsulting": "Consultoría Tecnológica",
+      "automation": "Automatización",
+      "support": "Soporte y Mantenimiento"
     },
     "legal": {
-      "terms": "Condiciones de Uso y Compra de Productos Médicos",
-      "privacy": "Aviso de Privacidad de Datos Personales",
-      "returns": "Política de Devoluciones, Cancelaciones y Reembolsos"
+      "privacy": "AVISO DE PRIVACIDAD",
+      "terms": "TÉRMINOS Y CONDICIONES",
+      "refunds": "POLÍTICA DE DEVOLUCIONES Y REEMBOLSOS"
     },
-    "copyright": "2026 © Todos los derechos reservados por Medion MX"
+    "contact": {
+      "address": "Avenida Río Mixcoac 39 Piso 1 Despacho 103, Col. Insurgentes Mixcoac, Benito Juárez, CDMX."
+    },
+    "paymentsAlt": "Métodos de pago",
+    "copyright": "Vultra © {year}. Todos los derechos reservados."
+  },
+  "contactPage": {
+    "banner": {
+      "title": "Contáctanos",
+      "breadcrumb": "Contáctanos"
+    },
+    "info": {
+      "badge": "Hablemos",
+      "title": "¡Contáctanos!",
+      "description": "No dudes en ponerte en contacto con nosotros para obtener más información y descubrir cómo podemos ayudarte a alcanzar tus objetivos. ¡Esperamos tu mensaje!"
+    },
+    "form": {
+      "name": "Nombre",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "message": "Escribe tu mensaje",
+      "submit": "Enviar",
+      "sending": "Enviando..."
+    },
+    "messages": {
+      "success": "¡Gracias por tu mensaje! Te contactaremos pronto.",
+      "error": "Ocurrió un error al enviar el formulario."
+    }
+  },
+  "aboutPage": {
+    "banner": {
+      "title": "Nosotros",
+      "breadcrumb": "Nosotros"
+    },
+    "companyValues": [
+      {
+        "icon": "Lightbulb",
+        "title": "Innovación",
+        "description": "Constantemente buscamos nuevas formas de mejorar y superar las expectativas."
+      },
+      {
+        "icon": "Award",
+        "title": "Calidad",
+        "description": "Nos comprometemos a entregar soluciones que cumplen con los más altos estándares."
+      },
+      {
+        "icon": "Users",
+        "title": "Integridad",
+        "description": "Actuamos con honestidad y transparencia en todas nuestras interacciones."
+      },
+      {
+        "icon": "Heart",
+        "title": "Compromiso",
+        "description": "Dedicación absoluta a la satisfacción de nuestros clientes."
+      }
+    ],
+    "about": {
+      "imageAlt": "Equipo Vultra",
+      "badge": "Sobre Nosotros",
+      "title": "Somos Vultra",
+      "description": "Tenemos la capacidad para entender y resolver problemas tecnológicos complejos. Nos enfocamos en ofrecer soluciones personalizadas que realmente agreguen valor a tu negocio. Nuestra experiencia y dedicación nos permiten entregar productos de alta calidad y rendimiento.",
+      "features": {
+        "custom": "Soluciones personalizadas",
+        "performance": "Alto rendimiento"
+      }
+    },
+    "values": {
+      "badge": "Lo que nos guía",
+      "title": "NUESTROS VALORES"
+    }
+  },
+  "customPackagePage": {
+    "hero": {
+      "badge": "Producto personalizado",
+      "title": "Detalles del Producto"
+    },
+    "breadcrumb": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "packages": "Paquetes",
+      "current": "Paquete a la medida"
+    },
+    "product": {
+      "name": "Paquete a la medida",
+      "imageAlt": "Paquete personalizado"
+    },
+    "description": {
+      "contactAdvisor": "Contacta a un asesor.",
+      "instructions": "Para cotizar un paquete a la medida contacta a un asesor. Escribe los datos de tu paquete a la medida para realizar el pago correspondiente."
+    },
+    "form": {
+      "badge": "Paquete especial",
+      "folioLabel": "Folio del paquete",
+      "folioPlaceholder": "Ej. AB-2026-001",
+      "amountLabel": "Monto a pagar",
+      "addToCart": "Agregar al carrito"
+    },
+    "total": {
+      "label": "Final total"
+    }
+  },
+  "packages": {
+    "banner": {
+      "title": "Paquetes",
+      "breadcrumb": "Paquetes"
+    },
+    "main": {
+      "badge": "Nuestros Paquetes",
+      "title": "Paquetes para cada tamaño de empresa",
+      "featured": "Destacado",
+      "packageLabel": "Paquete {number}",
+      "tax": "+ IVA"
+    },
+    "buttons": {
+      "added": "Agregado",
+      "startNow": "Empieza Ahora"
+    },
+    "consulting": {
+      "title": "¿Tienes una duda rápida sobre tecnología y no sabes a quién acudir?",
+      "description": "Con nuestros servicios de consultoría individual, obtén una respuesta clara en minutos. Ideal para resolver problemas urgentes o tomar decisiones rápidas sin perder tiempo ni dinero."
+    },
+    "cta": {
+      "imageAlt": "Profesional",
+      "badge": "¿Necesitas más capacidad?",
+      "title": "Tenemos un paquete hecho a la medida",
+      "description": "Contáctanos y uno de nuestros asesores te hará un paquete a la medida para cubrir las necesidades de tu compañía",
+      "button": "Paquete A Medida"
+    }
+  },
+  "services": {
+    "banner": {
+      "title": "Nuestros servicios",
+      "breadcrumb": "Nuestros servicios"
+    },
+    "service": {
+      "badge": "Servicio",
+      "readMore": "Leer Más"
+    },
+    "cta": {
+      "badge": "Impulsa tu empresa",
+      "title": "Conviértete en una empresa digital",
+      "description": "Nos esforzamos por entender y satisfacer las necesidades tecnológicas de cada cliente, ofreciendo servicios personalizados y resultados excepcionales.",
+      "button": "Ver Paquetes",
+      "imageAlt": "Profesional"
+    }
+  },
+  "serviceDetail": {
+    "hero": {
+      "tag": "Servicio tecnológico"
+    },
+    "breadcrumb": {
+      "home": "Inicio",
+      "services": "Nuestros servicios"
+    },
+    "feature": {
+      "placeholderLabel": "FeatureImage",
+      "placeholderDescription": "Agrega aquí la imagen destacada"
+    },
+    "aside": {
+      "title": "Nuestros servicios",
+      "subtitle": "Explora el resto de servicios disponibles."
+    },
+    "description": {
+      "title": "Descripción",
+      "subtitle": "Resumen claro del servicio y del valor que aporta."
+    },
+    "benefits": {
+      "title": "Beneficios",
+      "subtitle": "Resultados y ventajas que obtienes con este servicio."
+    },
+    "process": {
+      "title": "Cómo lo hacemos",
+      "subtitle": "Proceso de trabajo explicado en pasos desplegables."
+    },
+    "notFound": {
+      "title": "Servicio no encontrado",
+      "description": "El servicio que buscas no está disponible o no existe. Revisa la lista de servicios para continuar.",
+      "button": "Ver servicios"
+    }
+  },
+  "Emails": {
+    "contactEmail": {
+      "internalHeroPretitle": "Lead Entrante",
+      "internalHeroTitle": "Nuevo mensaje recibido",
+      "internalHeroSubtitle": "Se recibió una solicitud desde el formulario de contacto del sitio web. Revisa la información y da seguimiento.",
+      "labelName": "Nombre",
+      "labelEmail": "Correo",
+      "clientMessageTitle": "Mensaje del cliente",
+      "internalFollowUpNotice": "Responde directamente a este correo o escribe a {email} para dar seguimiento al prospecto.",
+      "userHeroPretitle": "Mensaje recibido",
+      "userHeroTitle": "Gracias por contactarnos",
+      "userHeroSubtitle": "Tu solicitud quedó registrada correctamente. Nuestro equipo la revisará y te responderemos a la brevedad.",
+      "userGreeting": "Hola, {name}.",
+      "userBodyText": "Hemos recibido tu mensaje. En breve uno de nuestros especialistas se pondrá en contacto contigo a través del correo que nos compartiste.",
+      "labelRegisteredEmail": "Correo registrado",
+      "labelSite": "Sitio",
+      "buttonBackToSite": "Volver al sitio web",
+      "internalSubject": "Nuevo prospecto: {name}",
+      "userSubject": "Hemos recibido tu solicitud - {brandName}",
+      "footerTagline": "{brandName} · Desarrollo de software y aplicaciones a medida.",
+      "footerRights": "© {year} · {brandName}. Todos los derechos reservados."
+    },
+    "checkoutEmail": {
+      "customerError": "Datos de confirmación incompletos.",
+      "customerSubject": "Confirmación de compra - Orden #{orderId}",
+      "businessSubject": "Nueva Venta - Orden #{orderId}",
+      "customerHeroPretitle": "Comprobante de compra",
+      "customerHeroTitle": "¡Gracias por tu pago!",
+      "customerHeroSubtitle": "Hola {name}. Hemos procesado exitosamente tu orden y estamos preparando todo para ti.",
+      "labelOrderNumber": "Número de orden",
+      "labelDate": "Fecha",
+      "labelShippingAddress": "Dirección de envío",
+      "buttonBackToStore": "Volver a la tienda",
+      "businessHeroPretitle": "Nueva Venta",
+      "businessHeroTitle": "Pago registrado exitosamente",
+      "businessHeroSubtitle": "Se ha registrado una nueva compra en la plataforma. Revisa los detalles de facturación y envío a continuación.",
+      "labelCustomer": "Cliente",
+      "labelEmail": "Correo",
+      "labelPhone": "Teléfono",
+      "labelOrder": "Orden",
+      "labelCustomerAddress": "Dirección del Cliente",
+      "labelAdditionalNotes": "Notas adicionales",
+      "tableConcept": "Concepto",
+      "tableQuantity": "Cant.",
+      "tableTotal": "Total",
+      "tableTotalPaid": "Total pagado: {amount} MXN",
+      "currencyFormat": "{price} MXN",
+      "footerSupport": "Si tienes dudas sobre este cargo, contáctanos en",
+      "footerRights": "Todos los derechos reservados.",
+      "successMessage": "Correos enviados exitosamente.",
+      "errorMessage": "El pago fue exitoso pero falló el envío del correo de confirmación."
+    }
   }
 }

@@ -1,736 +1,225 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
-import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 import { Link } from "@/i18n/routing";
+import { formatPrice } from "@/lib/price";
 import {
+  ArrowRight,
   Minus,
   Plus,
-  Trash2,
+  ShieldCheck,
   ShoppingBag,
-  ArrowRight,
-  ChevronLeft,
-  CreditCard,
+  Sparkles,
+  Trash2,
   User,
-  MapPin,
-  CheckCircle2,
-  AlertTriangle,
 } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
-import { useCart } from "@/context/CartContext";
-import { Button } from "@/components/ui/button";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { processKeycopPayment } from "@/lib/payment";
-import { formatPrice } from "@/lib/price";
-
-const VALID_COUPONS = [
-  { code: "MED10", discount: 0.1 },
-  { code: "CONFIANZA15", discount: 0.15 },
-  { code: "PROMO20", discount: 0.2 },
-];
-
-type Step = 1 | 2 | 3;
-
-function CardShell({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`rounded-2xl border border-[#E9D5FF] bg-white shadow-sm ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-function SectionTitle({
-  icon: Icon,
-  title,
-}: {
-  icon: React.ElementType;
-  title: string;
-}) {
-  return (
-    <div className="flex items-center gap-3 border-b border-[#F3E8FF] pb-4">
-      <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[#E9D5FF] bg-[#FAF5FF]">
-        <Icon className="h-4 w-4 text-[#A855F7]" />
-      </div>
-      <h3 className="text-xs font-bold uppercase  text-[#4B3A42]">
-        {title}
-      </h3>
-    </div>
-  );
-}
-
-function Field({
-  label,
-  name,
-  value,
-  onChange,
-  type = "text",
-  required = false,
-  placeholder,
-  className = "",
-  maxLength,
-  mono = false,
-  inputClassName = "",
-}: {
-  label: string;
-  name: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-  className?: string;
-  maxLength?: number;
-  mono?: boolean;
-  inputClassName?: string;
-}) {
-  return (
-    <div className={className}>
-      <label className="mb-2 block text-[11px] font-bold uppercase  text-[#8A7680]">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        maxLength={maxLength}
-        className={`w-full rounded-2xl border border-[#E9D5FF] bg-[#FCFAFF] px-4 py-3 text-sm text-[#4B3A42] outline-none transition-all placeholder:text-[#B7A4AA] focus:border-[#C084FC] focus:ring-4 focus:ring-[#E9D5FF]/60 ${mono ? "font-mono" : ""
-          } ${inputClassName}`}
-      />
-    </div>
-  );
-}
-
-export default function CarritoCheckoutPage() {
+export default function CartPage() {
+  const { items, total, removeItem, updateQuantity, itemCount } = useCart();
   const t = useTranslations("cartPage");
-  const locale = useLocale();
 
-  const { items, total, updateQuantity, removeItem, clearCart } = useCart();
-
-  const [step, setStep] = useState<Step>(1);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successData, setSuccessData] = useState<any>(null);
-
-  const [couponInput, setCouponInput] = useState("");
-  const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
-  const [couponError, setCouponError] = useState("");
-
-  const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    email: "",
-    telefono: "",
-    empresa: "",
-    direccion: "",
-    direccion2: "",
-    ciudad: "",
-    estado: "",
-    cp: "",
-    pais: "MX",
-    cardNumber: "",
-    cardName: "",
-    cardMonth: "",
-    cardYear: "",
-    cardCvv: "",
-  });
-
-  const discountAmount = appliedCoupon ? total * appliedCoupon.discount : 0;
-  const totalWithDiscount = total - discountAmount;
-  const iva = totalWithDiscount * 0.16;
-  const grandTotal = totalWithDiscount + iva;
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleApplyCoupon = (e: FormEvent) => {
-    e.preventDefault();
-    setCouponError("");
-
-    const found = VALID_COUPONS.find(
-      (c) => c.code === couponInput.trim().toUpperCase()
-    );
-
-    if (found) {
-      setAppliedCoupon(found);
-      setCouponInput("");
-      return;
-    }
-
-    setCouponError(t("financial.couponInvalid"));
-  };
-
-  const handleCheckoutSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsProcessing(true);
-    setErrorMessage("");
-
-    const uniqueOrderId = `MC-${Date.now()}`;
-
-    // Construir la URL completa de confirmación incluyendo la referencia de la orden
-    const confirmationRedirectUrl = `${window.location.origin}/confirmacion?reference=${uniqueOrderId}&state=APPROVED`;
-
-    const paymentPayload = {
-      amount: Number(grandTotal.toFixed(2)),
-      orderId: uniqueOrderId,
-      redirectUrl: confirmationRedirectUrl, // 👈 Se le pasa la URL de tu app
-      cardData: {
-        number: formData.cardNumber.replace(/\s/g, ""),
-        name: formData.cardName.trim(),
-        month: formData.cardMonth.trim(),
-        year: formData.cardYear.trim(),
-        cvv: formData.cardCvv.trim(),
-      },
-      customer: {
-        nombre: formData.nombre.trim(),
-        apellido: formData.apellido.trim(),
-        email: formData.email.trim(),
-        telefono: formData.telefono.trim(),
-        direccion: formData.direccion.trim(),
-        direccion2: formData.direccion2.trim() || undefined,
-        ciudad: formData.ciudad.trim(),
-        estado: formData.estado.trim(),
-        pais: formData.pais,
-        cp: formData.cp.trim(),
-        empresa: formData.empresa.trim() || undefined,
-      },
-      metadata: {
-        notes: appliedCoupon
-          ? `${t("metadata.couponApplied")}: ${appliedCoupon.code}`
-          : t("metadata.standardSale"),
-      },
-    };
-
-    try {
-      const response = await processKeycopPayment(paymentPayload);
-      console.log(response)
-
-      // 1. Si requiere autenticación 3DS (Redirección bancaria)
-      if (response.needsRedirect && response.redirectUrl) {
-        window.location.href = response.redirectUrl;
-        return;
-      }
-
-      // 2. Si el pago fue aprobado de inmediato sin 3DS
-      if (response.success) {
-        // Limpiar carrito u otras acciones necesarias
-        clearCart();
-
-        // Redirigir a la página de confirmación con los datos en Query Params
-        const successUrl = `/confirmacion?status=${response.status}&reference=${response.reference}&transactionId=${response.data?.transactionId || response.orderId}&amount=${paymentPayload.amount}`;
-        window.location.href = successUrl;
-      } else {
-        setErrorMessage(response.error  || response.data.message || t("errors.declined"));
-      }
-    } catch (err) {
-      console.error(err);
-      setErrorMessage(t("errors.connection"));
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
-  if (step === 3) {
+  if (items.length === 0) {
     return (
-      <main className="flex min-h-screen flex-col justify-between bg-[#FCFAFF]">
-        <Header />
-        <section className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center px-4 py-16 text-center">
-          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-[#E9D5FF] bg-[#FAF5FF] text-[#4B3A42]">
-            <CheckCircle2 className="h-9 w-9 text-[#A855F7]" />
+      <div className="relative min-h-[80vh] from-violet-500  to-violet-500 overflow-hidden bg-gradient-to-br  px-4 py-20 flex items-center justify-center">
+        {/* Ambient Glows */}
+        <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-purple-300/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-pink-300/30 blur-3xl" />
+
+        {/* Glass Empty Card */}
+        <div className="relative z-10 max-w-md w-full  mt-16 rounded-[2.5rem] border border-white/80 bg-white/70 p-10 text-center shadow-2xl shadow-purple-900/10 backdrop-blur-2xl">
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/80 bg-white/90 text-purple-600 shadow-lg shadow-purple-500/10 backdrop-blur-xl">
+            <ShoppingBag className="h-10 w-10" />
           </div>
-          <h1 className="mb-2 text-3xl font-bold text-[#4B3A42]">
-            {t("success.title")}
-          </h1>
-          <p className="mb-6 text-sm text-[#6E5B63]">
-            {t("success.description")}
+
+          <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 mb-2">
+            {t("emptyTitle")}
+          </h2>
+          <p className="text-sm font-medium leading-relaxed text-slate-600 mb-8">
+            {t("emptyDescription")}
           </p>
 
-          <CardShell className="mb-8 w-full space-y-3 p-6 text-left">
-            <div className="flex justify-between text-xs">
-              <span className="font-medium text-[#8A7680]">
-                {t("success.transactionStatus")}
-              </span>
-              <span className="rounded-full bg-[#FAF5FF] px-2 py-0.5 text-xs font-bold text-[#7E22CE]">
-                {t("success.approved")}
-              </span>
-            </div>
-          </CardShell>
-
-          <Link href="/tienda" className="w-full">
-            <Button className="w-full rounded-2xl bg-[#A855F7] py-6 text-base font-semibold text-white transition-all hover:bg-[#9333EA]">
-              {t("success.backToCatalog")}
-            </Button>
+          <Link
+            href="/paquetes"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 py-4 font-bold text-white shadow-xl shadow-purple-600/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-600/35"
+          >
+            {t("exploreServices")}
+            <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-        </section>
-        <Footer />
-      </main>
+        </div>
+      </div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#FCFAFF]">
-      <Header />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-violet-500  to-violet-500 px-4 py-12 text-slate-800 md:py-20">
+      {/* Background Ambient Glows */}
+      <div className="pointer-events-none absolute -left-32 -top-32 h-[30rem] w-[30rem] rounded-full bg-purple-300/30 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-pink-300/30 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-[32rem] w-[32rem] rounded-full bg-violet-300/20 blur-3xl" />
 
-      <div className="sticky top-0 z-10 border-b border-[#E9D5FF] bg-white shadow-sm">
-        <div className="mx-auto flex max-w-7xl flex-col items-stretch justify-between gap-4 px-4 py-5 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-xs font-semibold text-[#8A7680]">
-            <Link href="/" className="transition-colors hover:text-[#4B3A42]">
-              {t("breadcrumb.home")}
+      <div className="relative mt-16 mx-4 z-10">
+        {/* Header Header Glass Card */}
+        <div className="mb-10 rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-xl shadow-purple-900/5 backdrop-blur-2xl md:p-8">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-purple-200/60 bg-gradient-to-br from-purple-500/10 to-violet-500/10 text-purple-600 shadow-sm backdrop-blur-md">
+              <ShoppingBag className="h-7 w-7" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+                {t("title")}
+              </h1>
+              <p className="mt-1 text-sm font-semibold text-purple-700/80">
+                {t("itemsSelected", {
+                  count: itemCount,
+                  itemLabel: itemCount === 1 ? t("service") : t("services"),
+                })}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Listado de Servicios */}
+          <div className="space-y-4 lg:col-span-2">
+            {items.map((item) => (
+              <div
+                key={item.id}
+                className="group relative flex flex-col justify-between gap-5 rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-xl shadow-purple-900/5 backdrop-blur-2xl transition-all duration-300 hover:border-purple-200 hover:bg-white/80 hover:shadow-2xl hover:shadow-purple-900/10 sm:flex-row sm:items-center"
+              >
+                {/* Details */}
+                <div className="flex-1 space-y-2">
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-300/60 bg-purple-50/80 px-3 py-1 backdrop-blur-md">
+                    <Sparkles className="h-3.5 w-3.5 text-purple-600" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-purple-800">
+                      {t("badgeInteriorism")}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-extrabold text-slate-900">
+                    {item.product?.name ?? t("defaultServiceTitle")}
+                  </h3>
+
+                  {item.meta?.nombre && (
+                    <div className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200/80 bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-700 backdrop-blur-sm">
+                      <User className="h-3.5 w-3.5 text-purple-600" />
+                      <span>
+                        {t("assignedTo")}: {item.meta.nombre} {item.meta.apellidos}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Right Controls Area */}
+                <div className="flex items-center justify-between gap-6 border-t border-slate-200/60 pt-4 sm:w-auto sm:border-t-0 sm:pt-0">
+                  {/* Quantity Control Pill */}
+                  <div className="flex items-center rounded-2xl border border-white/80 bg-slate-100/80 p-1 shadow-inner backdrop-blur-md">
+                    <button
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      className="flex h-8 w-8 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm transition-all duration-200 hover:bg-slate-200/80 hover:text-purple-600 active:scale-95"
+                      aria-label={t("decreaseQuantity")}
+                    >
+                      <Minus className="h-4 w-4" />
+                    </button>
+                    <span className="w-8 text-center text-sm font-extrabold text-slate-900">
+                      {item.quantity}
+                    </span>
+                    <button
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      className="flex h-8 w-8 items-center justify-center rounded-xl bg-white text-slate-700 shadow-sm transition-all duration-200 hover:bg-slate-200/80 hover:text-purple-600 active:scale-95"
+                      aria-label={t("increaseQuantity")}
+                    >
+                      <Plus className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {/* Subtotal */}
+                  <div className="min-w-[100px] text-right">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                      {t("subtotal")}
+                    </span>
+                    <span className="text-lg font-black text-slate-900">
+                      MXN {formatPrice(item.subtotal)}
+                    </span>
+                  </div>
+
+                  {/* Delete Button */}
+                  <button
+                    onClick={() => removeItem(item.id)}
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-rose-200/50 bg-rose-50/50 text-slate-400 transition-all duration-200 hover:border-rose-300 hover:bg-rose-50 hover:text-rose-600 active:scale-95"
+                    title={t("removeService")}
+                  >
+                    <Trash2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Resumen del Pedido (Checkout box) */}
+          <div className="h-fit space-y-6 rounded-[2.5rem] border border-white/80 bg-white/70 p-6 shadow-2xl shadow-purple-900/10 backdrop-blur-2xl md:p-8">
+            <h2 className="border-b border-slate-200/60 pb-4 text-xl font-black tracking-tight text-slate-900">
+              {t("summaryTitle")}
+            </h2>
+
+            <div className="space-y-3.5 text-sm font-medium">
+              <div className="flex justify-between text-slate-600">
+                <span>{t("subtotal")}</span>
+                <span className="font-bold text-slate-900">
+                  MXN {formatPrice(total)}
+                </span>
+              </div>
+              <div className="flex justify-between text-slate-600">
+                <span>{t("taxesFees")}</span>
+                <span className="text-xs text-slate-400">
+                  {t("calculatedAtCheckout")}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between border-t border-slate-200/60 pt-4">
+              <span className="text-base font-bold text-slate-900">
+                {t("estimatedTotal")}
+              </span>
+              <span className="text-2xl font-black text-purple-700">
+                MXN {formatPrice(total)}
+              </span>
+            </div>
+
+            {/* Enlace directo a la página de Checkout */}
+            <Link
+              href="/checkout"
+              className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 py-4 font-bold text-white shadow-xl shadow-purple-600/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-600/35 active:scale-[0.98]"
+            >
+              {t("proceedToCheckout")}
+              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-            <span>/</span>
-            <span className={step === 1 ? "font-bold text-[#A855F7]" : ""}>
-              {t("breadcrumb.summary")}
-            </span>
-            <span>/</span>
-            <span className={step === 2 ? "font-bold text-[#A855F7]" : ""}>
-              {t("breadcrumb.shippingPayment")}
-            </span>
-          </nav>
 
-          <div className="flex items-center gap-3">
-            <div className={`h-3 w-3 rounded-full ${step >= 1 ? "bg-[#EC4899]" : "bg-[#E9D5FF]"}`} />
-            <div className={`h-1 w-12 rounded-full ${step >= 2 ? "bg-[#EC4899]" : "bg-[#E9D5FF]"}`} />
-            <div className={`h-3 w-3 rounded-full ${step >= 2 ? "bg-[#EC4899]" : "bg-[#E9D5FF]"}`} />
+            <div className="flex items-center justify-center gap-1.5 text-center text-xs font-medium text-slate-500">
+              <ShieldCheck className="h-4 w-4 text-emerald-600" />
+              <span>{t("securityNotice")}</span>
+            </div>
+
+            <div className="flex items-center justify-center gap-6 rounded-2xl border border-white/80 bg-slate-50/80 p-4 shadow-inner backdrop-blur-md">
+              <Image
+                src="/logo-keycop.webp"
+                alt="etomin"
+                width={110}
+                height={28}
+                className="object-contain"
+              />
+              <Image
+                src="/secure-payment.png"
+                alt="secure"
+                width={130}
+                height={20}
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
-
-      <section className="py-10 md:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {items.length === 0 ? (
-            <CardShell className="mx-auto max-w-lg p-10 text-center">
-              <ShoppingBag className="mx-auto mb-4 h-16 w-16 text-[#E9D5FF]" />
-              <h2 className="mb-2 text-xl font-bold text-[#4B3A42]">
-                {t("empty.title")}
-              </h2>
-              <p className="mb-6 text-xs text-[#6E5B63]">
-                {t("empty.description")}
-              </p>
-              <Link href="/tienda">
-                <Button className="rounded-2xl bg-[#EC4899] px-6 text-white transition-all hover:bg-[#DB2777]">
-                  {t("empty.goToStore")}
-                </Button>
-              </Link>
-            </CardShell>
-          ) : (
-            <div className="grid items-start gap-8 lg:grid-cols-3">
-              <div className="space-y-4 lg:col-span-2">
-                {errorMessage && (
-                  <div className="flex items-center gap-2 rounded-2xl border border-[#F3C7D0] bg-[#FFF1F3] p-4 text-xs font-semibold text-[#C84C6A]">
-                    <AlertTriangle className="h-4 w-4 flex-shrink-0" />
-                    <span>{errorMessage}</span>
-                  </div>
-                )}
-
-                {step === 1 && (
-                  <div className="space-y-4">
-                    <CardShell className="flex items-center justify-between p-5">
-                      <h2 className="text-sm font-bold uppercase  text-[#4B3A42]">
-                        {t("order.title")}
-                      </h2>
-                      <button
-                        type="button"
-                        onClick={clearCart}
-                        className="flex items-center gap-1 text-xs font-bold text-[#C84C6A] transition-colors hover:underline"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" /> {t("order.clear")}
-                      </button>
-                    </CardShell>
-
-                    {items.map((item) => (
-                      <CardShell key={item.product.id} className="flex gap-5 p-5">
-                        <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[#F3E5E8] bg-[#FCFAFF]">
-                          <Image
-                            src={item.product.image}
-                            alt={item.product.name}
-                            fill
-                            className="object-contain p-2"
-                          />
-                        </div>
-
-                        <div className="flex min-w-0 flex-1 flex-col justify-between">
-                          <div className="flex justify-between gap-3">
-                            <div className="min-w-0">
-                              <span className="rounded-full bg-[#FAF5FF] px-2 py-0.5 text-[10px] font-bold capitalize text-[#7E22CE]">
-                                {item.product.category_slug}
-                              </span>
-                              <h3 className="mt-2 line-clamp-1 text-xs font-bold text-[#4B3A42]">
-                                {item.product.name}
-                              </h3>
-                            </div>
-                            <button
-                              type="button"
-                              onClick={() => removeItem(item.product.id)}
-                              className="p-1 text-[#B7A4AA] transition-colors hover:text-[#C84C6A]"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
-
-                          <div className="mt-3 flex items-center justify-between">
-                            <div className="flex items-center rounded-2xl border border-[#E9D5FF] bg-[#FCFAFF] p-1">
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  updateQuantity(item.product.id, item.quantity - 1)
-                                }
-                                className="rounded-2xl p-2 transition-colors hover:bg-white"
-                              >
-                                <Minus className="h-3 w-3" />
-                              </button>
-                              <span className="w-9 text-center text-xs font-bold text-[#4B3A42]">
-                                {item.quantity}
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  updateQuantity(item.product.id, item.quantity + 1)
-                                }
-                                className="rounded-2xl p-2 transition-colors hover:bg-white"
-                              >
-                                <Plus className="h-3 w-3" />
-                              </button>
-                            </div>
-                            <span className="text-sm font-black text-[#4B3A42]">
-                              {formatPrice(item.product.price * item.quantity, "MXN", true)}
-                            </span>
-                          </div>
-                        </div>
-                      </CardShell>
-                    ))}
-                  </div>
-                )}
-
-                {step === 2 && (
-                  <form
-                    id="keycop-payment-form"
-                    onSubmit={handleCheckoutSubmit}
-                    className="space-y-6"
-                  >
-                    <CardShell className="space-y-5 p-7">
-                      <SectionTitle icon={User} title={t("form.buyerTitle")} />
-                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <Field
-                          label={t("form.firstName")}
-                          name="nombre"
-                          value={formData.nombre}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <Field
-                          label={t("form.lastName")}
-                          name="apellido"
-                          value={formData.apellido}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <Field
-                          label={t("form.email")}
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <Field
-                          label={t("form.phone")}
-                          name="telefono"
-                          type="tel"
-                          value={formData.telefono}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <Field
-                          label={t("form.company")}
-                          name="empresa"
-                          value={formData.empresa}
-                          onChange={handleInputChange}
-                          className="sm:col-span-2"
-                        />
-                      </div>
-                    </CardShell>
-
-                    <CardShell className="space-y-5 p-7">
-                      <SectionTitle icon={MapPin} title={t("form.addressTitle")} />
-                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <Field
-                          label={t("form.streetAddress")}
-                          name="direccion"
-                          value={formData.direccion}
-                          onChange={handleInputChange}
-                          required
-                          placeholder={t("form.streetAddressPlaceholder")}
-                          className="sm:col-span-2"
-                        />
-                        <Field
-                          label={t("form.neighborhood")}
-                          name="direccion2"
-                          value={formData.direccion2}
-                          onChange={handleInputChange}
-                          placeholder={t("form.neighborhoodPlaceholder")}
-                          className="sm:col-span-2"
-                        />
-                        <Field
-                          label={t("form.city")}
-                          name="ciudad"
-                          value={formData.ciudad}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <Field
-                          label={t("form.state")}
-                          name="estado"
-                          value={formData.estado}
-                          onChange={handleInputChange}
-                          required
-                          placeholder={t("form.statePlaceholder")}
-                        />
-                        <Field
-                          label={t("form.postalCode")}
-                          name="cp"
-                          value={formData.cp}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <div>
-                          <label className="mb-2 block text-[11px] font-bold uppercase text-[#8A7680]">
-                            {t("form.country")}
-                          </label>
-                          <select
-                            name="pais"
-                            value={formData.pais}
-                            onChange={handleInputChange}
-                            className="w-full rounded-2xl border border-[#E9D5FF] bg-[#FCFAFF] px-4 py-3 text-sm text-[#4B3A42] outline-none transition-all focus:border-[#C084FC] focus:ring-4 focus:ring-[#E9D5FF]/60"
-                          >
-                            <option value="MX">{t("form.mexico")}</option>
-                          </select>
-                        </div>
-                      </div>
-                    </CardShell>
-
-                    <CardShell className="space-y-5 p-7">
-                      <SectionTitle icon={CreditCard} title={t("form.paymentTitle")} />
-                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                        <Field
-                          label={t("form.cardNumber")}
-                          name="cardNumber"
-                          value={formData.cardNumber}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={16}
-                          placeholder={t("form.cardNumberPlaceholder")}
-                          className="sm:col-span-3"
-                          mono
-                          inputClassName="tracking-widest"
-                        />
-                        <Field
-                          label={t("form.cardHolderName")}
-                          name="cardName"
-                          value={formData.cardName}
-                          onChange={handleInputChange}
-                          required
-                          placeholder={t("form.cardHolderPlaceholder")}
-                          className="sm:col-span-3"
-                        />
-                        <Field
-                          label={t("form.expiryMonth")}
-                          name="cardMonth"
-                          value={formData.cardMonth}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={2}
-                          placeholder={t("form.expiryMonthPlaceholder")}
-                          mono
-                          inputClassName="text-center"
-                        />
-                        <Field
-                          label={t("form.expiryYear")}
-                          name="cardYear"
-                          value={formData.cardYear}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={2}
-                          placeholder={t("form.expiryYearPlaceholder")}
-                          mono
-                          inputClassName="text-center"
-                        />
-                        <Field
-                          label={t("form.cvv")}
-                          name="cardCvv"
-                          type="password"
-                          value={formData.cardCvv}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={4}
-                          placeholder={t("form.cvvPlaceholder")}
-                          mono
-                          inputClassName="text-center"
-                        />
-                      </div>
-                    </CardShell>
-                  </form>
-                )}
-              </div>
-
-              <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-6 rounded-2xl border border-[#E9D5FF] bg-white p-6 shadow-sm">
-                  <h2 className="text-sm font-bold uppercase text-[#4B3A42]">
-                    {t("financial.title")}
-                  </h2>
-
-                  {step === 1 && (
-                    <div className="space-y-3 border-b border-[#F3E8FF] pb-5">
-                      {!appliedCoupon ? (
-                        <form onSubmit={handleApplyCoupon} className="flex gap-2">
-                          <input
-                            type="text"
-                            placeholder={t("financial.couponPlaceholder")}
-                            value={couponInput}
-                            onChange={(e) => setCouponInput(e.target.value)}
-                            className="flex-1 rounded-2xl border border-[#E9D5FF] bg-[#FCFAFF] px-4 py-3 text-xs font-mono uppercase  text-[#4B3A42] outline-none transition-all placeholder:text-[#B7A4AA] focus:border-[#C084FC] focus:ring-4 focus:ring-[#E9D5FF]/60"
-                          />
-                          <button
-                            type="submit"
-                            className="rounded-2xl bg-[#4B3A42] px-4 text-xs font-bold text-white transition-colors hover:bg-[#3D2B34]"
-                          >
-                            {t("financial.applyCoupon")}
-                          </button>
-                        </form>
-                      ) : (
-                        <div className="flex items-center justify-between rounded-2xl border border-[#F3C7D0] bg-[#FFF1F3] p-3">
-                          <div className="text-xs font-medium text-[#9D5670]">
-                            {t("financial.appliedCoupon", {
-                              code: appliedCoupon.code,
-                              discount: appliedCoupon.discount * 100,
-                            })}
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => setAppliedCoupon(null)}
-                            className="text-[10px] font-bold text-[#C84C6A] transition-colors hover:underline"
-                          >
-                            {t("financial.remove")}
-                          </button>
-                        </div>
-                      )}
-                      {couponError && (
-                        <p className="text-[10px] font-bold text-[#C84C6A]">
-                          ⚠️ {couponError}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  <div className="space-y-3 border-b border-[#F3E8FF] pb-5 text-xs font-medium text-[#6E5B63]">
-                    <div className="flex justify-between">
-                      <span>{t("financial.subtotal")}</span>
-                      <span className="font-bold text-[#4B3A42]">
-                        {formatPrice(total, "MXN", true)}
-                      </span>
-                    </div>
-                    {appliedCoupon && (
-                      <div className="flex justify-between text-[#EC4899]">
-                        <span>{t("financial.discount")}</span>
-                        <span className="font-bold">
-                          -{formatPrice(discountAmount, "MXN", true)}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-sm font-bold text-[#4B3A42]">
-                      {t("financial.netTotal")}
-                    </span>
-                    <span className="text-2xl font-black text-[#4B3A42]">
-                      {formatPrice(grandTotal, "MXN", true)}
-                    </span>
-                  </div>
-                  <p className="-mt-4 text-right text-[10px] text-[#8A7680]">
-                    {t("financial.tax", {
-                      tax: formatPrice(iva, "MXN", true),
-                    })}
-                  </p>
-
-                  {step === 1 ? (
-                    <Button
-                      onClick={() => setStep(2)}
-                      className="w-full rounded-2xl bg-[#EC4899] py-6 text-sm font-bold  text-white transition-all hover:bg-[#DB2777]"
-                    >
-                      {t("actions.proceedToPayment")}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  ) : (
-                    <div className="space-y-3">
-                      <Button
-                        type="submit"
-                        form="keycop-payment-form"
-                        disabled={isProcessing}
-                        className={`w-full rounded-2xl py-6 text-sm font-bold  text-white transition ${isProcessing
-                          ? "cursor-wait bg-[#A855F7]"
-                          : "bg-[#EC4899] hover:bg-[#DB2777]"
-                          }`}
-                      >
-                        {isProcessing
-                          ? t("actions.processing")
-                          : t("actions.payAmount", {
-                            amount: formatPrice(grandTotal, "MXN", true),
-                          })}
-                      </Button>
-
-                      <button
-                        type="button"
-                        disabled={isProcessing}
-                        onClick={() => setStep(1)}
-                        className="flex w-full items-center justify-center gap-1 py-1 text-center text-xs font-bold text-[#8A7680] transition-colors hover:text-[#4B3A42]"
-                      >
-                        <ChevronLeft className="h-3.5 w-3.5" />
-                        {t("actions.backToCart")}
-                      </button>
-                    </div>
-                  )}
-
-                  <div className="border-t border-[#F3E8FF] pt-4 text-center">
-                    <p className="text-[10px] font-medium text-[#8A7680]">
-                      {t("security.note")}
-                    </p>
-                    <div className="mt-4 flex flex-row justify-between gap-4 p-4">
-                      <Image
-                        src="/logo-keycop.webp"
-                        alt={t("images.octanoAlt")}
-                        width={150}
-                        height={30}
-                      />
-                      <Image
-                        src="/secure-payment.png"
-                        alt={t("images.securePaymentAlt")}
-                        width={150}
-                        height={30}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      <Footer />
-    </main>
+    </div>
   );
 }

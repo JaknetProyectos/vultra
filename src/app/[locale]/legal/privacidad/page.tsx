@@ -3,675 +3,714 @@
 import { useLocale } from "next-intl";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalStyle from "@/components/LegalStyle";
 
 function LegalEs() {
-    return (
-        <div className="legal-container">
-            <style dangerouslySetInnerHTML={{
-                __html: `
-        .legal-container {
-          color: #1a1a1a;
-          line-height: 1.6;
-          font-family: sans-serif;
-        }
-        .legal-container h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; border-bottom: 2px solid #eee; padding-bottom: 1rem; }
-        .legal-container h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #3048ab; }
-        .legal-container h3 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5rem; }
-        .legal-container p { margin-bottom: 1.2rem; text-align: justify; }
-        .legal-container ul { margin-bottom: 1.2rem; padding-left: 1.5rem; list-style-type: disc; }
-        .legal-container li { margin-bottom: 0.5rem; }
-        .legal-container section { margin-bottom: 3rem; }
-      `}} />
+  return (
+    <div className="legal-container">
+      <LegalStyle />
 
-            <section>
-                <h1>Aviso de Privacidad de Datos Personales – ACLINICO, S.A. DE C.V.</h1>
+      <section>
+        <h1>AVISO DE PRIVACIDAD – VULTRA</h1>
 
-                <h2>1. Quién cuida tu información</h2>
+        <p>
+          En cumplimiento con la Ley Federal de Protección de Datos Personales en
+          Posesión de los Particulares y su Reglamento, DISTRIBUCIONES EL KILO S.A.
+          DE C.V., que opera bajo la denominación comercial VULTRA, con domicilio en
+          la Ciudad de México, pone a disposición de los usuarios del sitio web
+          vultra.com.mx el presente Aviso de Privacidad.
+        </p>
 
-                <p>
-                    <strong>1.1.</strong> La empresa que opera este Sitio de distribución de
-                    productos médicos y clínicos (en adelante, la Comercializadora) es
-                    responsable del uso y protección de los datos personales que recaba a
-                    través de sus canales digitales y de contacto.
-                </p>
+        <p>
+          VULTRA se especializa en desarrollo de software personalizado,
+          integración de sistemas y consultoría tecnológica. La continuidad en el uso
+          de nuestros servicios constituye la aceptación expresa del tratamiento de
+          datos personales conforme a los términos establecidos en este aviso.
+        </p>
 
-                <p>
-                    <strong>1.2.</strong> ACLINICO, S.A. DE C.V. con RFC ACL210407975 y
-                    domicilio de atención ubicado en Avenida Jaime Balmes 11, Interior 15a
-                    Torre A Piso 1, Colonia Polanco I Sección, Alcaldía Miguel Hidalgo, C.P.
-                    11510, Ciudad de México.
-                </p>
+        <h2>I. DEFINICIONES</h2>
 
-                <p>
-                    <strong>1.3.</strong> Para cualquier duda o solicitud relacionada con tus
-                    datos personales, puedes escribir al correo{" "}
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> y consultar la
-                    información disponible en el Sitio{" "}
-                    <a
-                        href="https://centromedicoavanza.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        centromedicoavanza.com
-                    </a>
-                </p>
+        <p>
+          <strong>Responsable:</strong> DISTRIBUCIONES EL KILO S.A. DE C.V.
+          (VULTRA), empresa especializada en soluciones tecnológicas integrales.
+        </p>
 
-                <h2>2. Qué datos personales podemos solicitar</h2>
+        <p>
+          <strong>Datos Personales:</strong> Información concerniente a personas
+          físicas identificadas o identificables, incluyendo nombre, contacto, datos
+          fiscales, información técnica de proyectos, especificaciones de sistemas y
+          cualquier dato proporcionado para servicios tecnológicos.
+        </p>
 
-                <p>
-                    <strong>2.1.</strong> Dependiendo de la interacción que tengas con la
-                    Comercializadora (consulta, cotización, compra, facturación), se pueden
-                    recabar datos de identificación como nombre y apellidos.
-                </p>
+        <p>
+          <strong>Sitio Web:</strong> vultra.com.mx y todas sus secciones,
+          aplicaciones y herramientas integradas.
+        </p>
 
-                <p>
-                    <strong>2.2.</strong> También se pueden recabar datos de contacto como
-                    correo electrónico y número telefónico.
-                </p>
+        <p>
+          <strong>Usuario:</strong> Persona física o moral que accede al sitio web o
+          contrata nuestros servicios especializados.
+        </p>
 
-                <p>
-                    <strong>2.3.</strong> Cuando aplica el envío de productos, se podrán
-                    solicitar datos de entrega como domicilio o referencias para envío.
-                </p>
+        <h2>II. CONTACTO DEL RESPONSABLE</h2>
 
-                <p>
-                    <strong>2.4.</strong> Para efectos de facturación, podremos solicitar
-                    denominación o razón social, RFC, domicilio fiscal y otros datos necesarios
-                    para la emisión de comprobantes fiscales.
-                </p>
+        <p>
+          <strong>Domicilio:</strong> Avenida Río Mixcoac 39 piso 1 Despacho 103,
+          Colonia Insurgentes Mixcoac, Benito Juárez C.P. 03920 Ciudad de México
+        </p>
 
-                <p>
-                    <strong>2.5.</strong> Podremos obtener datos sobre tu relación comercial,
-                    como tipo de organización (hospital, clínica, consultorio, proveedor), área
-                    de contacto y productos de interés.
-                </p>
+        <p>
+          <strong>Correo electrónico:</strong> atencion@vultra.com.mx
+        </p>
 
-                <p>
-                    <strong>2.6.</strong> Asimismo, se pueden recabar datos de uso del Sitio,
-                    como páginas visitadas, fecha y hora de acceso, tiempo de permanencia y
-                    referencias de origen, obtenidos mediante cookies y herramientas de
-                    analítica.
-                </p>
+        <h2>III. FINALIDADES DEL TRATAMIENTO</h2>
 
-                <p>
-                    <strong>2.7.</strong> La Comercializadora no busca recabar datos personales
-                    sensibles de manera directa; si por alguna razón decides proporcionarlos,
-                    se entenderá que lo haces de forma voluntaria y podrán aplicarse reglas
-                    adicionales de protección.
-                </p>
+        <p>Los datos personales serán utilizados para las siguientes finalidades:</p>
 
-                <h2>3. Para qué usamos tu información</h2>
+        <p>
+          <strong>Servicios principales:</strong> Desarrollo de software
+          personalizado, integración de sistemas empresariales y consultoría
+          tecnológica. Esto incluye análisis de requerimientos, diseño de soluciones,
+          implementación de proyectos, gestión del ciclo de vida del software y
+          servicios de soporte técnico.
+        </p>
 
-                <p>
-                    <strong>3.1.</strong> Tus datos personales se utilizan para atender
-                    solicitudes de información, cotizaciones y contacto relacionadas con el
-                    portafolio de productos médicos y clínicos.
-                </p>
+        <p>
+          <strong>Gestión comercial:</strong> Elaboración de propuestas técnicas,
+          negociación de contratos, facturación, seguimiento de proyectos,
+          comunicación de avances y prestación de servicios de mantenimiento.
+        </p>
 
-                <p>
-                    <strong>3.2.</strong> Se usan para gestionar pedidos, confirmar
-                    disponibilidad, coordinar entregas y dar seguimiento a tus compras.
-                </p>
+        <p>
+          <strong>Comunicaciones especializadas:</strong> Envío de información técnica
+          relevante, invitaciones a seminarios, presentaciones de nuevas tecnologías
+          y contenido educativo para profesionales del sector.
+        </p>
 
-                <p>
-                    <strong>3.3.</strong> Se emplean para emitir comprobantes fiscales cuando
-                    así lo solicites.
-                </p>
+        <p>
+          <strong>Seguridad y prevención:</strong> Verificación de identidad,
+          evaluación de riesgos, detección de fraudes y protección de información
+          confidencial y propiedad intelectual.
+        </p>
 
-                <p>
-                    <strong>3.4.</strong> También se utilizan para mantener comunicación
-                    contigo en relación con aclaraciones, dudas técnicas o administrativas
-                    sobre tus adquisiciones.
-                </p>
+        <h2>IV. OBTENCIÓN DE DATOS PERSONALES</h2>
 
-                <p>
-                    <strong>3.5.</strong> De manera adicional, y solo en caso de que tú lo
-                    permitas, podremos utilizar tus datos para enviarte información sobre
-                    nuevos productos, actualizaciones de catálogo o mejoras en nuestros
-                    servicios.
-                </p>
+        <p>
+          Los datos se obtienen cuando usted los proporciona directamente al
+          solicitar servicios, a través de su interacción con nuestro sitio web, y
+          mediante fuentes permitidas por ley para verificación y prevención de
+          fraudes.
+        </p>
 
-                <p>
-                    <strong>3.6.</strong> Asimismo, podremos compartir contenido informativo
-                    vinculado al sector salud, logística de insumos y buenas prácticas
-                    operativas.
-                </p>
+        <p>
+          <strong>Datos directos:</strong> Información de contacto, datos fiscales,
+          especificaciones técnicas, presupuestos y cronogramas.
+        </p>
 
-                <p>
-                    <strong>3.7.</strong> Tus datos también pueden utilizarse para realizar
-                    encuestas de satisfacción y análisis internos que nos permitan mejorar
-                    procesos y atención.
-                </p>
+        <p>
+          <strong>Datos de navegación:</strong> Dirección IP, tipo de navegador,
+          páginas visitadas, tiempo de permanencia y actividad en el sitio.
+        </p>
 
-                <p>
-                    <strong>3.8.</strong> Si no deseas recibir comunicaciones de carácter
-                    comercial o informativo, puedes solicitarlo en cualquier momento conforme a
-                    la sección 6 de este Aviso.
-                </p>
+        <p>
+          <strong>Datos técnicos:</strong> Especificaciones de sistemas,
+          arquitecturas tecnológicas, credenciales de desarrollo y configuraciones
+          necesarias para la prestación de servicios.
+        </p>
 
-                <h2>4. Fundamento del tratamiento y consentimiento</h2>
+        <h2>V. LIMITACIÓN DEL TRATAMIENTO</h2>
 
-                <p>
-                    <strong>4.1.</strong> El tratamiento de tus datos personales se realiza con
-                    base en la legislación mexicana en materia de protección de datos
-                    personales en posesión de particulares.
-                </p>
+        <p>
+          Puede limitar el uso de sus datos para comunicaciones promocionales
+          contactando a atencion@vultra.com.mx y especificando las restricciones
+          deseadas.
+        </p>
 
-                <p>
-                    <strong>4.2.</strong> Cuando proporcionas tus datos a través del Sitio,
-                    correo, teléfono o cualquier formulario de contacto, se entiende que
-                    consientes su tratamiento para las finalidades necesarias de atención,
-                    cotización, compra y facturación.
-                </p>
+        <h2>VI. EJERCICIO DE DERECHOS ARCO Y PROTECCIÓN DE DATOS</h2>
 
-                <p>
-                    <strong>4.3.</strong> Para finalidades adicionales, como mercadotecnia o
-                    envíos informativos, podrás aceptar o rechazar de forma expresa, o
-                    solicitar posteriormente que dejemos de usar tus datos para esos fines.
-                </p>
+        <p>
+          Los titulares de datos personales tienen derecho a acceder, rectificar,
+          cancelar u oponerse al tratamiento de sus datos personales, así como a
+          revocar el consentimiento otorgado para el tratamiento de los mismos,
+          conforme a lo establecido en la legislación aplicable en materia de
+          protección de datos personales.
+        </p>
 
-                <h2>5. Con quién podemos compartir tus datos</h2>
+        <p>
+          El derecho de acceso permite a los titulares conocer qué datos personales
+          obran en poder de VULTRA, las finalidades para las cuales se utilizan,
+          las condiciones de uso, el origen de los datos cuando no hayan sido
+          proporcionados directamente y si han sido objeto de alguna transferencia.
+          Este derecho puede ejercerse solicitando un informe detallado sobre el
+          tratamiento de datos personales específicos.
+        </p>
 
-                <p>
-                    <strong>5.1.</strong> Para poder cumplir con las finalidades descritas, la
-                    Comercializadora puede apoyarse en terceros que actúan como proveedores de
-                    servicios y que, por tanto, pueden tener acceso a ciertos datos personales.
-                </p>
+        <p>
+          El derecho de rectificación faculta a los titulares para solicitar la
+          corrección de datos personales inexactos, incompletos o desactualizados.
+          Este derecho es particularmente importante en el contexto de servicios
+          tecnológicos especializados, donde la precisión de la información técnica y
+          comercial es fundamental para la prestación efectiva de servicios de
+          desarrollo de software e integración de sistemas.
+        </p>
 
-                <p>
-                    <strong>5.2.</strong> Entre dichos terceros pueden encontrarse empresas de
-                    mensajería y logística para la entrega de productos.
-                </p>
+        <p>
+          El derecho de cancelación permite a los titulares solicitar la eliminación
+          de sus datos personales cuando consideren que no se requieren para las
+          finalidades que motivaron su tratamiento, cuando hayan vencido los plazos
+          establecidos para su conservación o cuando el tratamiento no se ajuste a
+          las disposiciones legales aplicables.
+        </p>
 
-                <p>
-                    <strong>5.3.</strong> También pueden incluirse proveedores de plataformas
-                    tecnológicas, hosting y herramientas de analítica.
-                </p>
+        <p>
+          El derecho de oposición faculta a los titulares para solicitar que se
+          suspenda el tratamiento de sus datos personales para finalidades
+          específicas, particularmente aquellas relacionadas con actividades de
+          marketing, prospección comercial o comunicaciones promocionales que no sean
+          estrictamente necesarias para la prestación de servicios contratados.
+        </p>
 
-                <p>
-                    <strong>5.4.</strong> Podrán participar proveedores de servicios de pago o
-                    instituciones financieras que procesan las transacciones.
-                </p>
+        <p>
+          Para ejercer cualquiera de estos derechos, los titulares deben presentar
+          una solicitud por escrito dirigida a atencion@vultra.com.mx o de manera
+          presencial en nuestro domicilio en la Ciudad de México, acompañada de
+          documentación que acredite su identidad y, en su caso, la personalidad
+          jurídica de su representante legal. VULTRA se compromete a responder las
+          solicitudes en un plazo máximo de veinte días hábiles.
+        </p>
 
-                <p>
-                    <strong>5.5.</strong> En algunos casos será necesario compartir datos con
-                    asesores legales, contables o fiscales para cumplir obligaciones legales.
-                </p>
+        <h2>VII. TRANSFERENCIAS DE DATOS</h2>
 
-                <p>
-                    <strong>5.6.</strong> Estos terceros solo utilizarán la información
-                    siguiendo instrucciones de la Comercializadora y no podrán emplearla para
-                    fines distintos a los aquí señalados.
-                </p>
+        <p>
+          No transferimos datos personales a terceros, excepto en casos previstos por
+          ley o cuando sea necesario para la prestación de servicios especializados
+          (proveedores de infraestructura, servicios en la nube, herramientas de
+          desarrollo). Cualquier transferencia se realiza bajo estrictos contratos de
+          confidencialidad.
+        </p>
 
-                <p>
-                    <strong>5.7.</strong> La Comercializadora no vende ni renta bases de datos
-                    personales.
-                </p>
+        <h2>VIII. MEDIDAS DE SEGURIDAD</h2>
 
-                <h2>6. Tus derechos ARCO y cómo ejercerlos</h2>
+        <p>
+          Implementamos medidas físicas, técnicas y administrativas para proteger sus
+          datos, incluyendo encriptación avanzada, protocolos SSL/TLS, autenticación
+          multifactor, firewalls, sistemas de detección de intrusiones y respaldos
+          seguros. Nuestro personal firma acuerdos de confidencialidad y recibe
+          capacitación continua.
+        </p>
 
-                <p>
-                    <strong>6.1.</strong> Como titular de los datos personales, tienes derecho
-                    a acceder a tus datos, solicitar su rectificación, pedir su cancelación o
-                    manifestar tu oposición al tratamiento de los mismos, derechos conocidos
-                    como ARCO.
-                </p>
+        <h2>IX. COOKIES, TECNOLOGÍAS DE SEGUIMIENTO Y ANÁLISIS WEB</h2>
 
-                <p>
-                    <strong>6.2.</strong> Para ejercer cualquiera de estos derechos, o para
-                    limitar el uso de tus datos, puedes enviar un correo a{" "}
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> indicando tu
-                    nombre completo, un medio de contacto y el derecho que deseas ejercer,
-                    explicando de forma clara tu solicitud.
-                </p>
+        <p>
+          El sitio web de VULTRA utiliza cookies, web beacons y otras tecnologías
+          de seguimiento para mejorar la experiencia del usuario, analizar patrones
+          de navegación, personalizar contenido y optimizar la funcionalidad de
+          nuestras plataformas tecnológicas. Estas tecnologías nos permiten recopilar
+          información sobre el comportamiento de navegación, preferencias de
+          contenido y patrones de interacción con nuestros servicios especializados.
+        </p>
 
-                <p>
-                    <strong>6.3.</strong> Deberás adjuntar copia de un documento que acredite
-                    tu identidad o, en su caso, la representación legal correspondiente.
-                </p>
+        <p>
+          Las cookies utilizadas incluyen cookies técnicas necesarias para el
+          funcionamiento básico del sitio web, cookies de personalización que
+          permiten recordar preferencias del usuario y configuraciones específicas,
+          cookies de análisis que proporcionan información estadística sobre el uso
+          del sitio, y cookies de marketing que facilitan la presentación de
+          contenido relevante sobre nuestros servicios de desarrollo de software y
+          consultoría tecnológica.
+        </p>
 
-                <p>
-                    <strong>6.4.</strong> La Comercializadora responderá en los plazos
-                    establecidos por la legislación aplicable, indicándote si tu solicitud
-                    resulta procedente y, en su caso, los pasos para hacerla efectiva.
-                </p>
+        <p>
+          La información recopilada através de estas tecnologías incluye dirección IP
+          de conexión, tipo y versión del navegador web, sistema operativo utilizado,
+          resolución de pantalla, páginas visitadas y secuencia de navegación, tiempo
+          de permanencia en cada sección, enlaces seleccionados, documentos
+          descargados, formularios completados y cualquier otra interacción registrada
+          durante la sesión.
+        </p>
 
-                <p>
-                    <strong>6.5.</strong> Para dejar de recibir correos informativos o
-                    comerciales, también puedes utilizar los mecanismos de baja incluidos en
-                    los propios mensajes o enviar un correo con el asunto “Cancelar
-                    suscripción”.
-                </p>
+        <p>
+          Los usuarios pueden configurar sus navegadores web para rechazar cookies o
+          recibir notificaciones cuando se intenten instalar cookies en su
+          dispositivo. Sin embargo, la desactivación de cookies puede afectar la
+          funcionalidad de ciertas características del sitio web, particularmente
+          aquellas relacionadas con la personalización de contenido y la
+          funcionalidad avanzada de nuestras herramientas de evaluación técnica.
+        </p>
 
-                <h2>7. Cookies y tecnologías similares</h2>
+        <p>
+          Para obtener información detallada sobre cómo deshabilitar cookies en
+          navegadores específicos o gestionar preferencias de privacidad relacionadas
+          con tecnologías de seguimiento, los usuarios pueden contactar a nuestro
+          departamento técnico a través de atencion@vultra.com.mx.
+        </p>
 
-                <p>
-                    <strong>7.1.</strong> El Sitio puede utilizar cookies y tecnologías
-                    similares para mejorar tu experiencia de navegación, recopilar estadísticas
-                    y entender cómo se usa el contenido.
-                </p>
+        <h2>X. CONSERVACIÓN DE DATOS</h2>
 
-                <p>
-                    <strong>7.2.</strong> Estas tecnologías pueden almacenar información básica
-                    como el tipo de dispositivo que utilizas, el navegador, las secciones que
-                    visitas y el tiempo que permaneces en el Sitio.
-                </p>
+        <p>
+          Conservamos los datos el tiempo necesario para cumplir las finalidades
+          establecidas: cotizaciones (2 años), proyectos contratados (duración del
+          contrato más 5 años), comunicaciones de marketing (hasta solicitud de
+          eliminación). Puede solicitar la eliminación definitiva de sus datos a
+          través de atencion@vultra.com.mx.
+        </p>
 
-                <p>
-                    <strong>7.3.</strong> Puedes ajustar la configuración de tu navegador para
-                    bloquear o eliminar cookies; en ese caso, algunas funciones del Sitio
-                    podrían no ejecutarse de forma óptima.
-                </p>
+        <h2>XI. ACTUALIZACIONES Y MODIFICACIONES DEL AVISO</h2>
 
-                <h2>8. Cómo protegemos tu información</h2>
+        <p>
+          VULTRA se reserva el derecho de modificar el presente Aviso de Privacidad
+          en cualquier momento, con el propósito de adaptarlo a cambios legislativos,
+          regulatorios, tecnológicos o de política interna que puedan afectar el
+          tratamiento de datos personales en el contexto de nuestros servicios
+          especializados de desarrollo de software, integración de sistemas y
+          consultoría tecnológica.
+        </p>
 
-                <p>
-                    <strong>8.1.</strong> La Comercializadora implementa medidas de seguridad
-                    administrativas, técnicas y físicas para proteger los datos personales
-                    contra pérdida, uso indebido, acceso no autorizado, alteración o
-                    destrucción.
-                </p>
+        <p>
+          Las modificaciones al Aviso de Privacidad serán comunicadas a los usuarios
+          a través de notificaciones destacadas en el sitio web principal,
+          comunicaciones dirigidas al correo electrónico proporcionado y, cuando sea
+          apropiado, mediante comunicación directa con clientes que mantengan
+          contratos activos de servicios tecnológicos especializados.
+        </p>
 
-                <p>
-                    <strong>8.2.</strong> Aunque se trabaja para mantener un nivel adecuado de
-                    seguridad, ningún sistema es completamente inmune; la Comercializadora
-                    revisa y mejora de forma continua sus medidas de protección.
-                </p>
+        <p>
+          Los usuarios tendrán un plazo de diez días hábiles posteriores a la
+          notificación para manifestar su oposición a las modificaciones
+          implementadas. En caso de no recibir manifestación expresa de oposición, se
+          considerará que el usuario acepta las modificaciones realizadas y consiente
+          el tratamiento de sus datos personales bajo los nuevos términos
+          establecidos.
+        </p>
 
-                <h2>9. Tiempo de conservación de los datos</h2>
+        <p>
+          Las versiones históricas del Aviso de Privacidad se conservarán en archivos
+          seguros para referencia legal y regulatoria, manteniéndose disponibles para
+          consulta de los usuarios que lo requieran para efectos de seguimiento de
+          cambios o cumplimiento de obligaciones contractuales específicas.
+        </p>
 
-                <p>
-                    <strong>9.1.</strong> Los datos personales se conservarán durante el tiempo
-                    que sea necesario para cumplir con las finalidades descritas en este Aviso
-                    y para atender posibles obligaciones legales, fiscales o contractuales.
-                </p>
+        <h2>XII. PROCEDIMIENTO PARA QUEJAS Y DENUNCIAS</h2>
 
-                <p>
-                    <strong>9.2.</strong> Una vez que deje de ser necesario conservar tu
-                    información, se procederá a su supresión o anonimización, conforme a las
-                    políticas internas de la Comercializadora y a la normatividad aplicable.
-                </p>
+        <p>
+          Los usuarios que consideren que sus derechos de protección de datos
+          personales han sido vulnerados por alguna conducta de VULTRA, o que
+          presuman la existencia de violaciones a las disposiciones establecidas en la
+          legislación aplicable, pueden interponer quejas o denuncias ante el
+          Instituto Nacional de Transparencia, Acceso a la Información y Protección
+          de Datos Personales.
+        </p>
 
-                <h2>10. Cambios a este Aviso de Privacidad</h2>
+        <p>
+          El procedimiento para interponer quejas incluye la presentación de una
+          solicitud formal ante el Instituto, acompañada de evidencia que respalde la
+          presunta violación, identificación precisa de los derechos vulnerados y
+          descripción detallada de los hechos que motivaron la queja. Los usuarios
+          pueden obtener información adicional sobre este procedimiento en el sitio
+          web oficial del Instituto.
+        </p>
 
-                <p>
-                    <strong>10.1.</strong> La Comercializadora podrá actualizar este Aviso de
-                    Privacidad para reflejar cambios normativos, mejoras internas o ajustes en
-                    los servicios ofrecidos.
-                </p>
+        <p>
+          VULTRA se compromete a cooperar plenamente con las autoridades
+          competentes en cualquier procedimiento de investigación relacionado con el
+          tratamiento de datos personales, proporcionando la información requerida e
+          implementando las medidas correctivas que sean ordenadas por la autoridad
+          correspondiente.
+        </p>
 
-                <p>
-                    <strong>10.2.</strong> Cualquier modificación relevante se publicará en el
-                    Sitio{" "}
-                    <a
-                        href="https://centromedicoavanza.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        centromedicoavanza.com
-                    </a>{" "}
-                    indicando la fecha de la última actualización.
-                </p>
+        <p>
+          Los usuarios también pueden dirigir sus inquietudes directamente a
+          VULTRA a través de nuestro correo electrónico atencion@vultra.com.mx,
+          donde serán atendidas por especialistas en protección de datos que
+          trabajarán para resolver cualquier inconformidad de manera expedita y
+          satisfactoria.
+        </p>
 
-                <h2>11. Aceptación del Aviso</h2>
+        <h2>XIII. DISPOSICIONES FINALES Y VIGENCIA</h2>
 
-                <p>
-                    <strong>11.1.</strong> Al navegar en el Sitio, enviar datos mediante
-                    formularios, solicitar información, cotizar o realizar compras, confirmas
-                    que conoces y aceptas el contenido de este Aviso de Privacidad.
-                </p>
+        <p>
+          El presente Aviso de Privacidad entra en vigor a partir de su publicación
+          en el sitio web de VULTRA y se mantendrá vigente hasta que sea modificado
+          o actualizado conforme a los procedimientos establecidos en este documento.
+          Su aplicación es obligatoria para todos los usuarios que accedan a nuestros
+          servicios de desarrollo de software, integración de sistemas y consultoría
+          tecnológica.
+        </p>
 
-                <p>
-                    <strong>11.2.</strong> Si en algún momento no estás de acuerdo con la forma
-                    en que tratamos tus datos, puedes ejercer tus derechos ARCO o contactar a
-                    la Comercializadora para revisar tu caso en particular.
-                </p>
+        <p>
+          La interpretación y cumplimiento del presente Aviso de Privacidad se regirá
+          por las disposiciones de la legislación mexicana aplicable en materia de
+          protección de datos personales, siendo competentes para resolver cualquier
+          controversia los tribunales federales de la Ciudad de México.
+        </p>
 
-                <p>
-                    <strong>Última actualización:</strong> Junio 2026.
-                </p>
-            </section>
-        </div>
-    );
+        <p>
+          En caso de discrepancia entre versiones en diferentes idiomas del presente
+          Aviso de Privacidad, prevalecerá la versión en español publicada en el
+          sitio web oficial de VULTRA.
+        </p>
+
+        <p>
+          VULTRA reitera su compromiso con la protección de la privacidad y los
+          datos personales de nuestros usuarios, garantizando que el tratamiento de
+          información personal se realice siempre con apego a los más altos estándares
+          de seguridad, confidencialidad y transparencia que caracterizan nuestros
+          servicios profesionales especializados en tecnología.
+        </p>
+      </section>
+
+    </div>
+  );
 }
 
 function LegalEn() {
-    return (
-        <div className="legal-container">
-            <style dangerouslySetInnerHTML={{
-                __html: `
-        .legal-container {
-          color: #1a1a1a;
-          line-height: 1.6;
-          font-family: sans-serif;
-        }
-        .legal-container h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; border-bottom: 2px solid #eee; padding-bottom: 1rem; }
-        .legal-container h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #3048ab; }
-        .legal-container h3 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5rem; }
-        .legal-container p { margin-bottom: 1.2rem; text-align: justify; }
-        .legal-container ul { margin-bottom: 1.2rem; padding-left: 1.5rem; list-style-type: disc; }
-        .legal-container li { margin-bottom: 0.5rem; }
-      `}} />
+  return (
+    <div className="legal-container">
+      <LegalStyle />
 
-            <section>
-                <h1>Personal Data Privacy Notice – ACLINICO, S.A. DE C.V.</h1>
+      <section>
+        <h1>PRIVACY NOTICE – VULTRA</h1>
 
-                <h2>1. Who takes care of your information</h2>
+        <p>
+          In compliance with the Federal Law on Protection of Personal Data Held by
+          Private Parties and its Regulations, DISTRIBUCIONES EL KILO S.A. DE C.V.,
+          operating under the commercial name VULTRA, with domicile in Mexico City,
+          makes this Privacy Notice available to users of the website vultra.com.mx.
+        </p>
 
-                <p>
-                    <strong>1.1.</strong> The company that operates this medical and clinical
-                    products distribution Website (hereinafter, the Distributor) is responsible
-                    for the use and protection of the personal data collected through its
-                    digital and contact channels.
-                </p>
+        <p>
+          VULTRA specializes in custom software development, systems integration,
+          and technology consulting. Continued use of our services constitutes
+          express acceptance of the processing of personal data in accordance with
+          the terms established in this notice.
+        </p>
 
-                <p>
-                    <strong>1.2.</strong> ACLINICO, S.A. DE C.V., with Tax ID (RFC)
-                    ACL210407975 and service address located at Avenida Jaime Balmes 11,
-                    Interior 15a Torre A Piso 1, Colonia Polanco I Sección, Alcaldía Miguel
-                    Hidalgo, C.P. 11510, Mexico City.
-                </p>
+        <h2>I. DEFINITIONS</h2>
 
-                <p>
-                    <strong>1.3.</strong> For any questions or requests related to your
-                    personal data, you may contact us at{" "}
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> and consult the
-                    information available on the Website{" "}
-                    <a
-                        href="https://centromedicoavanza.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        centromedicoavanza.com
-                    </a>
-                </p>
+        <p>
+          <strong>Controller:</strong> DISTRIBUCIONES EL KILO S.A. DE C.V.
+          (VULTRA), a company specialized in comprehensive technological solutions.
+        </p>
 
-                <h2>2. What personal data we may request</h2>
+        <p>
+          <strong>Personal Data:</strong> Information concerning identified or
+          identifiable natural persons, including name, contact information, tax
+          data, project technical information, system specifications, and any data
+          provided for technological services.
+        </p>
 
-                <p>
-                    <strong>2.1.</strong> Depending on your interaction with the Distributor
-                    (inquiry, quotation, purchase, billing), identification data such as first
-                    name and last name may be collected.
-                </p>
+        <p>
+          <strong>Website:</strong> vultra.com.mx and all its sections,
+          applications, and integrated tools.
+        </p>
 
-                <p>
-                    <strong>2.2.</strong> Contact information such as email address and phone
-                    number may also be collected.
-                </p>
+        <p>
+          <strong>User:</strong> Natural or legal person who accesses the website or
+          contracts our specialized services.
+        </p>
 
-                <p>
-                    <strong>2.3.</strong> When product shipping applies, delivery information
-                    such as address or shipping references may be requested.
-                </p>
+        <h2>II. CONTROLLER CONTACT INFORMATION</h2>
 
-                <p>
-                    <strong>2.4.</strong> For billing purposes, we may request company name or
-                    business name, Tax ID (RFC), tax address, and other information necessary
-                    for issuing tax invoices.
-                </p>
+        <p>
+          <strong>Address:</strong> Avenida Río Mixcoac 39 floor 1 Office 103,
+          Colonia Insurgentes Mixcoac, Benito Juárez C.P. 03920 Mexico City
+        </p>
 
-                <p>
-                    <strong>2.5.</strong> We may obtain information about your business
-                    relationship, such as type of organization (hospital, clinic, office,
-                    supplier), contact area, and products of interest.
-                </p>
+        <p>
+          <strong>Email:</strong> atencion@vultra.com.mx
+        </p>
 
-                <p>
-                    <strong>2.6.</strong> Likewise, Website usage data may be collected, such
-                    as pages visited, date and time of access, duration of visit, and referral
-                    sources, obtained through cookies and analytics tools.
-                </p>
+        <h2>III. PURPOSES OF DATA PROCESSING</h2>
 
-                <p>
-                    <strong>2.7.</strong> The Distributor does not seek to directly collect
-                    sensitive personal data; if for any reason you choose to provide such data,
-                    it will be understood that you do so voluntarily and additional protection
-                    rules may apply.
-                </p>
+        <p>
+          Personal data will be used for the following purposes:
+        </p>
 
-                <h2>3. What we use your information for</h2>
+        <p>
+          <strong>Main services:</strong> Custom software development, enterprise
+          systems integration, and technology consulting. This includes requirements
+          analysis, solution design, project implementation, software lifecycle
+          management, and technical support services.
+        </p>
 
-                <p>
-                    <strong>3.1.</strong> Your personal data is used to respond to requests for
-                    information, quotations, and contact related to the portfolio of medical
-                    and clinical products.
-                </p>
+        <p>
+          <strong>Commercial management:</strong> Preparation of technical proposals,
+          contract negotiation, invoicing, project follow-up, progress communication,
+          and maintenance service delivery.
+        </p>
 
-                <p>
-                    <strong>3.2.</strong> It is used to manage orders, confirm availability,
-                    coordinate deliveries, and follow up on your purchases.
-                </p>
+        <p>
+          <strong>Specialized communications:</strong> Sending relevant technical
+          information, invitations to seminars, presentations of new technologies,
+          and educational content for industry professionals.
+        </p>
 
-                <p>
-                    <strong>3.3.</strong> It is used to issue tax invoices when requested by
-                    you.
-                </p>
+        <p>
+          <strong>Security and prevention:</strong> Identity verification, risk
+          assessment, fraud detection, and protection of confidential information and
+          intellectual property.
+        </p>
 
-                <p>
-                    <strong>3.4.</strong> It is also used to maintain communication with you
-                    regarding clarifications, technical questions, or administrative matters
-                    related to your purchases.
-                </p>
+        <h2>IV. COLLECTION OF PERSONAL DATA</h2>
 
-                <p>
-                    <strong>3.5.</strong> Additionally, and only if you allow it, we may use
-                    your data to send you information about new products, catalog updates, or
-                    improvements to our services.
-                </p>
+        <p>
+          Data is collected when you provide it directly when requesting services,
+          through your interaction with our website, and through sources permitted by
+          law for verification and fraud prevention purposes.
+        </p>
 
-                <p>
-                    <strong>3.6.</strong> We may also share informational content related to
-                    the healthcare sector, supply logistics, and operational best practices.
-                </p>
+        <p>
+          <strong>Direct data:</strong> Contact information, tax data, technical
+          specifications, budgets, and schedules.
+        </p>
 
-                <p>
-                    <strong>3.7.</strong> Your data may also be used to conduct satisfaction
-                    surveys and internal analysis that allow us to improve processes and
-                    customer service.
-                </p>
+        <p>
+          <strong>Browsing data:</strong> IP address, browser type, visited pages,
+          time spent, and website activity.
+        </p>
 
-                <p>
-                    <strong>3.8.</strong> If you do not wish to receive commercial or
-                    informational communications, you may request this at any time in
-                    accordance with section 6 of this Notice.
-                </p>
+        <p>
+          <strong>Technical data:</strong> System specifications, technological
+          architectures, development credentials, and configurations necessary for
+          service delivery.
+        </p>
 
-                <h2>4. Legal basis for processing and consent</h2>
+        <h2>V. LIMITATION OF PROCESSING</h2>
 
-                <p>
-                    <strong>4.1.</strong> The processing of your personal data is carried out
-                    in accordance with Mexican legislation regarding the protection of personal
-                    data held by private parties.
-                </p>
+        <p>
+          You may limit the use of your data for promotional communications by
+          contacting atencion@vultra.com.mx and specifying the desired restrictions.
+        </p>
 
-                <p>
-                    <strong>4.2.</strong> When you provide your data through the Website,
-                    email, telephone, or any contact form, it is understood that you consent
-                    to its processing for the necessary purposes of customer service,
-                    quotations, purchases, and billing.
-                </p>
+        <h2>VI. EXERCISE OF ARCO RIGHTS AND DATA PROTECTION</h2>
 
-                <p>
-                    <strong>4.3.</strong> For additional purposes, such as marketing or
-                    informational communications, you may expressly accept or reject such use,
-                    or later request that we stop using your data for those purposes.
-                </p>
+        <p>
+          Data subjects have the right to access, rectify, cancel, or object to the
+          processing of their personal data, as well as revoke the consent granted
+          for such processing, in accordance with applicable personal data protection
+          legislation.
+        </p>
 
-                <h2>5. With whom we may share your data</h2>
+        <p>
+          The right of access allows data subjects to know which personal data is
+          held by VULTRA, the purposes for which it is used, the conditions of use,
+          the origin of the data when it has not been provided directly, and whether
+          it has been subject to any transfer. This right may be exercised by
+          requesting a detailed report on the processing of specific personal data.
+        </p>
 
-                <p>
-                    <strong>5.1.</strong> In order to fulfill the purposes described above, the
-                    Distributor may rely on third parties acting as service providers who may
-                    therefore have access to certain personal data.
-                </p>
+        <p>
+          The right of rectification allows data subjects to request the correction
+          of inaccurate, incomplete, or outdated personal data. This right is
+          particularly important in the context of specialized technological services,
+          where the accuracy of technical and commercial information is essential for
+          the effective provision of software development and systems integration
+          services.
+        </p>
 
-                <p>
-                    <strong>5.2.</strong> Such third parties may include courier and logistics
-                    companies for product delivery.
-                </p>
+        <p>
+          The right of cancellation allows data subjects to request the deletion of
+          their personal data when they consider that it is not required for the
+          purposes that motivated its processing, when the established retention
+          periods have expired, or when the processing does not comply with
+          applicable legal provisions.
+        </p>
 
-                <p>
-                    <strong>5.3.</strong> They may also include technology platform providers,
-                    hosting services, and analytics tools.
-                </p>
+        <p>
+          The right of objection allows data subjects to request the suspension of
+          the processing of their personal data for specific purposes, particularly
+          those related to marketing activities, commercial prospecting, or
+          promotional communications that are not strictly necessary for the
+          provision of contracted services.
+        </p>
 
-                <p>
-                    <strong>5.4.</strong> Payment service providers or financial institutions
-                    that process transactions may also participate.
-                </p>
+        <p>
+          To exercise any of these rights, data subjects must submit a written
+          request addressed to atencion@vultra.com.mx or in person at our domicile in
+          Mexico City, accompanied by documentation proving their identity and, where
+          applicable, the legal authority of their representative. VULTRA commits
+          to responding to requests within a maximum period of twenty business days.
+        </p>
 
-                <p>
-                    <strong>5.5.</strong> In some cases, it will be necessary to share data
-                    with legal, accounting, or tax advisors in order to comply with legal
-                    obligations.
-                </p>
+        <h2>VII. DATA TRANSFERS</h2>
 
-                <p>
-                    <strong>5.6.</strong> These third parties will only use the information in
-                    accordance with the Distributor’s instructions and may not use it for
-                    purposes other than those indicated herein.
-                </p>
+        <p>
+          We do not transfer personal data to third parties, except in cases provided
+          by law or when necessary for the provision of specialized services
+          (infrastructure providers, cloud services, development tools). Any transfer
+          is carried out under strict confidentiality agreements.
+        </p>
 
-                <p>
-                    <strong>5.7.</strong> The Distributor does not sell or rent personal data
-                    databases.
-                </p>
+        <h2>VIII. SECURITY MEASURES</h2>
 
-                <h2>6. Your ARCO rights and how to exercise them</h2>
+        <p>
+          We implement physical, technical, and administrative measures to protect
+          your data, including advanced encryption, SSL/TLS protocols,
+          multi-factor authentication, firewalls, intrusion detection systems, and
+          secure backups. Our staff signs confidentiality agreements and receives
+          ongoing training.
+        </p>
 
-                <p>
-                    <strong>6.1.</strong> As the owner of personal data, you have the right to
-                    access your data, request its correction, request its deletion, or object
-                    to its processing, rights known as ARCO rights.
-                </p>
+        <h2>IX. COOKIES, TRACKING TECHNOLOGIES, AND WEB ANALYTICS</h2>
 
-                <p>
-                    <strong>6.2.</strong> To exercise any of these rights, or to limit the use
-                    of your data, you may send an email to{" "}
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> indicating your
-                    full name, a contact method, and the right you wish to exercise, clearly
-                    explaining your request.
-                </p>
+        <p>
+          VULTRA’s website uses cookies, web beacons, and other tracking
+          technologies to improve user experience, analyze browsing patterns,
+          personalize content, and optimize the functionality of our technological
+          platforms. These technologies allow us to collect information about
+          browsing behavior, content preferences, and interaction patterns with our
+          specialized services.
+        </p>
 
-                <p>
-                    <strong>6.3.</strong> You must attach a copy of a document proving your
-                    identity or, where applicable, the corresponding legal representation.
-                </p>
+        <p>
+          The cookies used include technical cookies necessary for the basic
+          operation of the website, personalization cookies that allow user
+          preferences and specific settings to be remembered, analytics cookies that
+          provide statistical information about website usage, and marketing cookies
+          that facilitate the presentation of relevant content regarding our software
+          development and technology consulting services.
+        </p>
 
-                <p>
-                    <strong>6.4.</strong> The Distributor will respond within the deadlines
-                    established by applicable legislation, informing you whether your request
-                    is admissible and, if applicable, the steps to make it effective.
-                </p>
+        <p>
+          The information collected through these technologies includes connection IP
+          address, type and version of the web browser, operating system used, screen
+          resolution, visited pages and navigation sequence, time spent in each
+          section, selected links, downloaded documents, completed forms, and any
+          other interaction recorded during the session.
+        </p>
 
-                <p>
-                    <strong>6.5.</strong> To stop receiving informational or commercial emails,
-                    you may also use the unsubscribe mechanisms included in the messages
-                    themselves or send an email with the subject line “Unsubscribe”.
-                </p>
+        <p>
+          Users may configure their web browsers to reject cookies or receive
+          notifications when cookies are attempted to be installed on their device.
+          However, disabling cookies may affect the functionality of certain website
+          features, particularly those related to content personalization and the
+          advanced functionality of our technical evaluation tools.
+        </p>
 
-                <h2>7. Cookies and similar technologies</h2>
+        <p>
+          For detailed information on how to disable cookies in specific browsers or
+          manage privacy preferences related to tracking technologies, users may
+          contact our technical department through atencion@vultra.com.mx.
+        </p>
 
-                <p>
-                    <strong>7.1.</strong> The Website may use cookies and similar technologies
-                    to improve your browsing experience, collect statistics, and understand how
-                    the content is used.
-                </p>
+        <h2>X. DATA RETENTION</h2>
 
-                <p>
-                    <strong>7.2.</strong> These technologies may store basic information such
-                    as the type of device you use, browser, sections visited, and the amount of
-                    time you remain on the Website.
-                </p>
+        <p>
+          We retain data for the time necessary to fulfill the established purposes:
+          quotations (2 years), contracted projects (duration of the contract plus 5
+          years), marketing communications (until a deletion request is made). You
+          may request the permanent deletion of your data through
+          atencion@vultra.com.mx.
+        </p>
 
-                <p>
-                    <strong>7.3.</strong> You may adjust your browser settings to block or
-                    delete cookies; in such case, some Website functions may not operate
-                    optimally.
-                </p>
+        <h2>XI. UPDATES AND MODIFICATIONS TO THE NOTICE</h2>
 
-                <h2>8. How we protect your information</h2>
+        <p>
+          VULTRA reserves the right to modify this Privacy Notice at any time for
+          the purpose of adapting it to legislative, regulatory, technological, or
+          internal policy changes that may affect the processing of personal data in
+          the context of our specialized software development, systems integration,
+          and technology consulting services.
+        </p>
 
-                <p>
-                    <strong>8.1.</strong> The Distributor implements administrative, technical,
-                    and physical security measures to protect personal data against loss,
-                    misuse, unauthorized access, alteration, or destruction.
-                </p>
+        <p>
+          Modifications to the Privacy Notice will be communicated to users through
+          prominent notifications on the main website, communications sent to the
+          provided email address, and, when appropriate, through direct communication
+          with clients maintaining active contracts for specialized technological
+          services.
+        </p>
 
-                <p>
-                    <strong>8.2.</strong> Although efforts are made to maintain an appropriate
-                    level of security, no system is completely immune; the Distributor
-                    continuously reviews and improves its protection measures.
-                </p>
+        <p>
+          Users will have a period of ten business days following notification to
+          express opposition to the implemented modifications. In the absence of an
+          express objection, the user will be considered to have accepted the
+          modifications made and consented to the processing of their personal data
+          under the newly established terms.
+        </p>
 
-                <h2>9. Data retention period</h2>
+        <p>
+          Historical versions of the Privacy Notice will be retained in secure
+          archives for legal and regulatory reference, remaining available for users
+          who require consultation for the purpose of tracking changes or complying
+          with specific contractual obligations.
+        </p>
 
-                <p>
-                    <strong>9.1.</strong> Personal data will be retained for as long as
-                    necessary to fulfill the purposes described in this Notice and to comply
-                    with possible legal, tax, or contractual obligations.
-                </p>
+        <h2>XII. COMPLAINTS AND REPORTING PROCEDURE</h2>
 
-                <p>
-                    <strong>9.2.</strong> Once it is no longer necessary to retain your
-                    information, it will be deleted or anonymized in accordance with the
-                    Distributor’s internal policies and applicable regulations.
-                </p>
+        <p>
+          Users who consider that their personal data protection rights have been
+          violated by any conduct of VULTRA, or who suspect violations of the
+          provisions established in applicable legislation, may file complaints or
+          reports before the National Institute for Transparency, Access to
+          Information, and Protection of Personal Data.
+        </p>
 
-                <h2>10. Changes to this Privacy Notice</h2>
+        <p>
+          The procedure for filing complaints includes submitting a formal request to
+          the Institute, accompanied by evidence supporting the alleged violation,
+          precise identification of the violated rights, and a detailed description
+          of the facts that motivated the complaint. Users may obtain additional
+          information about this procedure on the Institute’s official website.
+        </p>
 
-                <p>
-                    <strong>10.1.</strong> The Distributor may update this Privacy Notice to
-                    reflect regulatory changes, internal improvements, or adjustments to the
-                    services offered.
-                </p>
+        <p>
+          VULTRA commits to fully cooperating with competent authorities in any
+          investigation procedure related to the processing of personal data,
+          providing the required information and implementing the corrective measures
+          ordered by the corresponding authority.
+        </p>
 
-                <p>
-                    <strong>10.2.</strong> Any relevant modification will be published on the
-                    Website{" "}
-                    <a
-                        href="https://centromedicoavanza.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        centromedicoavanza.com
-                    </a>{" "}
-                    indicating the date of the latest update.
-                </p>
+        <p>
+          Users may also direct their concerns directly to VULTRA through our email
+          address atencion@vultra.com.mx, where they will be assisted by data
+          protection specialists who will work to resolve any issue promptly and
+          satisfactorily.
+        </p>
 
-                <h2>11. Acceptance of the Notice</h2>
+        <h2>XIII. FINAL PROVISIONS AND VALIDITY</h2>
 
-                <p>
-                    <strong>11.1.</strong> By browsing the Website, submitting data through
-                    forms, requesting information, obtaining quotations, or making purchases,
-                    you confirm that you know and accept the content of this Privacy Notice.
-                </p>
+        <p>
+          This Privacy Notice becomes effective upon its publication on the VULTRA
+          website and will remain in force until modified or updated in accordance
+          with the procedures established in this document. Its application is
+          mandatory for all users who access our software development, systems
+          integration, and technology consulting services.
+        </p>
 
-                <p>
-                    <strong>11.2.</strong> If at any time you do not agree with the way we
-                    process your data, you may exercise your ARCO rights or contact the
-                    Distributor to review your particular case.
-                </p>
+        <p>
+          The interpretation and compliance of this Privacy Notice shall be governed
+          by the provisions of applicable Mexican legislation regarding personal data
+          protection, and the federal courts of Mexico City shall have jurisdiction
+          to resolve any dispute.
+        </p>
 
-                <p>
-                    <strong>Last updated:</strong> June 2026.
-                </p>
-            </section>
-        </div>
-    );
+        <p>
+          In the event of discrepancies between versions of this Privacy Notice in
+          different languages, the Spanish version published on the official
+          VULTRA website shall prevail.
+        </p>
+
+        <p>
+          VULTRA reiterates its commitment to protecting the privacy and personal
+          data of our users, guaranteeing that the processing of personal information
+          is always carried out in accordance with the highest standards of security,
+          confidentiality, and transparency that characterize our specialized
+          professional technology services.
+        </p>
+      </section>
+    </div>
+  );
 }
 
 export default function LegalPage() {
-    const locale = useLocale();
+  const locale = useLocale();
 
-    return (
-        <div className="min-h-screen flex flex-col bg-white">
-            <Header />
-            <main className="flex-grow container mx-auto px-6 py-20 max-w-4xl">
-                {locale === "es" ? <LegalEs /> : <LegalEn />}
-            </main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow container mx-auto px-6 mt-20 py-20 max-w-4xl">
+        {locale === "es" ? <LegalEs /> : <LegalEn />}
+      </main>
+    </div>
+  );
 }

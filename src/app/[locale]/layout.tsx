@@ -5,9 +5,12 @@ import React from 'react';
 import ClientBody from './ClientBody';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { AlertProvider } from '@/context/AlertContext';
+
 import { LocaleProvider } from '@/context/LangContext';
 import LangSwitcher from '@/components/LangSwitcher';
+import { Toaster } from 'sonner';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 export default async function LocaleLayout({
@@ -33,9 +36,14 @@ export default async function LocaleLayout({
       <ClientBody>
         <LocaleProvider>
           <CartProvider>
-            <AlertProvider>
+
+            <Header />
+            <main >
               {children}
-            </AlertProvider>
+            </main>
+            <LangSwitcher />
+            <Footer />
+            <Toaster />
           </CartProvider>
         </LocaleProvider>
       </ClientBody>

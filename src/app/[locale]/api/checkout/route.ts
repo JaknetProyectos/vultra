@@ -1,15 +1,46 @@
-import { NextResponse } from "next/server";
+import { formatPrice } from "@/lib/price";
+import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getTranslations } from "next-intl/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const LOGO_TEXT_URL = "https://medionmx.com/title.png";
+// Configuración de variables globales
+const BRAND_NAME = "Vultra";
+const BRAND_URL = "https://vultra.com.mx";
+const BRAND_LOGO = "https://vexora.com.mx/title.png";
+const BRAND_BANNER = "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const SUPPORT_EMAIL = "atencion@mark-vera.com";
+const SENDER_EMAIL = `${BRAND_NAME} <${SUPPORT_EMAIL}>`;
+const PRIMARY_COLOR = "#7052ff";
+const BG_GRADIENT_START = "#7052ff";
+const BG_GRADIENT_END = "#613be7";
 
-function formatCurrency(value: number) {
-  return new Intl.NumberFormat("es-MX", {
-    style: "currency",
-    currency: "MXN",
-  }).format(value);
+export interface EmailItem {
+  id: string;
+  price: number;
+  quantity: number;
+  title?: string;
+  image?: string;
+  description?: string;
+}
+
+export interface ConfirmRequestBody {
+  locale?: string;
+  orderId: string;
+  amount: number;
+  items: EmailItem[];
+  customer: {
+    nombre: string;
+    apellido: string;
+    email: string;
+    telefono: string;
+    direccion: string;
+    ciudad: string;
+    estado: string;
+    cp: string;
+  };
+  notes?: string;
 }
 
 function escapeHtml(value: string) {
@@ -21,890 +52,416 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
-export async function POST(req: Request) {
+function shell(content: string, footerText: { support: string; rights: string }) {
+  return `
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <title>${BRAND_NAME}</title>
+      </head>
+      <body
+        style="
+          margin:0;
+          padding:0;
+          background-color:${BG_GRADIENT_START};
+          font-family: 'Inter', Arial, Helvetica, sans-serif;
+          color:#334155;
+        "
+      >
+        <table
+          role="presentation"
+          width="100%"
+          border="0"
+          cellspacing="0"
+          cellpadding="0"
+          style="
+            background: linear-gradient(135deg, ${BG_GRADIENT_START} 0%, ${BG_GRADIENT_END} 100%);
+            padding: 40px 16px;
+          "
+        >
+          <tr>
+            <td align="center">
+              <table
+                role="presentation"
+                width="100%"
+                border="0"
+                cellspacing="0"
+                cellpadding="0"
+                style="
+                  max-width: 600px;
+                  width: 100%;
+                  border-collapse: separate;
+                  border-spacing: 0;
+                "
+              >
+                <!-- Logo -->
+                <tr>
+                  <td align="center" style="padding-bottom: 24px;">
+                    <a href="${BRAND_URL}" style="text-decoration:none;">
+                      <img
+                        src="${BRAND_LOGO}"
+                        alt="${BRAND_NAME}"
+                        style="display: block; max-width: 160px; height: auto; border: 0;"
+                      />
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Tarjeta Blanca Central -->
+                <tr>
+                  <td
+                    style="
+                      background: #ffffff;
+                      border-radius: 16px;
+                      overflow: hidden;
+                      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                    "
+                  >
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                      ${content}
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Footer -->
+                ${footerBlock(footerText)}
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  `;
+}
+
+function heroBlock(pretitle: string, title: string, subtitle: string) {
+  return `
+    <!-- Banner Image -->
+    <tr>
+      <td style="padding: 0; line-height: 0;">
+        <img
+          src="${BRAND_BANNER}"
+          alt="Banner ${BRAND_NAME}"
+          style="width: 100%; height: auto; display: block; border: 0;"
+        />
+      </td>
+    </tr>
+    <!-- Títulos -->
+    <tr>
+      <td style="padding: 32px 32px 16px 32px;">
+        <p
+          style="
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: ${PRIMARY_COLOR};
+          "
+        >
+          ${escapeHtml(pretitle)}
+        </p>
+        <h1
+          style="
+            margin: 0 0 12px 0;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #0f172a;
+          "
+        >
+          ${escapeHtml(title)}
+        </h1>
+        <p
+          style="
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #64748b;
+          "
+        >
+          ${escapeHtml(subtitle)}
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
+function sectionStart() {
+  return `
+    <tr>
+      <td style="padding: 0 32px 32px 32px;">
+  `;
+}
+
+function sectionEnd() {
+  return `
+      </td>
+    </tr>
+  `;
+}
+
+function footerBlock(footerText: { support: string; rights: string }) {
+  return `
+    <tr>
+      <td style="padding: 32px 16px 0 16px; text-align: center;">
+        <p
+          style="
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+          "
+        >
+          ${escapeHtml(footerText.support)} <a href="mailto:${SUPPORT_EMAIL}" style="color: #ffffff; font-weight: bold;">${SUPPORT_EMAIL}</a>
+        </p>
+        <p
+          style="
+            margin: 8px 0 0 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+          "
+        >
+          © ${new Date().getFullYear()} · ${BRAND_NAME}. ${escapeHtml(footerText.rights)}
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
+function infoGrid(items: { label: string; value: string; href?: string }[]) {
+  const cells = items
+    .map(
+      (item) => `
+      <td valign="top" style="padding: 0 16px 16px 0; min-width: 150px; width: 50%;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; height: 100%;">
+          <p
+            style="
+              margin: 0 0 4px 0;
+              font-size: 11px;
+              line-height: 1;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              font-weight: 700;
+              color: #64748b;
+            "
+          >
+            ${escapeHtml(item.label)}
+          </p>
+          ${
+            item.href
+              ? `<a href="${escapeHtml(item.href)}" style="font-size: 14px; line-height: 1.4; color: #0f172a; text-decoration: none; font-weight: 600; display: block; word-break: break-word;">${escapeHtml(item.value)}</a>`
+              : `<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #0f172a; font-weight: 600; word-break: break-word;">${escapeHtml(item.value)}</p>`
+          }
+        </div>
+      </td>
+    `
+    )
+    .join("");
+
+  return `
+    <table
+      role="presentation"
+      width="100%"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      style="margin-top: 16px;"
+    >
+      <tr>
+        ${cells}
+      </tr>
+    </table>
+  `;
+}
+
+function itemsTable(
+  items: EmailItem[],
+  total: number,
+  labels: { concept: string; quantity: string; total: string; totalPaid: string; currencyFormat: string }
+) {
+  const rows = items
+    .map(
+      (item) => `
+      <tr>
+        <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+          <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0f172a;">${escapeHtml(item.title || item.id)}</p>
+          ${item.description ? `<p style="margin: 4px 0 0 0; font-size: 12px; color: #64748b;">${escapeHtml(item.description)}</p>` : ""}
+        </td>
+        <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: center; font-size: 14px; color: #475569;">
+          ${item.quantity}
+        </td>
+        <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right; font-size: 14px; font-weight: 600; color: #0f172a;">
+          ${escapeHtml(labels.currencyFormat.replace("{price}", formatPrice(item.price * item.quantity)))}
+        </td>
+      </tr>`
+    )
+    .join("");
+
+  return `
+    <div style="margin-top: 24px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background: #ffffff;">
+        <thead>
+          <tr>
+            <th style="padding: 12px 16px; background: #f8fafc; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0;">${escapeHtml(labels.concept)}</th>
+            <th style="padding: 12px 16px; background: #f8fafc; text-align: center; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0;">${escapeHtml(labels.quantity)}</th>
+            <th style="padding: 12px 16px; background: #f8fafc; text-align: right; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0;">${escapeHtml(labels.total)}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3" style="padding: 0 16px;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                ${rows}
+              </table>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" style="padding: 16px; background: #f8fafc; text-align: right; font-size: 16px; font-weight: 800; color: #0f172a; border-top: 1px solid #e2e8f0;">
+              ${escapeHtml(labels.totalPaid.replace("{amount}", formatPrice(total)))}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  `;
+}
+
+export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body: ConfirmRequestBody = await req.json();
+    const locale = body.locale || "es";
+    const t = await getTranslations({ locale, namespace: "Emails.checkoutEmail" });
 
-    const {
-      orderId,
-      amount,
-      customer,
-      items,
-      metadata,
-    } = body;
-
-    if (
-      !orderId ||
-      !amount ||
-      !customer ||
-      !items ||
-      !items.length
-    ) {
+    if (!body.orderId || !body.customer?.email || !body.items) {
       return NextResponse.json(
-        {
-          error:
-            "Información de orden incompleta para facturación por email.",
-        },
+        { success: false, error: t("customerError") },
         { status: 400 }
       );
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | TABLA DE PRODUCTOS
-    |--------------------------------------------------------------------------
-    */
+    const { orderId, amount, items, customer, notes } = body;
+    const clientName = `${customer.nombre} ${customer.apellido}`.trim();
+    const clientAddress = `${customer.direccion}, ${customer.ciudad}, ${customer.estado}, CP ${customer.cp}`;
 
-    let itemsTableRows = "";
+    const footerText = {
+      support: t("footerSupport"),
+      rights: t("footerRights"),
+    };
 
-    items.forEach((item: any) => {
-      const productTotal =
-        item.product.price * item.quantity;
+    const tableLabels = {
+      concept: t("tableConcept"),
+      quantity: t("tableQuantity"),
+      total: t("tableTotal"),
+      totalPaid: t("tableTotalPaid", { amount: "" }),
+      currencyFormat: t("currencyFormat", { price: "{price}" }),
+    };
 
-      itemsTableRows += `
-        <tr>
-          <td
+    const customerHTML = shell(`
+      ${heroBlock(
+        t("customerHeroPretitle"),
+        t("customerHeroTitle"),
+        t("customerHeroSubtitle", { name: customer.nombre })
+      )}
+
+      ${sectionStart()}
+        ${infoGrid([
+          { label: t("labelOrderNumber"), value: `#${orderId}` },
+          { label: t("labelDate"), value: new Date().toLocaleDateString(locale === "en" ? "en-US" : "es-MX", { year: 'numeric', month: 'long', day: 'numeric' }) },
+        ])}
+        
+        ${infoGrid([
+          { label: t("labelShippingAddress"), value: clientAddress },
+        ])}
+
+        ${itemsTable(items, amount, tableLabels)}
+
+        <div style="margin-top: 32px; text-align: center;">
+          <a
+            href="${BRAND_URL}"
             style="
-              padding: 18px 0;
-              border-bottom: 1px solid #f3e8ff;
+              display: inline-block;
+              padding: 14px 28px;
+              background-color: ${PRIMARY_COLOR};
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 15px;
+              font-weight: 600;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(112, 82, 255, 0.3);
             "
           >
-            <div
-              style="
-                font-size: 14px;
-                font-weight: 700;
-                color: #2e1065;
-                margin-bottom: 4px;
-              "
-            >
-              ${escapeHtml(item.product.name)}
-            </div>
+            ${escapeHtml(t("buttonBackToStore"))}
+          </a>
+        </div>
+      ${sectionEnd()}
+    `, footerText);
 
-            <div
-              style="
-                font-size: 12px;
-                color: #8b6f95;
-              "
-            >
-              Precio unitario:
-              ${formatCurrency(item.product.price)}
-            </div>
-          </td>
+    const businessHTML = shell(`
+      ${heroBlock(
+        t("businessHeroPretitle"),
+        t("businessHeroTitle"),
+        t("businessHeroSubtitle")
+      )}
 
-          <td
-            align="center"
-            style="
-              padding: 18px 0;
-              border-bottom: 1px solid #f3e8ff;
-              font-size: 14px;
-              font-weight: 700;
-              color: #4b3a42;
-            "
-          >
-            ${item.quantity}
-          </td>
+      ${sectionStart()}
+        ${infoGrid([
+          { label: t("labelCustomer"), value: clientName },
+          { label: t("labelEmail"), value: customer.email, href: `mailto:${customer.email}` },
+        ])}
+        
+        ${infoGrid([
+          { label: t("labelPhone"), value: customer.telefono },
+          { label: t("labelOrder"), value: `#${orderId}` },
+        ])}
 
-          <td
-            align="right"
-            style="
-              padding: 18px 0;
-              border-bottom: 1px solid #f3e8ff;
-              font-size: 14px;
-              font-weight: 800;
-              color: #c026d3;
-            "
-          >
-            ${formatCurrency(productTotal)}
-          </td>
-        </tr>
-      `;
-    });
+        <div style="margin-top: 16px; padding: 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+          <p style="margin: 0 0 8px 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: ${PRIMARY_COLOR};">
+            ${escapeHtml(t("labelCustomerAddress"))}
+          </p>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #334155;">
+            ${escapeHtml(clientAddress)}
+          </p>
+          
+          ${notes ? `
+            <p style="margin: 16px 0 8px 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: ${PRIMARY_COLOR};">
+              ${escapeHtml(t("labelAdditionalNotes"))}
+            </p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #334155;">
+              ${escapeHtml(notes)}
+            </p>
+          ` : ""}
+        </div>
 
-    /*
-    |--------------------------------------------------------------------------
-    | HEADER BASE
-    |--------------------------------------------------------------------------
-    */
-
-    const emailHeader = `
-      <table
-        width="100%"
-        border="0"
-        cellspacing="0"
-        cellpadding="0"
-        style="
-          max-width: 700px;
-          margin: 0 auto;
-          background: #ffffff;
-          border-radius: 30px;
-          overflow: hidden;
-          border: 1px solid #f1e6ff;
-          box-shadow: 0 18px 50px rgba(168, 85, 247, 0.10);
-        "
-      >
-        <tr>
-          <td
-            style="
-              height: 8px;
-              background: linear-gradient(90deg,#ec4899 0%,#c026d3 100%);
-              font-size: 0;
-              line-height: 0;
-            "
-          >
-            &nbsp;
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding: 28px 32px 0 32px;">
-            <table
-              width="100%"
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="
-                background: linear-gradient(180deg,#faf5ff 0%,#fff7fb 100%);
-                border: 1px solid #f3e8ff;
-                border-radius: 24px;
-              "
-            >
-              <tr>
-                <td
-                  style="
-                    padding: 30px 24px;
-                    text-align: center;
-                  "
-                >
-                  <div
-                    style="
-                      display: inline-block;
-                      padding: 10px 16px;
-                      border-radius: 999px;
-                      background: #ffffff;
-                      border: 1px solid #f5d0fe;
-                      color: #a21caf;
-                      font-size: 11px;
-                      font-weight: 800;
-                      letter-spacing: 0.18em;
-                      text-transform: uppercase;
-                      margin-bottom: 18px;
-                    "
-                  >
-                    Orden Confirmada
-                  </div>
-
-                  <h1
-                    style="
-                      margin: 0;
-                      font-size: 30px;
-                      line-height: 1.15;
-                      font-weight: 900;
-                      letter-spacing: -0.04em;
-                      color: #2e1065;
-                    "
-                  >
-                    Confirmación de Compra
-                  </h1>
-
-                  <p
-                    style="
-                      margin: 14px auto 0 auto;
-                      max-width: 520px;
-                      font-size: 14px;
-                      line-height: 1.8;
-                      color: #6b4d7a;
-                    "
-                  >
-                    Tu orden fue procesada correctamente a través de nuestros canales seguros.
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-    `;
-
-    /*
-    |--------------------------------------------------------------------------
-    | FOOTER
-    |--------------------------------------------------------------------------
-    */
-
-    const emailFooter = `
-        <tr>
-          <td style="padding: 0 32px 30px 32px;">
-            <table
-              width="100%"
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="
-                margin-top: 18px;
-                background: #fcf7ff;
-                border: 1px solid #f3e8ff;
-                border-radius: 22px;
-              "
-            >
-              <tr>
-                <td
-                  style="
-                    padding: 22px;
-                    text-align: center;
-                  "
-                >
-                  <img
-                    src="${LOGO_TEXT_URL}"
-                    alt="Medion MX"
-                    style="
-                      width: 170px;
-                      max-width: 100%;
-                      height: auto;
-                      display: block;
-                      margin: 0 auto 14px auto;
-                    "
-                  />
-
-                  <p
-                    style="
-                      margin: 0;
-                      font-size: 11px;
-                      line-height: 1.7;
-                      color: #8b6f95;
-                    "
-                  >
-                    Medion MX &copy; 2026. Todos los derechos reservados.<br>
-                    Ubicación logística Polanco, Miguel Hidalgo, CDMX.
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    `;
-
-    /*
-    |--------------------------------------------------------------------------
-    | EMAIL CLIENTE
-    |--------------------------------------------------------------------------
-    */
-
-    const htmlCliente = `
-      <!DOCTYPE html>
-      <html>
-        <body
-          style="
-            margin: 0;
-            padding: 0;
-            background: #fcf7ff;
-            font-family: Arial, Helvetica, sans-serif;
-          "
-        >
-          <table
-            width="100%"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-            style="
-              background: #fcf7ff;
-              padding: 36px 16px;
-            "
-          >
-            <tr>
-              <td align="center">
-
-                ${emailHeader}
-
-                <table
-                  width="100%"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
-                    max-width: 700px;
-                    margin: 0 auto;
-                    background: #ffffff;
-                    border-left: 1px solid #f1e6ff;
-                    border-right: 1px solid #f1e6ff;
-                  "
-                >
-                  <tr>
-                    <td style="padding: 0 32px 22px 32px;">
-
-                      <div
-                        style="
-                          background: #ffffff;
-                          border: 1px solid #f3e8ff;
-                          border-radius: 24px;
-                          padding: 28px;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 20px;
-                            flex-wrap: wrap;
-                            margin-bottom: 22px;
-                          "
-                        >
-                          <div>
-                            <p
-                              style="
-                                margin: 0 0 6px 0;
-                                font-size: 11px;
-                                font-weight: 800;
-                                text-transform: uppercase;
-                                letter-spacing: 0.14em;
-                                color: #8b6f95;
-                              "
-                            >
-                              Cliente
-                            </p>
-
-                            <h2
-                              style="
-                                margin: 0;
-                                font-size: 24px;
-                                color: #2e1065;
-                                font-weight: 900;
-                              "
-                            >
-                              ${escapeHtml(customer.nombre)}
-                            </h2>
-                          </div>
-
-                          <div
-                            style="
-                              background: #faf5ff;
-                              border: 1px solid #e9d5ff;
-                              border-radius: 18px;
-                              padding: 14px 18px;
-                              min-width: 180px;
-                            "
-                          >
-                            <p
-                              style="
-                                margin: 0 0 4px 0;
-                                font-size: 11px;
-                                text-transform: uppercase;
-                                letter-spacing: 0.14em;
-                                color: #8b6f95;
-                                font-weight: 700;
-                              "
-                            >
-                              Orden
-                            </p>
-
-                            <p
-                              style="
-                                margin: 0;
-                                font-size: 18px;
-                                font-weight: 900;
-                                color: #c026d3;
-                              "
-                            >
-                              #${escapeHtml(orderId)}
-                            </p>
-                          </div>
-                        </div>
-
-                        <p
-                          style="
-                            margin: 0;
-                            font-size: 14px;
-                            line-height: 1.8;
-                            color: #4b3a42;
-                          "
-                        >
-                          Tu compra ya fue validada y enviada al área de preparación y distribución.
-                        </p>
-                      </div>
-
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 24px 32px;">
-
-                      <div
-                        style="
-                          background: #fcf7ff;
-                          border: 1px solid #e9d5ff;
-                          border-radius: 24px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 18px 22px;
-                            background: #faf5ff;
-                            border-bottom: 1px solid #e9d5ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              text-transform: uppercase;
-                              letter-spacing: 0.14em;
-                              color: #7e22ce;
-                            "
-                          >
-                            Productos adquiridos
-                          </p>
-                        </div>
-
-                        <div style="padding: 0 22px;">
-                          <table
-                            width="100%"
-                            border="0"
-                            cellspacing="0"
-                            cellpadding="0"
-                          >
-                            <thead>
-                              <tr>
-                                <th
-                                  align="left"
-                                  style="
-                                    padding: 18px 0 10px 0;
-                                    font-size: 11px;
-                                    text-transform: uppercase;
-                                    color: #9b87a5;
-                                  "
-                                >
-                                  Producto
-                                </th>
-
-                                <th
-                                  align="center"
-                                  style="
-                                    padding: 18px 0 10px 0;
-                                    width: 70px;
-                                    font-size: 11px;
-                                    text-transform: uppercase;
-                                    color: #9b87a5;
-                                  "
-                                >
-                                  Cant.
-                                </th>
-
-                                <th
-                                  align="right"
-                                  style="
-                                    padding: 18px 0 10px 0;
-                                    width: 120px;
-                                    font-size: 11px;
-                                    text-transform: uppercase;
-                                    color: #9b87a5;
-                                  "
-                                >
-                                  Subtotal
-                                </th>
-                              </tr>
-                            </thead>
-
-                            <tbody>
-                              ${itemsTableRows}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 24px 32px;">
-                      <table
-                        width="100%"
-                        border="0"
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="
-                          background: linear-gradient(135deg,#ffffff 0%,#fff7fb 100%);
-                          border: 1px solid #f3d4ff;
-                          border-radius: 24px;
-                        "
-                      >
-                        <tr>
-                          <td style="padding: 24px;">
-                            <table
-                              width="100%"
-                              border="0"
-                              cellspacing="0"
-                              cellpadding="0"
-                            >
-                              <tr>
-                                <td>
-                                  <p
-                                    style="
-                                      margin: 0 0 6px 0;
-                                      font-size: 11px;
-                                      text-transform: uppercase;
-                                      letter-spacing: 0.14em;
-                                      color: #8b6f95;
-                                      font-weight: 700;
-                                    "
-                                  >
-                                    Total liquidado
-                                  </p>
-
-                                  <p
-                                    style="
-                                      margin: 0;
-                                      font-size: 34px;
-                                      font-weight: 900;
-                                      color: #c026d3;
-                                      letter-spacing: -0.03em;
-                                    "
-                                  >
-                                    ${formatCurrency(amount)}
-                                  </p>
-                                </td>
-
-                                <td align="right">
-                                  <div
-                                    style="
-                                      display: inline-block;
-                                      background: #faf5ff;
-                                      border: 1px solid #e9d5ff;
-                                      border-radius: 18px;
-                                      padding: 14px 16px;
-                                    "
-                                  >
-                                    <p
-                                      style="
-                                        margin: 0;
-                                        font-size: 12px;
-                                        color: #7e22ce;
-                                        font-weight: 700;
-                                      "
-                                    >
-                                      Pago confirmado
-                                    </p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 28px 32px;">
-                      <div
-                        style="
-                          background: #fff7ed;
-                          border: 1px solid #fed7aa;
-                          border-radius: 24px;
-                          padding: 24px;
-                        "
-                      >
-                        <p
-                          style="
-                            margin: 0 0 10px 0;
-                            font-size: 12px;
-                            font-weight: 800;
-                            text-transform: uppercase;
-                            letter-spacing: 0.14em;
-                            color: #9a3412;
-                          "
-                        >
-                          Dirección de entrega
-                        </p>
-
-                        <p
-                          style="
-                            margin: 0;
-                            font-size: 14px;
-                            line-height: 1.8;
-                            color: #7c2d12;
-                          "
-                        >
-                          ${escapeHtml(customer.direccion)}
-                          ${
-                            customer.direccion2
-                              ? `, ${escapeHtml(customer.direccion2)}`
-                              : ""
-                          }
-                          <br>
-                          ${escapeHtml(customer.ciudad)},
-                          ${escapeHtml(customer.estado)},
-                          C.P. ${escapeHtml(customer.cp)}
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-
-                ${emailFooter}
-
-              </td>
-            </tr>
-          </table>
-        </body>
-      </html>
-    `;
-
-    /*
-    |--------------------------------------------------------------------------
-    | EMAIL NEGOCIO
-    |--------------------------------------------------------------------------
-    */
-
-    const htmlNegocio = `
-      <!DOCTYPE html>
-      <html>
-        <body
-          style="
-            margin: 0;
-            padding: 0;
-            background: #fcf7ff;
-            font-family: Arial, Helvetica, sans-serif;
-          "
-        >
-          <table
-            width="100%"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-            style="
-              background: #fcf7ff;
-              padding: 36px 16px;
-            "
-          >
-            <tr>
-              <td align="center">
-
-                ${emailHeader}
-
-                <table
-                  width="100%"
-                  border="0"
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
-                    max-width: 700px;
-                    margin: 0 auto;
-                    background: #ffffff;
-                    border-left: 1px solid #f1e6ff;
-                    border-right: 1px solid #f1e6ff;
-                  "
-                >
-                  <tr>
-                    <td style="padding: 0 32px 22px 32px;">
-
-                      <div
-                        style="
-                          background: linear-gradient(135deg,#faf5ff 0%,#fff1f7 100%);
-                          border: 1px solid #f3d4ff;
-                          border-radius: 24px;
-                          padding: 26px;
-                        "
-                      >
-                        <div
-                          style="
-                            display: inline-block;
-                            background: #c026d3;
-                            color: white;
-                            padding: 8px 14px;
-                            border-radius: 999px;
-                            font-size: 11px;
-                            font-weight: 800;
-                            letter-spacing: 0.12em;
-                            text-transform: uppercase;
-                            margin-bottom: 18px;
-                          "
-                        >
-                          Venta Ecommerce
-                        </div>
-
-                        <h2
-                          style="
-                            margin: 0 0 10px 0;
-                            font-size: 32px;
-                            line-height: 1.1;
-                            font-weight: 900;
-                            color: #2e1065;
-                          "
-                        >
-                          ${formatCurrency(amount)}
-                        </h2>
-
-                        <p
-                          style="
-                            margin: 0;
-                            font-size: 14px;
-                            line-height: 1.7;
-                            color: #5b4768;
-                          "
-                        >
-                          Orden procesada correctamente y lista para surtido.
-                        </p>
-                      </div>
-
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 24px 32px;">
-                      <div
-                        style="
-                          background: #ffffff;
-                          border: 1px solid #f3e8ff;
-                          border-radius: 24px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 18px 22px;
-                            background: #faf5ff;
-                            border-bottom: 1px solid #f3e8ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              text-transform: uppercase;
-                              letter-spacing: 0.14em;
-                              color: #7e22ce;
-                            "
-                          >
-                            Datos del cliente
-                          </p>
-                        </div>
-
-                        <div style="padding: 22px;">
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 14px;
-                              line-height: 2;
-                              color: #4b3a42;
-                            "
-                          >
-                            <strong>Nombre:</strong>
-                            ${escapeHtml(customer.nombre)}
-                            ${escapeHtml(customer.apellido)}
-                            <br>
-
-                            <strong>Email:</strong>
-                            ${escapeHtml(customer.email)}
-                            <br>
-
-                            <strong>Teléfono:</strong>
-                            ${escapeHtml(customer.telefono)}
-                            <br>
-
-                            <strong>Notas internas:</strong>
-                            ${
-                              metadata?.notes
-                                ? escapeHtml(metadata.notes)
-                                : "Ninguna"
-                            }
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="padding: 0 32px 28px 32px;">
-                      <div
-                        style="
-                          background: #fcf7ff;
-                          border: 1px solid #e9d5ff;
-                          border-radius: 24px;
-                          overflow: hidden;
-                        "
-                      >
-                        <div
-                          style="
-                            padding: 18px 22px;
-                            background: #faf5ff;
-                            border-bottom: 1px solid #e9d5ff;
-                          "
-                        >
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 12px;
-                              font-weight: 800;
-                              text-transform: uppercase;
-                              letter-spacing: 0.14em;
-                              color: #7e22ce;
-                            "
-                          >
-                            Artículos a surtir
-                          </p>
-                        </div>
-
-                        <div style="padding: 0 22px;">
-                          <table
-                            width="100%"
-                            border="0"
-                            cellspacing="0"
-                            cellpadding="0"
-                          >
-                            <tbody>
-                              ${itemsTableRows}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-
-                ${emailFooter}
-
-              </td>
-            </tr>
-          </table>
-        </body>
-      </html>
-    `;
-
-    /*
-    |--------------------------------------------------------------------------
-    | ENVÍO
-    |--------------------------------------------------------------------------
-    */
+        ${itemsTable(items, amount, tableLabels)}
+      ${sectionEnd()}
+    `, footerText);
 
     await Promise.all([
       resend.emails.send({
-        from: "Medion MX <hello@medionmx.com>",
+        from: SENDER_EMAIL,
         to: [customer.email],
-        subject: `Confirmación de Compra Orden #${orderId} - Medion MX`,
-        html: htmlCliente,
+        subject: t("customerSubject", { orderId }),
+        html: customerHTML,
       }),
-
       resend.emails.send({
-        from: "Medion MX <hello@medionmx.com>",
-        to: ["hello@medionmx.com>"],
-        replyTo: customer.email,
-        subject: `NOTIFICACIÓN DE VENTA: Orden #${orderId}`,
-        html: htmlNegocio,
+        from: SENDER_EMAIL,
+        to: [SUPPORT_EMAIL],
+        subject: t("businessSubject", { orderId }),
+        html: businessHTML,
       }),
     ]);
 
-    return NextResponse.json({ success: true });
-
+    return NextResponse.json({ success: true, message: t("successMessage") });
   } catch (error: any) {
-    console.error(
-      "❌ Error enviando correos post-checkout:",
-      error
-    );
-
+    console.error("Error enviando correos en /api/confirm:", error);
     return NextResponse.json(
-      { error: error.message },
+      { success: false, error: "El pago fue exitoso pero falló el envío del correo de confirmación." },
       { status: 500 }
     );
   }

@@ -1,7 +1,6 @@
 "use client";
 
-import { Languages } from "lucide-react";
-
+import { Globe2, Loader2, ArrowLeftRight } from "lucide-react";
 import { useLocaleContext } from "@/context/LangContext";
 
 export default function LangSwitcher() {
@@ -16,48 +15,115 @@ export default function LangSwitcher() {
       disabled={isPending}
       aria-label="Cambiar idioma"
       className="
-        fixed bottom-6 right-6 z-40
         group
+        fixed
+        bottom-5
+        right-5
+        z-50
+
+        overflow-hidden
+
         flex items-center gap-3
+
         rounded-2xl
-        border border-white/10
-        bg-zinc-950/95
+
+        border border-purple-400/20
+
+        bg-[#120d1f]/90
         backdrop-blur-xl
-        px-3 py-3
-        shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+
+        px-4 py-3
+
+        shadow-[0_0_30px_rgba(168,85,247,0.12)]
+
         transition-all duration-300
-        hover:scale-[1.03]
-        hover:border-emerald-500/30
-        hover:shadow-[0_10px_40px_rgba(16,185,129,0.18)]
-        disabled:opacity-60
+
+        hover:-translate-y-1
+        hover:border-fuchsia-400/40
+        hover:shadow-[0_0_40px_rgba(192,132,252,0.25)]
+
+        active:scale-[0.98]
+
         disabled:cursor-not-allowed
+        disabled:opacity-70
       "
     >
+      {/* Glow */}
+      <div
+        className="
+          absolute
+          inset-0
+          opacity-0
+          transition-opacity
+          duration-500
+          group-hover:opacity-100
+          bg-gradient-to-r
+          from-purple-500/10
+          via-fuchsia-400/15
+          to-violet-500/10
+        "
+      />
+
       {/* Icon */}
       <div
         className="
-          flex h-8 w-8 items-center justify-center
-          rounded-2xl
-          
+          relative
+          flex
+          h-11
+          w-11
+          items-center
+          justify-center
+
+          rounded-xl
+
+          border border-purple-400/20
+
+          bg-purple-500/10
+
+          text-purple-300
+
+          transition-all
+          duration-500
+
+          group-hover:rotate-12
+          group-hover:scale-110
+          group-hover:bg-purple-500/20
         "
       >
-        <Languages className="w-5 h-5 text-white" />
+        {isPending ? (
+          <Loader2 className="h-5 w-5 animate-spin" />
+        ) : (
+          <Globe2 className="h-5 w-5" />
+        )}
       </div>
 
-      {/* Text */}
-      <div className="text-left">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-bold text-white">
+      {/* Content */}
+      <div className="relative flex flex-col justify-center items-center leading-none">
+        <div className="mt-1 flex items-center justify-center gap-2">
+          <span
+            className="
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.25em]
+              text-fuchsia-300
+            "
+          >
             {locale === "es" ? "Español" : "English"}
           </span>
 
+          <ArrowLeftRight
+            className="
+              h-3.5
+              w-3.5
+              text-purple-300/70
+              transition-transform
+              duration-300
+              group-hover:translate-x-0.5
+            "
+          />
         </div>
       </div>
-
-      {/* Loading pulse */}
-      {isPending && (
-        <div className="absolute inset-0 rounded-2xl border border-emerald-400/40 animate-pulse" />
-      )}
     </button>
   );
 }

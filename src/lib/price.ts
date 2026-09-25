@@ -4,8 +4,8 @@ export const formatPrice = (
     includeCurrency: boolean = false
 ): string => {
     const formatted = new Intl.NumberFormat("es-MX", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
     }).format(amount)
 
     return includeCurrency

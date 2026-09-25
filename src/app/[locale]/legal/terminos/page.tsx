@@ -3,724 +3,959 @@
 import { useLocale } from "next-intl";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalStyle from "@/components/LegalStyle";
 
 function LegalEs() {
-    return (
-        <div className="legal-container">
-            <style dangerouslySetInnerHTML={{
-                __html: `
-        .legal-container {
-          color: #1a1a1a;
-          line-height: 1.6;
-          font-family: sans-serif;
-        }
-        .legal-container h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; border-bottom: 2px solid #eee; padding-bottom: 1rem; }
-        .legal-container h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #3048ab; }
-        .legal-container h3 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5rem; }
-        .legal-container p { margin-bottom: 1.2rem; text-align: justify; }
-        .legal-container ul { margin-bottom: 1.2rem; padding-left: 1.5rem; list-style-type: disc; }
-        .legal-container li { margin-bottom: 0.5rem; }
-        .legal-container section { margin-bottom: 3rem; }
-      `}} />
+  return (
+    <div className="legal-container">
+      <LegalStyle />
 
-            <section>
-                <h1>Condiciones de Uso y Compra de Productos Médicos – ACLINICO, S.A. DE C.V.</h1>
+      <section>
+        <h1>TÉRMINOS Y CONDICIONES – Vultra</h1>
 
-                <h2>I. Quién administra este sitio</h2>
+        <h2>1. ACEPTACIÓN DEL CONVENIO</h2>
 
-                <p>
-                    <strong>1.1.</strong> Este sitio web de venta y distribución de productos
-                    médicos y clínicos (el “Sitio”) es operado por Med confianza en lo sucesivo
-                    la Comercializadora, con denominación social ACLINICO, S.A. DE C.V. y RFC
-                    ACL210407975, con domicilio en Avenida Jaime Balmes 11, Interior 15a Torre
-                    A Piso 1, Colonia Polanco I Sección, Alcaldía Miguel Hidalgo, C.P. 11510,
-                    Ciudad De México.
-                </p>
+        <p>
+          Es un gusto tenerle por vultra.com.mx (en adelante “Sitio Web”), operado
+          por DISTRIBUCIONES EL KILO S.A. DE C.V. (en adelante, “VULTRA”),
+          sociedad legalmente constituida conforme a las leyes mexicanas, con
+          domicilio en Avenida Río Mixcoac 39 piso 1 Despacho 103, Colonia
+          Insurgentes Mixcoac, Benito Juárez C.P. 03920 Ciudad de México.
+        </p>
 
-                <p>
-                    <strong>1.2.</strong> Para consultas, aclaraciones o soporte relacionado
-                    con el Sitio o con las compras realizadas, la Comercializadora pone a
-                    disposición el correo electrónico
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> y el teléfono
-                    <a href="tel:+5215525836217">+52 1 55 2583 6217</a>.
-                </p>
+        <p>
+          Al acceder, navegar, registrarse o contratar servicios a través del Sitio
+          Web, Usted (en adelante, el “Usuario” o “Cliente”) acepta íntegra e
+          irrevocablemente estos Términos y Condiciones de Uso y Prestación de
+          Servicios (en adelante, el “Convenio”), así como el Aviso de Privacidad y
+          cualquier otro documento legal publicado en el Sitio Web. La aceptación de
+          estos términos constituye un acuerdo vinculante entre el Usuario y
+          VULTRA.
+        </p>
 
-                <p>
-                    <strong>1.3.</strong> El simple uso del Sitio, así como la realización de
-                    pedidos o solicitudes de cotización, implica que la persona usuaria (el
-                    “Cliente”) ha leído y acepta estas Condiciones.
-                </p>
+        <p>
+          Si el Usuario no acepta de manera total y expresa este Convenio, deberá
+          abstenerse de utilizar el Sitio Web y/o los servicios ofrecidos. El acceso
+          continuado al Sitio Web posterior a cualquier modificación de estos
+          términos constituirá la aceptación tácita de dichos cambios.
+        </p>
 
-                <h2>II. Qué hacemos y a quién atendemos</h2>
+        <h2>2. CAPACIDAD LEGAL PARA CONTRATAR</h2>
 
-                <p>
-                    <strong>2.1.</strong> La Comercializadora se dedica a la distribución de
-                    productos médicos y clínicos destinados a hospitales, clínicas,
-                    consultorios, centros especializados y demás organizaciones del sector
-                    salud, así como a profesionales que actúan en dicho entorno.
-                </p>
+        <p>
+          El Sitio Web está disponible únicamente para personas físicas mayores de
+          edad con capacidad legal plena para contratar según las leyes mexicanas, o
+          para representantes legales de personas morales debidamente facultados con
+          poderes suficientes para obligar a sus representadas. Los menores de edad
+          podrán acceder al Sitio Web únicamente bajo la supervisión y responsabilidad
+          de sus padres o tutores legales.
+        </p>
 
-                <p>
-                    <strong>2.2.</strong> La información publicada en el Sitio tiene la
-                    finalidad de describir, de manera general, las características, usos y
-                    aplicaciones de los productos, sin sustituir la capacitación, criterio
-                    clínico o regulaciones aplicables en cada institución.
-                </p>
+        <p>
+          VULTRA no asume responsabilidad por actos realizados por menores de edad
+          o personas sin capacidad legal, siendo responsabilidad exclusiva de sus
+          tutores o representantes legales cualquier consecuencia derivada del uso no
+          autorizado del Sitio Web. En caso de detectar el uso del Sitio Web por
+          parte de menores de edad sin la debida supervisión, VULTRA se reserva el
+          derecho de suspender inmediatamente el acceso y cancelar cualquier
+          transacción pendiente.
+        </p>
 
-                <p>
-                    <strong>2.3.</strong> El Cliente es responsable de verificar que los
-                    productos adquiridos sean aptos para el uso específico que pretende darles
-                    y que cumplen con los requisitos internos, normativos o institucionales que
-                    le resulten aplicables.
-                </p>
+        <h2>3. OBJETO Y ALCANCE DEL SERVICIO</h2>
 
-                <h2>III. Registro, datos y comunicación con el Cliente</h2>
+        <p>
+          VULTRA es una empresa especializada en el desarrollo de software
+          personalizado, integración de sistemas empresariales y consultoría
+          tecnológica. A través del Sitio Web se comercializan y prestan servicios
+          que incluyen, de manera enunciativa mas no limitativa: desarrollo de
+          aplicaciones web y móviles, sistemas de gestión empresarial, consultoría en
+          transformación digital, integración de APIs, desarrollo de comercio
+          electrónico, mantenimiento y soporte técnico, auditorías tecnológicas, y
+          servicios de análisis de datos.
+        </p>
 
-                <p>
-                    <strong>3.1.</strong> Para solicitar información, cotizaciones o realizar
-                    pedidos, el Cliente podrá registrarse en el Sitio o proporcionar sus datos
-                    mediante los formularios habilitados.
-                </p>
+        <p>
+          Los servicios pueden incluir tanto productos digitales como servicios de
+          consultoría presencial o remota, según se especifique en cada propuesta
+          comercial. VULTRA se reserva el derecho de actualizar, suspender o
+          eliminar, previa notificación de treinta días naturales, la totalidad o
+          parte de los servicios ofrecidos, sin que esto genere responsabilidad
+          alguna hacia los Usuarios que no hayan contratado servicios vigentes.
+        </p>
 
-                <p>
-                    <strong>3.2.</strong> El Cliente garantiza que los datos de contacto,
-                    envío y facturación que proporcione son verdaderos, completos y
-                    actualizados, y se compromete a mantenerlos al día.
-                </p>
+        <p>
+          Todos los servicios se prestan bajo modalidades que pueden incluir:
+          desarrollo a medida, licenciamiento de software, servicios de suscripción,
+          consultoría por proyecto, y mantenimiento continuo. Las especificaciones
+          técnicas, alcances, entregables y cronogramas se definirán en propuestas
+          comerciales individuales que formarán parte integral de este Convenio.
+        </p>
 
-                <p>
-                    <strong>3.3.</strong> La Comercializadora podrá comunicarse con el Cliente
-                    por correo electrónico, teléfono u otros medios electrónicos para dar
-                    seguimiento a pedidos, enviar confirmaciones, resolver dudas o proporcionar
-                    información relevante sobre su compra.
-                </p>
+        <h2>4. USO PERMITIDO DEL SITIO</h2>
 
-                <p>
-                    <strong>3.4.</strong> El uso de los datos personales del Cliente se rige
-                    por el Aviso de Privacidad publicado en el Sitio.
-                </p>
+        <p>
+          El Usuario se compromete a utilizar el Sitio Web exclusivamente para fines
+          lícitos, relacionados con la contratación de servicios tecnológicos y el
+          acceso a información corporativa. El uso del Sitio Web debe realizarse de
+          conformidad con la legislación aplicable, las buenas prácticas comerciales
+          y los presentes Términos y Condiciones.
+        </p>
 
-                <h2>IV. Catálogo, información y disponibilidad</h2>
+        <p>
+          Está estrictamente prohibido reproducir, distribuir, modificar,
+          descompilar, realizar ingeniería inversa o explotar comercialmente el
+          contenido del Sitio Web, incluyendo código fuente, bases de datos,
+          diseños, textos, imágenes y cualquier otro material, sin autorización
+          escrita previa de VULTRA. Esta prohibición se extiende a cualquier forma
+          de copia, adaptación o distribución, ya sea total o parcial.
+        </p>
 
-                <p>
-                    <strong>4.1.</strong> El catálogo de productos médicos y clínicos mostrado
-                    en el Sitio es orientativo y puede actualizarse en cualquier momento. La
-                    publicación de un producto no garantiza su disponibilidad inmediata.
-                </p>
+        <p>
+          El Usuario no podrá utilizar herramientas automatizadas de extracción de
+          datos tales como bots, scrapers, crawlers, o cualquier software diseñado
+          para recopilar información del Sitio Web de forma automatizada. Tampoco
+          podrá introducir software malicioso, virus, gusanos, troyanos, bombas
+          lógicas, o cualquier código que pueda dañar, interferir o afectar la
+          integridad, seguridad o funcionamiento del Sitio Web.
+        </p>
 
-                <p>
-                    <strong>4.2.</strong> Las descripciones, fichas técnicas, imágenes de
-                    referencia y cualquier información asociada a los productos se proporcionan
-                    con el objetivo de facilitar la decisión de compra, pero pueden existir
-                    variaciones menores en presentación, lote o fabricante, manteniendo siempre
-                    parámetros de calidad equivalentes.
-                </p>
+        <p>
+          Queda prohibido interferir con la experiencia de otros Usuarios, realizar
+          ataques de denegación de servicio, intentar acceder a áreas restringidas
+          del Sitio Web, usurpar identidades, manipular información con fines
+          fraudulentos, o realizar cualquier acción que pueda comprometer la
+          seguridad o estabilidad de los sistemas de VULTRA.
+        </p>
 
-                <p>
-                    <strong>4.3.</strong> En caso de falta de disponibilidad de un producto
-                    solicitado, la Comercializadora podrá ofrecer alternativas de
-                    características equivalentes o, en su caso, informar al Cliente para que
-                    decida si continúa con el pedido parcial o solicita la cancelación de la
-                    partida correspondiente.
-                </p>
+        <p>
+          La infracción de cualquiera de estas prohibiciones constituirá causa
+          suficiente para la cancelación inmediata de la cuenta, la suspensión de
+          servicios, la notificación a autoridades competentes y/o el inicio de
+          acciones legales civiles y penales correspondientes, sin perjuicio de la
+          obligación del Usuario de reparar los daños y perjuicios causados.
+        </p>
 
-                <h2>V. Precios, impuestos y condiciones comerciales</h2>
+        <h2>5. REGISTRO Y CUENTA DE USUARIO</h2>
 
-                <p>
-                    <strong>5.1.</strong> Los precios de los productos se expresan en moneda
-                    nacional (pesos mexicanos, MXN) y están sujetos al Impuesto al Valor
-                    Agregado (IVA) a la tasa vigente, salvo que se indique expresamente que
-                    incluyen dicho impuesto.
-                </p>
+        <p>
+          Para contratar servicios o acceder a funcionalidades específicas del Sitio
+          Web, el Usuario deberá registrar una cuenta proporcionando información
+          exacta, completa, verificable y actualizada. Los datos requeridos pueden
+          incluir nombre completo, dirección, correo electrónico, número telefónico,
+          y cualquier otra información necesaria para la prestación de servicios.
+        </p>
 
-                <p>
-                    <strong>5.2.</strong> Los precios publicados en el Sitio pueden modificarse
-                    en cualquier momento por la Comercializadora; los cambios no afectarán
-                    pedidos ya confirmados y aceptados, siempre que el Cliente haya recibido la
-                    confirmación de condiciones.
-                </p>
+        <p>
+          El Usuario es absolutamente responsable de mantener la confidencialidad de
+          sus credenciales de acceso, incluyendo nombre de usuario, contraseña y
+          cualquier método de autenticación adicional. Cualquier actividad realizada
+          desde su cuenta se presumirá autorizada por el Usuario titular, salvo que
+          notifique inmediatamente a VULTRA sobre accesos no autorizados,
+          proporcionando toda la información disponible sobre el incidente.
+        </p>
 
-                <p>
-                    <strong>5.3.</strong> En caso de cotizaciones personalizadas, las
-                    condiciones de precio, volumen, vigencia y forma de pago se especificarán
-                    en el documento o comunicación correspondiente, y prevalecerán sobre lo
-                    publicado en el Sitio para ese caso concreto.
-                </p>
+        <p>
+          VULTRA se reserva el derecho de rechazar cualquier solicitud de registro
+          o de suspender cuentas existentes cuando detecte información falsa,
+          incompleta o fraudulenta, o cuando el Usuario incurra en conductas
+          contrarias a estos Términos y Condiciones. En caso de suspensión,
+          VULTRA notificará al Usuario las razones específicas y, cuando sea
+          posible, otorgará un plazo razonable para la corrección de las
+          irregularidades detectadas.
+        </p>
 
-                <h2>VI. Pedidos, aceptación y medios de pago</h2>
+        <h2>6. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES</h2>
 
-                <p>
-                    <strong>6.1.</strong> El envío de una solicitud de pedido o de cotización
-                    por parte del Cliente no implica, por sí mismo, la aceptación automática
-                    por parte de la Comercializadora.
-                </p>
+        <p>
+          VULTRA cumple estrictamente con la Ley Federal de Protección de Datos
+          Personales en Posesión de los Particulares y sus reformas vigentes. Toda
+          información personal proporcionada será tratada conforme a los principios
+          de licitud, consentimiento, calidad, finalidad, lealtad, proporcionalidad
+          y responsabilidad establecidos en la legislación aplicable.
+        </p>
 
-                <p>
-                    <strong>6.2.</strong> La compra se considerará confirmada una vez que:
-                    (i) el Cliente reciba una confirmación expresa de disponibilidad y
-                    condiciones, y (ii) se acredite el pago mediante los medios de pago
-                    autorizados.
-                </p>
+        <p>
+          La recopilación y tratamiento de los datos personales tiene por objeto
+          permitir la identificación del Usuario, gestionar la contratación y
+          prestación de servicios, emitir facturación, brindar soporte técnico, dar
+          cumplimiento a obligaciones fiscales y legales, así como enviar
+          comunicaciones sobre actualizaciones de servicios, promociones especiales,
+          encuestas de satisfacción o nuevos productos, previa autorización expresa
+          del Usuario.
+        </p>
 
-                <p>
-                    <strong>6.3.</strong> Los medios de pago disponibles (por ejemplo,
-                    tarjetas bancarias, transferencias u otros) se indicarán al momento de
-                    gestionar el pedido o cotización, y podrán estar sujetos a validaciones por
-                    parte de procesadores de pago o instituciones financieras.
-                </p>
+        <p>
+          Los datos personales serán almacenados en servidores seguros con medidas de
+          protección técnicas y administrativas apropiadas para prevenir el acceso no
+          autorizado, uso indebido, alteración o destrucción. VULTRA no compartirá
+          información personal con terceros, excepto cuando sea necesario para la
+          prestación de servicios, cumplimiento de obligaciones legales, o cuando
+          medie autorización expresa del Usuario.
+        </p>
 
-                <p>
-                    <strong>6.4.</strong> La Comercializadora se reserva el derecho de rechazar
-                    pedidos cuando detecte inconsistencias en la información, riesgo de fraude,
-                    incumplimientos previos o cualquier circunstancia que pueda afectar la
-                    operación o la seguridad de las transacciones.
-                </p>
+        <p>
+          Para ejercer los derechos de acceso, rectificación, cancelación y
+          oposición, así como para obtener información detallada sobre el tratamiento
+          de datos personales, consulte el Aviso de Privacidad disponible en el Sitio
+          Web, que forma parte integral del presente Convenio.
+        </p>
 
-                <h2>VII. Entregas, logística y riesgos</h2>
+        <h2>7. DISPONIBILIDAD Y DESCRIPCIÓN DE PRODUCTOS</h2>
 
-                <p>
-                    <strong>7.1.</strong> Las condiciones de entrega (tiempos estimados,
-                    costos, modalidades de envío) se informarán al Cliente en el flujo de
-                    compra o en la cotización respectiva, considerando el destino, tipo de
-                    productos y cantidad solicitada.
-                </p>
+        <p>
+          Los servicios disponibles en el Sitio Web están sujetos a disponibilidad
+          técnica y comercial. VULTRA se esfuerza por mantener la información
+          actualizada y precisa, pero no garantiza que todos los servicios estén
+          disponibles en todo momento ni que las especificaciones técnicas permanezcan
+          inalteradas.
+        </p>
 
-                <p>
-                    <strong>7.2.</strong> Los plazos de entrega son estimados y pueden variar
-                    por causas ajenas a la Comercializadora, como incidencias de paquetería,
-                    condiciones logísticas, situaciones de fuerza mayor o disposiciones de las
-                    autoridades.
-                </p>
+        <p>
+          Las descripciones de servicios, capturas de pantalla, demostraciones y
+          materiales promocionales son meramente ilustrativos y pueden no reflejar
+          exactamente el producto final, el cual estará sujeto a las especificaciones
+          técnicas acordadas en cada propuesta comercial. Los tiempos de desarrollo,
+          funcionalidades específicas y características técnicas pueden variar según
+          los requerimientos particulares de cada proyecto.
+        </p>
 
-                <p>
-                    <strong>7.3.</strong> El riesgo sobre los productos (pérdida, daño o
-                    deterioro) se transmite al Cliente al momento de la entrega en el domicilio
-                    o punto de entrega acordado.
-                </p>
+        <p>
+          VULTRA proporcionará estimaciones de tiempo y presupuesto basadas en la
+          información disponible al momento de la cotización. Sin embargo, el
+          desarrollo de software personalizado puede requerir ajustes en cronogramas
+          y costos debido a cambios en requerimientos, complejidad técnica
+          imprevista, o modificaciones solicitadas por el Cliente durante el proceso
+          de desarrollo.
+        </p>
 
-                <p>
-                    <strong>7.4.</strong> El Cliente deberá revisar los productos al recibirlos
-                    y, en caso de daño visible, faltantes o errores en la entrega, deberá
-                    notificarlo a la Comercializadora dentro del plazo que se establezca en la
-                    política de devoluciones y reclamaciones.
-                </p>
+        <h2>8. PROCESO DE CONTRATACIÓN Y PROPUESTAS COMERCIALES</h2>
 
-                <h2>VIII. Uso adecuado y responsabilidad del Cliente</h2>
+        <p>
+          La contratación de servicios se inicia con la solicitud del Usuario a
+          través del Sitio Web, correo electrónico o contacto telefónico. VULTRA
+          elaborará una propuesta comercial detallada que incluirá descripción del
+          servicio, especificaciones técnicas, cronograma, entregables, condiciones
+          de pago y términos específicos aplicables al proyecto.
+        </p>
 
-                <p>
-                    <strong>8.1.</strong> Los productos distribuidos a través del Sitio están
-                    destinados a uso médico o clínico, por lo que deben manejarse por personal
-                    capacitado y conforme a las instrucciones del fabricante y a las políticas
-                    internas de cada institución.
-                </p>
+        <p>
+          La propuesta comercial, una vez aceptada por el Usuario, se convertirá en
+          parte integral de este Convenio y prevalecerá sobre cualquier disposición
+          general en caso de conflicto. El Usuario tendrá un plazo de treinta días
+          naturales para aceptar la propuesta, después del cual VULTRA podrá
+          modificar las condiciones ofrecidas.
+        </p>
 
-                <p>
-                    <strong>8.2.</strong> La Comercializadora no se hace responsable por daños
-                    derivados de: uso inadecuado o distinto al recomendado, instalación
-                    incorrecta, omisión de instrucciones, falta de capacitación del personal o
-                    cualquier manipulación ajena a sus procesos de distribución.
-                </p>
+        <p>
+          Para formalizar la contratación, el Usuario deberá manifestar su aceptación
+          por escrito, proporcionar la información técnica necesaria, y realizar el
+          pago inicial según se especifique en la propuesta comercial. La prestación
+          del servicio iniciará una vez cumplidos todos los requisitos de contratación
+          y recibido el pago correspondiente.
+        </p>
 
-                <p>
-                    <strong>8.3.</strong> Es responsabilidad del Cliente verificar, antes de su
-                    uso, que el producto recibido corresponde a lo solicitado, que se encuentra
-                    en condiciones adecuadas y que no ha excedido su fecha de caducidad, cuando
-                    aplique.
-                </p>
+        <h2>9. PRECIOS, FORMAS DE PAGO Y FACTURACIÓN</h2>
 
-                <h2>IX. Propiedad intelectual y contenido del Sitio</h2>
+        <p>
+          Todos los precios están expresados en pesos mexicanos (MXN) e incluyen IVA,
+          salvo que se indique lo contrario en la propuesta comercial específica. Los
+          precios son válidos por el tiempo especificado en cada cotización y pueden
+          estar sujetos a modificaciones por cambios en alcance, requerimientos
+          adicionales o variaciones en costos de terceros.
+        </p>
 
-                <p>
-                    <strong>9.1.</strong> Los textos, logotipos, diseños, material gráfico,
-                    fichas técnicas, estructura y organización del Sitio son propiedad de la
-                    Comercializadora o se utilizan bajo licencia, y están protegidos por la
-                    legislación de propiedad intelectual.
-                </p>
+        <p>
+          VULTRA acepta diversas formas de pago que pueden incluir transferencia
+          bancaria, tarjetas de crédito y débito, cheques certificados, y sistemas
+          de pago electrónico. Los métodos de pago disponibles se especificarán en
+          cada propuesta comercial, y el Usuario se obliga a liquidar el precio de
+          los servicios según la forma y plazos acordados.
+        </p>
 
-                <p>
-                    <strong>9.2.</strong> Está prohibido reproducir, distribuir, modificar o
-                    explotar comercialmente el contenido del Sitio, salvo autorización previa y
-                    por escrito de la Comercializadora.
-                </p>
+        <p>
+          Los pagos se estructurarán conforme a los hitos y entregables definidos en
+          cada proyecto. Generalmente se requerirá un anticipo para iniciar los
+          trabajos, pagos parciales durante el desarrollo, y liquidación final contra
+          entrega del producto terminado. En caso de servicios de suscripción o
+          mantenimiento, los pagos se realizarán conforme a la periodicidad acordada.
+        </p>
 
-                <p>
-                    <strong>9.3.</strong> El uso del Sitio por el Cliente no le otorga licencia
-                    o derecho alguno sobre marcas registradas, nombres comerciales o cualquier
-                    otro elemento de propiedad intelectual.
-                </p>
+        <p>
+          En caso de fallas en el procesamiento de pagos, VULTRA notificará
+          inmediatamente al Usuario y suspenderá los servicios hasta que se regularice
+          la situación. Si las fallas derivan de problemas con tarjetas de crédito o
+          débito, el Usuario deberá contactar directamente al emisor de la tarjeta.
+          VULTRA no almacena datos bancarios, los cuales son procesados por terceros
+          bajo estrictos estándares de seguridad PCI DSS.
+        </p>
 
-                <h2>X. Uso permitido del Sitio</h2>
+        <p>
+          Una vez confirmado cada pago, VULTRA enviará vía correo electrónico la
+          confirmación correspondiente y, si así lo solicita el Usuario, la factura
+          correspondiente conforme a las reglas fiscales vigentes.
+        </p>
 
-                <p>
-                    <strong>10.1.</strong> El Cliente se compromete a utilizar el Sitio
-                    exclusivamente para fines lícitos y relacionados con la consulta,
-                    solicitud de información y adquisición de productos médicos y clínicos.
-                </p>
+        <h2>10. PROPIEDAD INTELECTUAL Y DERECHOS DE AUTOR</h2>
 
-                <p>
-                    <strong>10.2.</strong> Queda prohibido utilizar el Sitio para: intentar
-                    vulnerar la seguridad de sistemas, enviar información falsa, realizar
-                    actividades de fraude, introducir malware o cualquier código malicioso o
-                    infringir derechos de terceros.
-                </p>
+        <p>
+          Los derechos de propiedad intelectual sobre el software desarrollado se
+          regirán por lo establecido en cada propuesta comercial específica.
+          Generalmente, VULTRA retiene los derechos sobre metodologías, frameworks,
+          herramientas y componentes reutilizables, mientras que el Cliente obtiene
+          los derechos sobre el código específico desarrollado para su proyecto.
+        </p>
 
-                <p>
-                    <strong>10.3.</strong> La Comercializadora podrá suspender o limitar el
-                    acceso al Sitio o a determinadas funciones en caso de detectar un uso
-                    indebido o sospecha de actividades contrarias a estos Términos o a la ley.
-                </p>
+        <p>
+          Todo el contenido del Sitio Web, incluyendo marcas, logotipos, nombres
+          comerciales, imágenes, diseños, software, bases de datos, textos y
+          elementos gráficos, son propiedad exclusiva de VULTRA o de sus
+          licenciantes y están protegidos por la legislación nacional e internacional
+          en materia de propiedad intelectual.
+        </p>
 
-                <h2>XI. Limitación de responsabilidad</h2>
+        <p>
+          El uso no autorizado de estos elementos constituye una infracción a los
+          derechos de propiedad intelectual y dará lugar a las acciones legales
+          correspondientes. El Usuario no adquiere derecho alguno sobre la propiedad
+          intelectual de VULTRA por el mero uso del Sitio Web o la contratación de
+          servicios.
+        </p>
 
-                <p>
-                    <strong>11.1.</strong> En la medida permitida por la ley mexicana, la
-                    responsabilidad total de la Comercializadora frente al Cliente por
-                    cualquier reclamación relacionada con productos adquiridos a través del
-                    Sitio se limitará, como máximo, al monto efectivamente pagado por el
-                    producto que haya originado la reclamación.
-                </p>
+        <h2>11. CONFIDENCIALIDAD</h2>
 
-                <p>
-                    <strong>11.2.</strong> La Comercializadora no será responsable por pérdidas
-                    indirectas, lucro cesante, interrupciones en la operación del Cliente o
-                    daños derivados de decisiones clínicas u operativas que corresponden al
-                    criterio profesional del Cliente o de su equipo.
-                </p>
+        <p>
+          VULTRA se compromete a mantener absoluta confidencialidad sobre toda la
+          información técnica, comercial, financiera y estratégica que el Cliente
+          proporcione durante la prestación de servicios. Esta obligación de
+          confidencialidad permanecerá vigente durante la prestación del servicio y
+          por un período de cinco años posteriores a su terminación.
+        </p>
 
-                <p>
-                    <strong>11.3.</strong> La Comercializadora tampoco será responsable por
-                    fallas en servicios de terceros (transportistas, pasarelas de pago,
-                    proveedores de internet) ni por hechos de fuerza mayor o caso fortuito que
-                    escapen a su control razonable.
-                </p>
+        <p>
+          El Cliente, por su parte, se obliga a mantener confidencialidad sobre las
+          metodologías, procesos, técnicas y conocimientos especializados que
+          VULTRA emplee en la prestación de servicios. Esta información se considera
+          secreto comercial y su divulgación no autorizada podrá dar lugar a acciones
+          legales.
+        </p>
 
-                <h2>XII. Devoluciones, cancelaciones y reclamaciones</h2>
+        <p>
+          La obligación de confidencialidad no aplicará a información que sea del
+          dominio público, que haya sido desarrollada independientemente por la parte
+          receptora, o que deba divulgarse por mandato legal o judicial, previa
+          notificación a la otra parte cuando sea posible.
+        </p>
 
-                <p>
-                    <strong>12.1.</strong> Las reglas específicas sobre devoluciones, cambios
-                    de productos, cancelaciones de pedidos, plazos y condiciones de reembolso
-                    se encuentran detalladas en la Política de Devoluciones, Cancelaciones y
-                    Reembolsos publicada en el Sitio, la cual forma parte de estas Condiciones.
-                </p>
+        <h2>12. RESPONSABILIDADES Y LIMITACIÓN DE GARANTÍA</h2>
 
-                <p>
-                    <strong>12.2.</strong> El Cliente deberá revisar dicha Política antes de
-                    concluir su compra y aceptar que cualquier solicitud en esa materia se
-                    gestionará conforme a lo ahí establecido.
-                </p>
+        <p>
+          El Usuario utiliza el Sitio Web y contrata los servicios bajo su propia
+          responsabilidad. VULTRA no garantiza la continuidad ininterrumpida del
+          Sitio Web ni la ausencia total de errores en sus sistemas. Tampoco garantiza
+          que el Sitio Web esté completamente libre de virus, malware u otros
+          elementos potencialmente dañinos.
+        </p>
 
-                <h2>XIII. Datos personales y privacidad</h2>
+        <p>
+          VULTRA hará sus mejores esfuerzos para proporcionar servicios de calidad,
+          pero no garantiza resultados específicos de negocio, incrementos en ventas,
+          mejoras en productividad, o cualquier otro beneficio comercial particular.
+          La responsabilidad de VULTRA se limita a la prestación de los servicios
+          conforme a las especificaciones técnicas acordadas.
+        </p>
 
-                <p>
-                    <strong>13.1.</strong> El tratamiento de datos personales recabados a
-                    través del Sitio se rige por el Aviso de Privacidad correspondiente,
-                    disponible en el mismo Sitio, donde se describen las finalidades,
-                    mecanismos de protección y procedimientos para ejercer derechos ARCO.
-                </p>
+        <p>
+          En ningún caso VULTRA será responsable por daños indirectos,
+          incidentales, especiales, punitivos, lucro cesante, pérdida de datos,
+          interrupción de negocio, o cualquier otra pérdida económica que resulte del
+          uso del Sitio Web o la prestación de servicios, aún cuando haya sido
+          advertida de la posibilidad de tales daños.
+        </p>
 
-                <p>
-                    <strong>13.2.</strong> Al utilizar el Sitio y proporcionar sus datos, el
-                    Cliente reconoce que ha leído el Aviso de Privacidad y consiente el
-                    tratamiento de su información conforme a lo ahí indicado.
-                </p>
+        <p>
+          La responsabilidad total de VULTRA, por cualquier causa y bajo cualquier
+          teoría legal, no excederá el monto total pagado por el Cliente por los
+          servicios específicos que dieron origen al reclamo durante los doce meses
+          anteriores al evento que origina la responsabilidad.
+        </p>
 
-                <h2>XIV. Ley aplicable y solución de controversias</h2>
+        <h2>13. TERMINACIÓN Y CANCELACIÓN</h2>
 
-                <p>
-                    <strong>14.1.</strong> Estas Condiciones se rigen por las leyes de los
-                    Estados Unidos Mexicanos.
-                </p>
+        <p>
+          Cualquiera de las partes podrá terminar la relación contractual mediante
+          notificación escrita con treinta días naturales de anticipación, sin
+          necesidad de expresar causa. En caso de terminación, el Cliente deberá
+          pagar por todos los servicios prestados hasta la fecha de terminación
+          efectiva.
+        </p>
 
-                <p>
-                    <strong>14.2.</strong> Cualquier controversia derivada de la interpretación
-                    o cumplimiento de estas Condiciones se someterá a los tribunales
-                    competentes de la Ciudad de México, renunciando las partes a cualquier otro
-                    fuero que pudiera corresponderles.
-                </p>
+        <p>
+          VULTRA podrá terminar inmediatamente la prestación de servicios, sin
+          responsabilidad alguna, cuando el Cliente incurra en incumplimiento
+          sustancial de sus obligaciones contractuales, incluyendo mora en pagos por
+          más de treinta días, proporción de información falsa, o violación de
+          derechos de propiedad intelectual.
+        </p>
 
-                <h2>XV. Actualizaciones de las Condiciones</h2>
+        <p>
+          El Cliente podrá cancelar servicios específicos conforme a los términos
+          establecidos en cada propuesta comercial. Las cancelaciones podrán implicar
+          penalizaciones según el avance del proyecto y los recursos ya comprometidos
+          por VULTRA.
+        </p>
 
-                <p>
-                    <strong>15.1.</strong> La Comercializadora podrá modificar estas
-                    Condiciones en cualquier momento. La versión vigente estará disponible en
-                    el Sitio, indicando la fecha de su última actualización.
-                </p>
+        <p>
+          Al terminar la relación contractual, cada parte deberá devolver o destruir
+          la información confidencial de la otra parte, y cesar cualquier uso de
+          marcas, nombres comerciales o materiales protegidos por derechos de autor.
+        </p>
 
-                <p>
-                    <strong>15.2.</strong> El uso continuado del Sitio o la realización de
-                    nuevas compras después de la publicación de cambios implicará la aceptación
-                    de la versión modificada por parte del Cliente.
-                </p>
+        <h2>14. FUERZA MAYOR</h2>
 
-                <p>
-                    <strong>Última actualización:</strong> Junio 2026.
-                </p>
-            </section>
-        </div>
-    );
+        <p>
+          Ninguna de las partes será responsable por incumplimiento de sus
+          obligaciones cuando este se deba a causas de fuerza mayor o caso fortuito,
+          incluyendo desastres naturales, guerra, terrorismo, epidemias, fallas en
+          servicios de terceros, interrupciones en suministro eléctrico o
+          telecomunicaciones, o cualquier otra causa más allá del control razonable
+          de la parte afectada.
+        </p>
+
+        <p>
+          La parte afectada deberá notificar inmediatamente a la otra parte sobre la
+          ocurrencia del evento de fuerza mayor y hacer sus mejores esfuerzos para
+          minimizar su impacto y reanudar el cumplimiento de sus obligaciones tan
+          pronto como sea posible.
+        </p>
+
+        <h2>15. MODIFICACIONES</h2>
+
+        <p>
+          VULTRA podrá modificar estos Términos y Condiciones en cualquier momento,
+          publicando las modificaciones en el Sitio Web. Los cambios serán efectivos
+          desde su publicación y se aplicarán a todos los servicios contratados
+          posteriormente. Para servicios en curso, las modificaciones se aplicarán
+          únicamente si son aceptadas expresamente por el Cliente.
+        </p>
+
+        <p>
+          El uso continuado del Sitio Web después de la publicación de modificaciones
+          constituirá la aceptación tácita de los nuevos términos. Si el Usuario no
+          acepta las modificaciones, deberá discontinuar el uso del Sitio Web y podrá
+          terminar los servicios vigentes conforme a los términos de cancelación
+          aplicables.
+        </p>
+
+        <h2>16. LEY APLICABLE Y JURISDICCIÓN</h2>
+
+        <p>
+          Este Convenio se rige por las leyes aplicables de los Estados Unidos
+          Mexicanos. Para controversias que no sean sometidas a arbitraje, las partes
+          se someten expresamente a la jurisdicción de los tribunales competentes de
+          la Ciudad de México, renunciando a cualquier otro fuero que pudiera
+          corresponderles.
+        </p>
+
+        <p>
+          El Usuario podrá acudir a la Procuraduría Federal del Consumidor (PROFECO)
+          para dirimir conflictos relacionados con servicios de consumo, conforme a
+          las disposiciones de la Ley Federal de Protección al Consumidor.
+        </p>
+
+        <h2>17. DISPOSICIONES GENERALES</h2>
+
+        <p>
+          Si cualquier disposición de este Convenio es declarada inválida o
+          inaplicable por autoridad competente, las demás disposiciones permanecerán
+          en pleno vigor y efecto. La falta de ejercicio de cualquier derecho no
+          constituirá renuncia al mismo.
+        </p>
+
+        <p>
+          Este Convenio constituye el acuerdo completo entre las partes y reemplaza
+          cualquier acuerdo previo relacionado con el mismo objeto. Las modificaciones
+          deben realizarse por escrito y ser aceptadas por ambas partes.
+        </p>
+
+        <p>
+          Los títulos y subtítulos de este Convenio se incluyen únicamente para
+          facilitar la referencia y no afectan la interpretación de las disposiciones.
+        </p>
+      </section>
+
+    </div>
+  );
 }
 
 function LegalEn() {
-    return (
-        <div className="legal-container">
-            <style dangerouslySetInnerHTML={{
-                __html: `
-        .legal-container {
-          color: #1a1a1a;
-          line-height: 1.6;
-          font-family: sans-serif;
-        }
-        .legal-container h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; border-bottom: 2px solid #eee; padding-bottom: 1rem; }
-        .legal-container h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #3048ab; }
-        .legal-container h3 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5rem; }
-        .legal-container p { margin-bottom: 1.2rem; text-align: justify; }
-        .legal-container ul { margin-bottom: 1.2rem; padding-left: 1.5rem; list-style-type: disc; }
-        .legal-container li { margin-bottom: 0.5rem; }
-      `}} />
+  return (
+    <div className="legal-container">
+      <LegalStyle />
 
-            <section>
-                <h1>Terms of Use and Purchase of Medical Products – ACLINICO, S.A. DE C.V.</h1>
+      <section>
+        <h1>TERMS AND CONDITIONS – Vultra</h1>
 
-                <h2>I. Who manages this website</h2>
+        <h2>1. ACCEPTANCE OF THE AGREEMENT</h2>
 
-                <p>
-                    <strong>1.1.</strong> This website for the sale and distribution of medical
-                    and clinical products (the “Website”) is operated by Med confianza,
-                    hereinafter referred to as the Distributor, with the corporate name
-                    ACLINICO, S.A. DE C.V. and Tax ID (RFC) ACL210407975, with address at
-                    Avenida Jaime Balmes 11, Interior 15a Torre A Piso 1, Colonia Polanco I
-                    Sección, Alcaldía Miguel Hidalgo, C.P. 11510, Mexico City.
-                </p>
+        <p>
+          We are pleased to welcome you to vultra.com.mx (hereinafter, the
+          “Website”), operated by DISTRIBUCIONES EL KILO S.A. DE C.V.
+          (hereinafter, “VULTRA”), a company legally incorporated under Mexican
+          law, with address at Avenida Río Mixcoac 39 floor 1 Office 103, Colonia
+          Insurgentes Mixcoac, Benito Juárez C.P. 03920 Mexico City.
+        </p>
 
-                <p>
-                    <strong>1.2.</strong> For inquiries, clarifications, or support related to
-                    the Website or purchases made, the Distributor provides the email address
-                    <a href="mailto:hello@medionmx.com">hello@medionmx.com</a> and the phone
-                    number <a href="tel:+5215525836217">+52 1 55 2583 6217</a>.
-                </p>
+        <p>
+          By accessing, browsing, registering, or contracting services through the
+          Website, You (hereinafter, the “User” or “Client”) fully and irrevocably
+          accept these Terms and Conditions of Use and Service Provision
+          (hereinafter, the “Agreement”), as well as the Privacy Notice and any other
+          legal document published on the Website. Acceptance of these terms
+          constitutes a binding agreement between the User and VULTRA.
+        </p>
 
-                <p>
-                    <strong>1.3.</strong> The mere use of the Website, as well as the placement
-                    of orders or quotation requests, implies that the user (the “Customer”) has
-                    read and accepted these Terms.
-                </p>
+        <p>
+          If the User does not fully and expressly accept this Agreement, they must
+          refrain from using the Website and/or the services offered. Continued
+          access to the Website after any modification to these terms shall
+          constitute tacit acceptance of such changes.
+        </p>
 
-                <h2>II. What we do and who we serve</h2>
+        <h2>2. LEGAL CAPACITY TO CONTRACT</h2>
 
-                <p>
-                    <strong>2.1.</strong> The Distributor is dedicated to the distribution of
-                    medical and clinical products intended for hospitals, clinics, medical
-                    offices, specialized centers, and other organizations within the healthcare
-                    sector, as well as professionals operating in such environments.
-                </p>
+        <p>
+          The Website is available only to individuals of legal age with full legal
+          capacity to contract under Mexican law, or to legal representatives of
+          legal entities duly authorized with sufficient powers to bind their
+          represented parties. Minors may access the Website only under the
+          supervision and responsibility of their parents or legal guardians.
+        </p>
 
-                <p>
-                    <strong>2.2.</strong> The information published on the Website is intended
-                    to generally describe the characteristics, uses, and applications of the
-                    products, without replacing training, clinical judgment, or applicable
-                    regulations within each institution.
-                </p>
+        <p>
+          VULTRA assumes no responsibility for acts carried out by minors or
+          persons lacking legal capacity, and any consequence arising from
+          unauthorized use of the Website shall be the sole responsibility of their
+          guardians or legal representatives. If VULTRA detects the use of the
+          Website by minors without proper supervision, it reserves the right to
+          immediately suspend access and cancel any pending transaction.
+        </p>
 
-                <p>
-                    <strong>2.3.</strong> The Customer is responsible for verifying that the
-                    purchased products are suitable for the specific use intended and that they
-                    comply with any applicable internal, regulatory, or institutional
-                    requirements.
-                </p>
+        <h2>3. PURPOSE AND SCOPE OF THE SERVICE</h2>
 
-                <h2>III. Registration, data, and communication with the Customer</h2>
+        <p>
+          VULTRA is a company specialized in custom software development,
+          enterprise systems integration, and technology consulting. Through the
+          Website, services are marketed and provided, including but not limited to:
+          development of web and mobile applications, enterprise management systems,
+          digital transformation consulting, API integration, e-commerce development,
+          maintenance and technical support, technology audits, and data analysis
+          services.
+        </p>
 
-                <p>
-                    <strong>3.1.</strong> To request information, quotations, or place orders,
-                    the Customer may register on the Website or provide their data through the
-                    available forms.
-                </p>
+        <p>
+          Services may include both digital products and on-site or remote consulting
+          services, as specified in each commercial proposal. VULTRA reserves the
+          right to update, suspend, or remove, upon thirty calendar days’ notice, all
+          or part of the services offered, without generating any liability toward
+          Users who do not have active contracted services.
+        </p>
 
-                <p>
-                    <strong>3.2.</strong> The Customer guarantees that the contact, shipping,
-                    and billing information provided is truthful, complete, and up to date, and
-                    undertakes to keep it updated.
-                </p>
+        <p>
+          All services are provided under modalities that may include: custom
+          development, software licensing, subscription services, project-based
+          consulting, and ongoing maintenance. Technical specifications, scope,
+          deliverables, and schedules shall be defined in individual commercial
+          proposals that will form an integral part of this Agreement.
+        </p>
 
-                <p>
-                    <strong>3.3.</strong> The Distributor may contact the Customer by email,
-                    telephone, or other electronic means to follow up on orders, send
-                    confirmations, resolve questions, or provide relevant information regarding
-                    their purchase.
-                </p>
+        <h2>4. PERMITTED USE OF THE WEBSITE</h2>
 
-                <p>
-                    <strong>3.4.</strong> The use of the Customer’s personal data is governed
-                    by the Privacy Notice published on the Website.
-                </p>
+        <p>
+          The User agrees to use the Website exclusively for lawful purposes related
+          to contracting technological services and accessing corporate information.
+          Use of the Website must comply with applicable legislation, good commercial
+          practices, and these Terms and Conditions.
+        </p>
 
-                <h2>IV. Catalog, information, and availability</h2>
+        <p>
+          It is strictly prohibited to reproduce, distribute, modify, decompile,
+          reverse engineer, or commercially exploit the content of the Website,
+          including source code, databases, designs, texts, images, and any other
+          material, without prior written authorization from VULTRA. This
+          prohibition extends to any form of copying, adaptation, or distribution,
+          whether total or partial.
+        </p>
 
-                <p>
-                    <strong>4.1.</strong> The catalog of medical and clinical products shown on
-                    the Website is for informational purposes and may be updated at any time.
-                    The publication of a product does not guarantee its immediate availability.
-                </p>
+        <p>
+          The User may not use automated data extraction tools such as bots,
+          scrapers, crawlers, or any software designed to collect information from
+          the Website in an automated manner. Nor may the User introduce malicious
+          software, viruses, worms, trojans, logic bombs, or any code that may
+          damage, interfere with, or affect the integrity, security, or operation of
+          the Website.
+        </p>
 
-                <p>
-                    <strong>4.2.</strong> Product descriptions, technical sheets, reference
-                    images, and any information associated with the products are provided to
-                    facilitate purchasing decisions; however, minor variations in presentation,
-                    batch, or manufacturer may exist while maintaining equivalent quality
-                    standards.
-                </p>
+        <p>
+          It is prohibited to interfere with the experience of other Users, carry out
+          denial-of-service attacks, attempt to access restricted areas of the
+          Website, impersonate identities, manipulate information for fraudulent
+          purposes, or perform any action that may compromise the security or
+          stability of VULTRA’s systems.
+        </p>
 
-                <p>
-                    <strong>4.3.</strong> In the event of a lack of availability of a requested
-                    product, the Distributor may offer alternatives with equivalent
-                    characteristics or inform the Customer so they may decide whether to proceed
-                    with a partial order or request cancellation of the corresponding item.
-                </p>
+        <p>
+          Violation of any of these prohibitions shall constitute sufficient grounds
+          for immediate account cancellation, suspension of services, notification to
+          competent authorities, and/or initiation of corresponding civil and
+          criminal legal actions, without prejudice to the User’s obligation to
+          compensate for damages caused.
+        </p>
 
-                <h2>V. Prices, taxes, and commercial conditions</h2>
+        <h2>5. USER REGISTRATION AND ACCOUNT</h2>
 
-                <p>
-                    <strong>5.1.</strong> Product prices are expressed in national currency
-                    (Mexican pesos, MXN) and are subject to Value Added Tax (VAT) at the
-                    current applicable rate, unless expressly indicated that such tax is
-                    included.
-                </p>
+        <p>
+          To contract services or access specific functionalities of the Website, the
+          User must register an account by providing accurate, complete, verifiable,
+          and up-to-date information. Required data may include full name, address,
+          email address, telephone number, and any other information necessary for
+          the provision of services.
+        </p>
 
-                <p>
-                    <strong>5.2.</strong> Prices published on the Website may be modified at
-                    any time by the Distributor; however, changes will not affect orders that
-                    have already been confirmed and accepted, provided that the Customer has
-                    received confirmation of the applicable conditions.
-                </p>
+        <p>
+          The User is fully responsible for maintaining the confidentiality of their
+          access credentials, including username, password, and any additional
+          authentication method. Any activity carried out from their account shall be
+          presumed authorized by the account holder, unless they immediately notify
+          VULTRA of unauthorized access and provide all available information about
+          the incident.
+        </p>
 
-                <p>
-                    <strong>5.3.</strong> In the case of customized quotations, the conditions
-                    regarding price, volume, validity, and payment method will be specified in
-                    the corresponding document or communication and will prevail over what is
-                    published on the Website for that specific case.
-                </p>
+        <p>
+          VULTRA reserves the right to reject any registration request or suspend
+          existing accounts when false, incomplete, or fraudulent information is
+          detected, or when the User engages in conduct contrary to these Terms and
+          Conditions. In the event of suspension, VULTRA shall notify the User of
+          the specific reasons and, when possible, provide a reasonable period to
+          correct the detected irregularities.
+        </p>
 
-                <h2>VI. Orders, acceptance, and payment methods</h2>
+        <h2>6. PRIVACY POLICY AND PERSONAL DATA PROTECTION</h2>
 
-                <p>
-                    <strong>6.1.</strong> The submission of an order request or quotation
-                    request by the Customer does not, by itself, imply automatic acceptance by
-                    the Distributor.
-                </p>
+        <p>
+          VULTRA strictly complies with the Federal Law on Protection of Personal
+          Data Held by Private Parties and its current amendments. All personal
+          information provided shall be processed in accordance with the principles
+          of legality, consent, quality, purpose, loyalty, proportionality, and
+          responsibility established in applicable legislation.
+        </p>
 
-                <p>
-                    <strong>6.2.</strong> A purchase will be considered confirmed once:
-                    (i) the Customer receives express confirmation of availability and
-                    conditions, and (ii) payment is verified through the authorized payment
-                    methods.
-                </p>
+        <p>
+          The collection and processing of personal data is intended to allow User
+          identification, manage the contracting and provision of services, issue
+          invoices, provide technical support, comply with tax and legal obligations,
+          and send communications regarding service updates, special promotions,
+          satisfaction surveys, or new products, subject to the User’s express
+          authorization.
+        </p>
 
-                <p>
-                    <strong>6.3.</strong> The available payment methods (for example, bank
-                    cards, transfers, or others) will be indicated when processing the order or
-                    quotation and may be subject to validation by payment processors or
-                    financial institutions.
-                </p>
+        <p>
+          Personal data shall be stored on secure servers with appropriate technical
+          and administrative protection measures to prevent unauthorized access,
+          misuse, alteration, or destruction. VULTRA shall not share personal
+          information with third parties except when necessary for the provision of
+          services, compliance with legal obligations, or when expressly authorized
+          by the User.
+        </p>
 
-                <p>
-                    <strong>6.4.</strong> The Distributor reserves the right to reject orders
-                    when inconsistencies in the information, risk of fraud, previous breaches,
-                    or any circumstance that may affect operations or transaction security are
-                    detected.
-                </p>
+        <p>
+          To exercise rights of access, rectification, cancellation, and objection,
+          as well as to obtain detailed information regarding the processing of
+          personal data, please consult the Privacy Notice available on the Website,
+          which forms an integral part of this Agreement.
+        </p>
 
-                <h2>VII. Deliveries, logistics, and risks</h2>
+        <h2>7. AVAILABILITY AND DESCRIPTION OF PRODUCTS</h2>
 
-                <p>
-                    <strong>7.1.</strong> Delivery conditions (estimated times, costs, shipping
-                    methods) will be communicated to the Customer during the purchase process
-                    or in the corresponding quotation, considering the destination, type of
-                    products, and quantity requested.
-                </p>
+        <p>
+          The services available on the Website are subject to technical and
+          commercial availability. VULTRA strives to keep information updated and
+          accurate, but does not guarantee that all services will be available at all
+          times or that technical specifications will remain unchanged.
+        </p>
 
-                <p>
-                    <strong>7.2.</strong> Delivery times are estimates and may vary due to
-                    causes beyond the Distributor’s control, such as courier incidents,
-                    logistical conditions, force majeure events, or decisions by authorities.
-                </p>
+        <p>
+          Service descriptions, screenshots, demonstrations, and promotional
+          materials are merely illustrative and may not exactly reflect the final
+          product, which shall be subject to the technical specifications agreed upon
+          in each commercial proposal. Development timelines, specific
+          functionalities, and technical characteristics may vary according to the
+          particular requirements of each project.
+        </p>
 
-                <p>
-                    <strong>7.3.</strong> Risk regarding the products (loss, damage, or
-                    deterioration) is transferred to the Customer at the moment of delivery at
-                    the agreed address or delivery point.
-                </p>
+        <p>
+          VULTRA shall provide time and budget estimates based on the information
+          available at the time of quotation. However, custom software development
+          may require adjustments to schedules and costs due to changes in
+          requirements, unforeseen technical complexity, or modifications requested
+          by the Client during the development process.
+        </p>
 
-                <p>
-                    <strong>7.4.</strong> The Customer must inspect the products upon receipt
-                    and, in the event of visible damage, missing items, or delivery errors,
-                    must notify the Distributor within the period established in the returns
-                    and claims policy.
-                </p>
+        <h2>8. CONTRACTING PROCESS AND COMMERCIAL PROPOSALS</h2>
 
-                <h2>VIII. Proper use and Customer responsibility</h2>
+        <p>
+          Contracting of services begins with the User’s request through the Website,
+          email, or telephone contact. VULTRA shall prepare a detailed commercial
+          proposal including service description, technical specifications, schedule,
+          deliverables, payment conditions, and specific terms applicable to the
+          project.
+        </p>
 
-                <p>
-                    <strong>8.1.</strong> The products distributed through the Website are
-                    intended for medical or clinical use and therefore must be handled by
-                    trained personnel and in accordance with the manufacturer’s instructions and
-                    the internal policies of each institution.
-                </p>
+        <p>
+          Once accepted by the User, the commercial proposal shall become an integral
+          part of this Agreement and shall prevail over any general provision in case
+          of conflict. The User shall have a period of thirty calendar days to accept
+          the proposal, after which VULTRA may modify the offered conditions.
+        </p>
 
-                <p>
-                    <strong>8.2.</strong> The Distributor shall not be responsible for damages
-                    arising from: improper or non-recommended use, incorrect installation,
-                    failure to follow instructions, lack of personnel training, or any handling
-                    outside its distribution processes.
-                </p>
+        <p>
+          To formalize the contracting, the User must express acceptance in writing,
+          provide the necessary technical information, and make the initial payment
+          as specified in the commercial proposal. Service provision shall begin once
+          all contracting requirements have been fulfilled and the corresponding
+          payment has been received.
+        </p>
 
-                <p>
-                    <strong>8.3.</strong> It is the Customer’s responsibility to verify, prior
-                    to use, that the received product corresponds to what was requested, is in
-                    appropriate condition, and has not exceeded its expiration date, where
-                    applicable.
-                </p>
+        <h2>9. PRICES, PAYMENT METHODS, AND INVOICING</h2>
 
-                <h2>IX. Intellectual property and Website content</h2>
+        <p>
+          All prices are expressed in Mexican pesos (MXN) and include VAT, unless
+          otherwise indicated in the specific commercial proposal. Prices are valid
+          for the period specified in each quotation and may be subject to
+          modifications due to changes in scope, additional requirements, or
+          variations in third-party costs.
+        </p>
 
-                <p>
-                    <strong>9.1.</strong> The texts, logos, designs, graphic materials,
-                    technical sheets, structure, and organization of the Website are the
-                    property of the Distributor or are used under license and are protected by
-                    intellectual property legislation.
-                </p>
+        <p>
+          VULTRA accepts various payment methods, which may include bank transfer,
+          credit and debit cards, certified checks, and electronic payment systems.
+          Available payment methods shall be specified in each commercial proposal,
+          and the User agrees to pay for services according to the agreed method and
+          deadlines.
+        </p>
 
-                <p>
-                    <strong>9.2.</strong> Reproduction, distribution, modification, or
-                    commercial exploitation of the Website content is prohibited without prior
-                    written authorization from the Distributor.
-                </p>
+        <p>
+          Payments shall be structured according to the milestones and deliverables
+          defined for each project. Generally, an advance payment shall be required
+          to begin work, partial payments during development, and final settlement
+          upon delivery of the completed product. In the case of subscription or
+          maintenance services, payments shall be made according to the agreed
+          periodicity.
+        </p>
 
-                <p>
-                    <strong>9.3.</strong> The Customer’s use of the Website does not grant any
-                    license or right over trademarks, trade names, or any other intellectual
-                    property element.
-                </p>
+        <p>
+          In the event of payment processing failures, VULTRA shall immediately
+          notify the User and suspend services until the situation is resolved. If
+          failures arise from issues with credit or debit cards, the User must
+          contact the card issuer directly. VULTRA does not store banking data,
+          which is processed by third parties under strict PCI DSS security
+          standards.
+        </p>
 
-                <h2>X. Permitted use of the Website</h2>
+        <p>
+          Once each payment is confirmed, VULTRA shall send the corresponding
+          confirmation by email and, if requested by the User, the corresponding
+          invoice in accordance with current tax regulations.
+        </p>
 
-                <p>
-                    <strong>10.1.</strong> The Customer agrees to use the Website exclusively
-                    for lawful purposes related to consultation, information requests, and the
-                    acquisition of medical and clinical products.
-                </p>
+        <h2>10. INTELLECTUAL PROPERTY AND COPYRIGHT</h2>
 
-                <p>
-                    <strong>10.2.</strong> It is prohibited to use the Website to: attempt to
-                    compromise system security, send false information, engage in fraudulent
-                    activities, introduce malware or any malicious code, or infringe the rights
-                    of third parties.
-                </p>
+        <p>
+          Intellectual property rights over developed software shall be governed by
+          the provisions established in each specific commercial proposal. Generally,
+          VULTRA retains rights over methodologies, frameworks, tools, and reusable
+          components, while the Client obtains rights over the specific code
+          developed for their project.
+        </p>
 
-                <p>
-                    <strong>10.3.</strong> The Distributor may suspend or limit access to the
-                    Website or certain functions in the event of detecting improper use or
-                    suspicion of activities contrary to these Terms or the law.
-                </p>
+        <p>
+          All Website content, including trademarks, logos, trade names, images,
+          designs, software, databases, texts, and graphic elements, are the
+          exclusive property of VULTRA or its licensors and are protected by
+          national and international intellectual property legislation.
+        </p>
 
-                <h2>XI. Limitation of liability</h2>
+        <p>
+          Unauthorized use of these elements constitutes an infringement of
+          intellectual property rights and shall give rise to corresponding legal
+          actions. The User acquires no rights whatsoever over VULTRA’s
+          intellectual property merely by using the Website or contracting services.
+        </p>
 
-                <p>
-                    <strong>11.1.</strong> To the extent permitted by Mexican law, the total
-                    liability of the Distributor toward the Customer for any claim related to
-                    products purchased through the Website shall be limited, at most, to the
-                    amount effectively paid for the product that gave rise to the claim.
-                </p>
+        <h2>11. CONFIDENTIALITY</h2>
 
-                <p>
-                    <strong>11.2.</strong> The Distributor shall not be liable for indirect
-                    losses, loss of profits, interruptions in the Customer’s operations, or
-                    damages arising from clinical or operational decisions corresponding to the
-                    professional judgment of the Customer or their team.
-                </p>
+        <p>
+          VULTRA undertakes to maintain absolute confidentiality regarding all
+          technical, commercial, financial, and strategic information provided by the
+          Client during the provision of services. This confidentiality obligation
+          shall remain in force during the provision of services and for a period of
+          five years following termination.
+        </p>
 
-                <p>
-                    <strong>11.3.</strong> The Distributor shall also not be responsible for
-                    failures in third-party services (carriers, payment gateways, internet
-                    providers) or for force majeure events or unforeseen circumstances beyond
-                    its reasonable control.
-                </p>
+        <p>
+          The Client, in turn, undertakes to maintain confidentiality regarding the
+          methodologies, processes, techniques, and specialized knowledge employed by
+          VULTRA in the provision of services. Such information is considered a
+          trade secret, and unauthorized disclosure may give rise to legal action.
+        </p>
 
-                <h2>XII. Returns, cancellations, and claims</h2>
+        <p>
+          The confidentiality obligation shall not apply to information that is in
+          the public domain, has been independently developed by the receiving party,
+          or must be disclosed pursuant to legal or judicial order, subject to prior
+          notice to the other party whenever possible.
+        </p>
 
-                <p>
-                    <strong>12.1.</strong> The specific rules regarding returns, product
-                    exchanges, order cancellations, deadlines, and refund conditions are
-                    detailed in the Returns, Cancellations, and Refunds Policy published on the
-                    Website, which forms part of these Terms.
-                </p>
+        <h2>12. RESPONSIBILITIES AND LIMITATION OF WARRANTY</h2>
 
-                <p>
-                    <strong>12.2.</strong> The Customer must review such Policy before
-                    completing their purchase and accept that any request in this matter will
-                    be handled in accordance with its provisions.
-                </p>
+        <p>
+          The User uses the Website and contracts services at their own risk.
+          VULTRA does not guarantee uninterrupted continuity of the Website or the
+          complete absence of errors in its systems. Nor does it guarantee that the
+          Website is entirely free of viruses, malware, or other potentially harmful
+          elements.
+        </p>
 
-                <h2>XIII. Personal data and privacy</h2>
+        <p>
+          VULTRA shall use its best efforts to provide quality services, but does
+          not guarantee specific business results, increases in sales, productivity
+          improvements, or any other particular commercial benefit. VULTRA’s
+          liability is limited to the provision of services in accordance with the
+          agreed technical specifications.
+        </p>
 
-                <p>
-                    <strong>13.1.</strong> The processing of personal data collected through
-                    the Website is governed by the corresponding Privacy Notice, available on
-                    the same Website, where the purposes, protection mechanisms, and procedures
-                    for exercising ARCO rights are described.
-                </p>
+        <p>
+          Under no circumstances shall VULTRA be liable for indirect, incidental,
+          special, punitive damages, loss of profits, data loss, business
+          interruption, or any other economic loss resulting from use of the Website
+          or provision of services, even if advised of the possibility of such
+          damages.
+        </p>
 
-                <p>
-                    <strong>13.2.</strong> By using the Website and providing their data, the
-                    Customer acknowledges that they have read the Privacy Notice and consent to
-                    the processing of their information as indicated therein.
-                </p>
+        <p>
+          VULTRA’s total liability, for any cause and under any legal theory, shall
+          not exceed the total amount paid by the Client for the specific services
+          giving rise to the claim during the twelve months preceding the event that
+          gave rise to liability.
+        </p>
 
-                <h2>XIV. Applicable law and dispute resolution</h2>
+        <h2>13. TERMINATION AND CANCELLATION</h2>
 
-                <p>
-                    <strong>14.1.</strong> These Terms are governed by the laws of the United
-                    Mexican States.
-                </p>
+        <p>
+          Either party may terminate the contractual relationship by written notice
+          thirty calendar days in advance, without the need to state cause. In the
+          event of termination, the Client must pay for all services rendered up to
+          the effective termination date.
+        </p>
 
-                <p>
-                    <strong>14.2.</strong> Any dispute arising from the interpretation or
-                    enforcement of these Terms shall be submitted to the competent courts of
-                    Mexico City, with the parties waiving any other jurisdiction that may
-                    otherwise apply to them.
-                </p>
+        <p>
+          VULTRA may immediately terminate the provision of services, without any
+          liability whatsoever, when the Client materially breaches contractual
+          obligations, including payment default exceeding thirty days, provision of
+          false information, or violation of intellectual property rights.
+        </p>
 
-                <h2>XV. Updates to the Terms</h2>
+        <p>
+          The Client may cancel specific services according to the terms established
+          in each commercial proposal. Cancellations may involve penalties depending
+          on project progress and resources already committed by VULTRA.
+        </p>
 
-                <p>
-                    <strong>15.1.</strong> The Distributor may modify these Terms at any time.
-                    The current version will be available on the Website, indicating the date
-                    of its latest update.
-                </p>
+        <p>
+          Upon termination of the contractual relationship, each party shall return
+          or destroy the other party’s confidential information and cease any use of
+          trademarks, trade names, or copyrighted materials.
+        </p>
 
-                <p>
-                    <strong>15.2.</strong> Continued use of the Website or the placement of new
-                    purchases after the publication of changes shall imply acceptance of the
-                    modified version by the Customer.
-                </p>
+        <h2>14. FORCE MAJEURE</h2>
 
-                <p>
-                    <strong>Last updated:</strong> June 2026.
-                </p>
-            </section>
-        </div>
-    );
+        <p>
+          Neither party shall be liable for failure to perform obligations when such
+          failure is due to force majeure or unforeseen circumstances, including
+          natural disasters, war, terrorism, epidemics, failures in third-party
+          services, interruptions in electricity supply or telecommunications, or any
+          other cause beyond the reasonable control of the affected party.
+        </p>
+
+        <p>
+          The affected party shall immediately notify the other party of the
+          occurrence of the force majeure event and use its best efforts to minimize
+          its impact and resume performance of its obligations as soon as possible.
+        </p>
+
+        <h2>15. MODIFICATIONS</h2>
+
+        <p>
+          VULTRA may modify these Terms and Conditions at any time by publishing
+          the modifications on the Website. Changes shall become effective upon
+          publication and shall apply to all services contracted thereafter. For
+          ongoing services, modifications shall apply only if expressly accepted by
+          the Client.
+        </p>
+
+        <p>
+          Continued use of the Website after publication of modifications shall
+          constitute tacit acceptance of the new terms. If the User does not accept
+          the modifications, they must discontinue use of the Website and may
+          terminate active services according to the applicable cancellation terms.
+        </p>
+
+        <h2>16. APPLICABLE LAW AND JURISDICTION</h2>
+
+        <p>
+          This Agreement is governed by the applicable laws of the United Mexican
+          States. For disputes not submitted to arbitration, the parties expressly
+          submit to the jurisdiction of the competent courts of Mexico City, waiving
+          any other jurisdiction that may correspond to them.
+        </p>
+
+        <p>
+          The User may resort to the Federal Consumer Protection Agency (PROFECO) to
+          resolve disputes related to consumer services, in accordance with the
+          provisions of the Federal Consumer Protection Law.
+        </p>
+
+        <h2>17. GENERAL PROVISIONS</h2>
+
+        <p>
+          If any provision of this Agreement is declared invalid or unenforceable by
+          a competent authority, the remaining provisions shall remain in full force
+          and effect. Failure to exercise any right shall not constitute a waiver
+          thereof.
+        </p>
+
+        <p>
+          This Agreement constitutes the entire agreement between the parties and
+          replaces any prior agreement related to the same subject matter.
+          Modifications must be made in writing and accepted by both parties.
+        </p>
+
+        <p>
+          The headings and subheadings of this Agreement are included solely for ease
+          of reference and do not affect interpretation of the provisions.
+        </p>
+      </section>
+    </div>
+  );
 }
 
 export default function LegalPage() {
-    const locale = useLocale();
+  const locale = useLocale();
 
-    return (
-        <div className="min-h-screen flex flex-col bg-white">
-            <Header />
-            <main className="flex-grow container mx-auto px-6 py-20 max-w-4xl">
-                {locale === "es" ? <LegalEs /> : <LegalEn />}
-            </main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow container mx-auto px-6 mt-20 py-20 max-w-4xl">
+        {locale === "es" ? <LegalEs /> : <LegalEn />}
+      </main>
+    </div>
+  );
 }

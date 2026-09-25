@@ -1,7 +1,7 @@
 "use client";
 
-import { CartProvider } from "@/context/CartContext";
 import { useEffect } from "react";
+import { CartProvider } from "@/context/CartContext";
 
 export default function ClientBody({
   children,
@@ -14,9 +14,9 @@ export default function ClientBody({
     document.body.className = "antialiased";
   }, []);
 
-  return <div className="antialiased">
-    <CartProvider>
-      {children}
-    </CartProvider>
-  </div>;
+  return (
+
+      <div className="antialiased">{children}</div>
+
+  );
 }

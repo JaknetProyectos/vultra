@@ -1,478 +1,252 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-
 import { Link } from "@/i18n/routing";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-
 import {
+  Rocket,
+  Layers3,
+  Package,
+  Mail,
+  Smartphone,
+  Code2,
+  Workflow,
+  Cpu,
+  Bot,
+  ShieldCheck,
+  FileText,
+  ReceiptText,
+  BadgeDollarSign,
   MapPin,
   Phone,
-  Mail,
-  CreditCard,
-  FileText,
-  ShieldCheck,
-  RotateCcw,
 } from "lucide-react";
-
-import { Logo } from "./Header";
 
 export default function Footer() {
   const t = useTranslations("footer");
 
+  const links = [
+    {
+      name: t("navigation.about"),
+      href: "/nosotros",
+      icon: Rocket,
+    },
+    {
+      name: t("navigation.services"),
+      href: "/servicios",
+      icon: Layers3,
+    },
+    {
+      name: t("navigation.packages"),
+      href: "/paquetes",
+      icon: Package,
+    },
+    {
+      name: t("navigation.contact"),
+      href: "/contacto",
+      icon: Mail,
+    },
+  ];
+
+  const services = [
+    {
+      name: t("services.mobileApps"),
+      href: "/servicios/desarrollo-de-aplicaciones-moviles",
+      icon: Smartphone,
+    },
+    {
+      name: t("services.customSoftware"),
+      href: "/servicios/desarrollo-de-software-a-medida",
+      icon: Code2,
+    },
+    {
+      name: t("services.systemIntegration"),
+      href: "/servicios/integracion-de-sistemas",
+      icon: Workflow,
+    },
+    {
+      name: t("services.techConsulting"),
+      href: "/servicios/consultoria-tecnologica",
+      icon: Cpu,
+    },
+    {
+      name: t("services.automation"),
+      href: "/servicios/automatizacion-de-procesos",
+      icon: Bot,
+    },
+    {
+      name: t("services.support"),
+      href: "/servicios/soporte-y-mantenimiento",
+      icon: ShieldCheck,
+    },
+  ];
+
+  const policies = [
+    {
+      name: t("legal.privacy"),
+      href: "/legal/privacidad",
+      icon: FileText,
+    },
+    {
+      name: t("legal.terms"),
+      href: "/legal/terminos",
+      icon: ReceiptText,
+    },
+    {
+      name: t("legal.refunds"),
+      href: "/legal/reembolsos",
+      icon: BadgeDollarSign,
+    },
+  ];
+
   return (
-    <footer className="relative overflow-hidden border-t border-[#F3E5E8] bg-white pt-20 pb-10">
-      {/* Background Elements */}
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#FAF5FF] opacity-80" />
-      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-[#FCE7F3] opacity-70" />
+    <footer className="relative overflow-hidden border-t border-neutral-900 bg-black text-white">
+      {/* iOS Glow Backdrop Subtle Layer */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-[-100px] top-[-100px] h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Line */}
-        <div className="mb-14">
-          <div className="h-[6px] w-full rounded-full bg-[#E9D5FF]" />
-        </div>
-
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-14"
-        >
-          <div className="flex justify-center mb-8">
-            <div
-              className="
-                rounded-[2rem]
-                border
-                border-[#F3E8FF]
-                bg-white
-                px-6
-                py-4
-                shadow-sm
-              "
-            >
-              <Logo />
+      <div className="relative mx-auto max-w-7xl px-4 py-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* About */}
+          <div>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 shadow-sm backdrop-blur-md">
+              <Rocket className="h-4 w-4 text-emerald-400" />
+              <span className="text-sm font-semibold text-emerald-400">
+                {t("about.badge")}
+              </span>
             </div>
+
+            <p className="text-sm leading-relaxed text-zinc-300">
+              {t("about.description")}
+            </p>
           </div>
 
-          <h3 className="font-poppins text-3xl md:text-5xl font-bold tracking-tight text-[#4B3A42]">
-            {t("title")}
-          </h3>
-        </motion.div>
+          {/* Navigation */}
+          <div>
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-widest text-white">
+              {t("titles.navigation")}
+            </h3>
 
-        {/* Main Grid */}
-        <div className="grid gap-6 lg:grid-cols-2 mb-14">
-          {/* Address */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ y: -4 }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[2rem]
-              border
-              border-[#F3E5E8]
-              bg-[#FFF8FA]
-              p-8
-              shadow-sm
-            "
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.08),transparent_55%)]" />
+            <ul className="space-y-2.5">
+              {links.map((link) => {
+                const Icon = link.icon;
 
-            <div className="relative flex items-center gap-4 mb-7">
-              <div
-                className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-[#E9D5FF]
-                  bg-white
-                "
-              >
-                <MapPin className="h-6 w-6 text-[#A855F7]" />
-              </div>
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-center gap-3 rounded-2xl border border-neutral-900 bg-zinc-950/80 px-3.5 py-2.5 text-sm text-zinc-200 transition-all duration-300 hover:border-emerald-500/40 hover:bg-neutral-900 hover:text-white"
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-neutral-900 text-emerald-400 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                        <Icon className="h-4 w-4 text-emerald-400" />
+                      </div>
 
-              <h4 className="text-xl font-semibold text-[#4B3A42]">
-                {t("address.title")}
-              </h4>
-            </div>
+                      <span className="font-medium">{link.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-            <div className="relative space-y-3 text-[#6E5B63] leading-relaxed">
-              <p>{t("address.line1")}</p>
-              <p>{t("address.line2")}</p>
-              <p>{t("address.line3")}</p>
-              <p>{t("address.line4")}</p>
-            </div>
-          </motion.div>
+          {/* Services */}
+          <div>
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-widest text-white">
+              {t("titles.services")}
+            </h3>
 
+            <ul className="space-y-2.5">
+              {services.map((service) => {
+                const Icon = service.icon;
+
+                return (
+                  <li key={service.name}>
+                    <Link
+                      href={service.href}
+                      className="group flex items-center gap-3 text-sm text-zinc-300 transition-colors hover:text-white"
+                    >
+                      <Icon className="h-4 w-4 text-emerald-400 transition-transform duration-300 group-hover:scale-110" />
+                      <span>{service.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Policies */}
+          <div>
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-widest text-white">
+              {t("titles.legal")}
+            </h3>
+
+            <ul className="space-y-2.5">
+              {policies.map((policy) => {
+                const Icon = policy.icon;
+
+                return (
+                  <li key={policy.name}>
+                    <Link
+                      href={policy.href}
+                      className="group flex items-center gap-3 text-sm text-zinc-300 transition-colors hover:text-white"
+                    >
+                      <Icon className="h-4 w-4 text-emerald-400 transition-transform duration-300 group-hover:scale-110" />
+                      <span>{policy.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-12 flex flex-col gap-8 border-t border-neutral-900 pt-8 lg:flex-row lg:items-end lg:justify-between">
           {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
-            whileHover={{ y: -4 }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[2rem]
-              border
-              border-[#F3E5E8]
-              bg-white
-              p-8
-              shadow-sm
-            "
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(236,72,153,0.08),transparent_55%)]" />
-
-            <div className="relative flex items-center gap-4 mb-7">
-              <div
-                className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-[#FCE7F3]
-                  bg-[#FFF8FA]
-                "
-              >
-                <Phone className="h-5 w-5 text-[#EC4899]" />
-              </div>
-
-              <h4 className="text-xl font-semibold text-[#4B3A42]">
-                {t("support.title")}
-              </h4>
+          <div className="max-w-2xl">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
+              <h3 className="text-sm font-bold uppercase tracking-widest text-white">
+                {t("titles.contact")}
+              </h3>
             </div>
 
-            <div className="relative space-y-6">
-              <div className="flex items-start gap-4">
-                <div
-                  className="
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#FAF5FF]
-                    border
-                    border-[#E9D5FF]
-                  "
-                >
-                  <Phone className="h-4 w-4 text-[#A855F7]" />
-                </div>
-
-                <div>
-                  <p className="mb-1 text-sm text-[#8A7680]">
-                    {t("support.phone")}
-                  </p>
-
-                  <a
-                    href="tel:+5215525836217"
-                    className="
-                      font-medium
-                      text-[#4B3A42]
-                      transition-colors
-                      hover:text-[#A855F7]
-                    "
-                  >
-                    +52 1 55 2583 6217
-                  </a>
-                </div>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3 text-sm text-zinc-300">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                <p>{t("contact.address")}</p>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div
-                  className="
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#FFF8FA]
-                    border
-                    border-[#FCE7F3]
-                  "
-                >
-                  <Mail className="h-4 w-4 text-[#EC4899]" />
-                </div>
-
-                <div>
-                  <p className="mb-1 text-sm text-[#8A7680]">
-                    {t("support.email")}
-                  </p>
-
-                  <a
-                    href="mailto:hello@medionmx.com"
-                    className="
-                      font-medium
-                      underline
-                      underline-offset-4
-                      text-[#4B3A42]
-                      transition-colors
-                      hover:text-[#EC4899]
-                    "
-                  >
-                    hello@medionmx.com
-                  </a>
-                </div>
-              </div>
-
-              <div
-                className="
-                  rounded-[1.5rem]
-                  border
-                  border-[#F3E8FF]
-                  bg-[#FAF5FF]
-                  p-5
-                  text-sm
-                  leading-relaxed
-                  text-[#6E5B63]
-                "
+              <a
+                href="tel:+5215519458234"
+                className="group inline-flex items-center gap-3 text-sm text-zinc-300 transition-colors hover:text-white"
               >
-                {t("support.description")}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Payments */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-          className="
-            relative
-            overflow-hidden
-            max-w-4xl
-            mx-auto
-            rounded-[2.5rem]
-            border
-            border-[#F3E5E8]
-            bg-[#FFF8FA]
-            p-10
-            shadow-sm
-            mb-14
-          "
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.08),transparent_60%)]" />
-
-          <div className="relative">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div
-                className="
-                  flex
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-[#E9D5FF]
-                  bg-white
-                "
-              >
-                <CreditCard className="h-5 w-5 text-[#A855F7]" />
-              </div>
-
-              <h4 className="text-2xl font-semibold text-[#4B3A42]">
-                {t("payments.title")}
-              </h4>
-            </div>
-
-            <div className="flex justify-center gap-5 flex-wrap">
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="
-                  rounded-[1.5rem]
-                  border
-                  border-[#F3E5E8]
-                  bg-white
-                  px-7
-                  py-5
-                  shadow-sm
-                "
-              >
-                <Image
-                  src="/mastercard.png"
-                  alt="Mastercard"
-                  width={70}
-                  height={45}
-                  className="object-contain"
-                />
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="
-                  rounded-[1.5rem]
-                  border
-                  border-[#F3E5E8]
-                  bg-white
-                  px-7
-                  py-5
-                  shadow-sm
-                "
-              >
-                <Image
-                  src="/visa.png"
-                  alt="Visa"
-                  width={70}
-                  height={45}
-                  className="object-contain"
-                />
-              </motion.div>
+                <Phone className="h-4 w-4 text-emerald-400 transition-transform duration-300 group-hover:rotate-12" />
+                +52 1 551945 8234
+              </a>
             </div>
           </div>
-        </motion.div>
 
-        {/* Legal */}
-        <div className="grid gap-4 max-w-5xl mx-auto mb-12 md:grid-cols-3">
-          <Link
-            href="/legal/terminos"
-            className="
-              group
-              flex
-              items-center
-              gap-4
-              rounded-[1.8rem]
-              border
-              border-[#F3E5E8]
-              bg-white
-              px-6
-              py-5
-              text-[#4B3A42]
-              shadow-sm
-              transition-all
-              duration-200
-              hover:-translate-y-1
-              hover:bg-[#FAF5FF]
-            "
-          >
-            <div
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-[#E9D5FF]
-                bg-[#FAF5FF]
-              "
-            >
-              <FileText className="h-5 w-5 text-[#A855F7]" />
+          {/* Payments */}
+          <div className="flex items-center gap-4 lg:justify-end">
+            <div className="rounded-2xl border border-neutral-800 bg-white/95 p-2 shadow-lg backdrop-blur">
+              <Image
+                src="/cards.png"
+                alt={t("paymentsAlt")}
+                width={120}
+                height={30}
+                className="object-contain"
+              />
             </div>
-
-            <span className="text-sm font-medium">
-              {t("legal.terms")}
-            </span>
-          </Link>
-
-          <Link
-            href="/legal/privacidad"
-            className="
-              group
-              flex
-              items-center
-              gap-4
-              rounded-[1.8rem]
-              border
-              border-[#F3E5E8]
-              bg-white
-              px-6
-              py-5
-              text-[#4B3A42]
-              shadow-sm
-              transition-all
-              duration-200
-              hover:-translate-y-1
-              hover:bg-[#FFF8FA]
-            "
-          >
-            <div
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-[#FCE7F3]
-                bg-[#FFF8FA]
-              "
-            >
-              <ShieldCheck className="h-5 w-5 text-[#EC4899]" />
-            </div>
-
-            <span className="text-sm font-medium">
-              {t("legal.privacy")}
-            </span>
-          </Link>
-
-          <Link
-            href="/legal/reembolsos"
-            className="
-              group
-              flex
-              items-center
-              gap-4
-              rounded-[1.8rem]
-              border
-              border-[#F3E5E8]
-              bg-white
-              px-6
-              py-5
-              text-[#4B3A42]
-              shadow-sm
-              transition-all
-              duration-200
-              hover:-translate-y-1
-              hover:bg-[#FAF5FF]
-            "
-          >
-            <div
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-[#E9D5FF]
-                bg-[#FAF5FF]
-              "
-            >
-              <RotateCcw className="h-5 w-5 text-[#A855F7]" />
-            </div>
-
-            <span className="text-sm font-medium">
-              {t("legal.returns")}
-            </span>
-          </Link>
+          </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="border-t border-[#F3E5E8] pt-8">
-          <p className="text-center text-sm text-[#7B6870]">
-            {t("copyright")}
+      {/* Copyright */}
+      <div className="border-t border-neutral-900 bg-neutral-950 px-4 py-5">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-center md:flex-row">
+          <p className="text-xs text-zinc-400">
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>
