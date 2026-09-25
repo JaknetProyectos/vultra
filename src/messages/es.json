@@ -1,0 +1,376 @@
+{
+  "header": {
+    "logoAlt": "Logotipo",
+    "titleAlt": "Cintillo",
+    "cart": "Carrito",
+    "openMenu": "Mostrar menú",
+    "closeMenu": "Esconder menú",
+    "nav": {
+      "home": "Inicio",
+      "about": "Quiénes Somos",
+      "store": "Tienda",
+      "contact": "Contacto"
+    }
+  },
+  "cartPage": {
+    "breadcrumb": {
+      "home": "Inicio",
+      "summary": "1. Lista",
+      "shippingPayment": "2. Entrega y Métodos de Pago"
+    },
+    "success": {
+      "title": "¡Transacción Realizada con Éxito!",
+      "description": "Su pago ha sido autorizado. El surtido de sus consumibles médicos ha comenzado para su posterior despacho.",
+      "paymentReference": "Referencia de Pago:",
+      "paidAmount": "Monto Liquidado:",
+      "transactionStatus": "Estatus del Movimiento:",
+      "approved": "APROBADA",
+      "backToCatalog": "Regresar a la Tienda"
+    },
+    "empty": {
+      "title": "Tu cesta de compra no tiene productos",
+      "description": "No se detectaron herramientas médicas elegidas en tu sesión actual.",
+      "goToStore": "Explorar Tienda"
+    },
+    "order": {
+      "title": "Bienes en tu solicitud",
+      "clear": "Remover Productos"
+    },
+    "financial": {
+      "title": "Resumen Estadístico",
+      "couponPlaceholder": "Código de descuento",
+      "applyCoupon": "Aplicar",
+      "appliedCoupon": "Cupón {code} (-{discount}%)",
+      "remove": "Quitar",
+      "couponInvalid": "La clave de descuento es errónea o se encuentra vencida.",
+      "subtotal": "Subtotal de Materiales:",
+      "discount": "Descuento Concedido:",
+      "netTotal": "Cifra Final a Liquidar:",
+      "tax": "IVA {tax}"
+    },
+    "actions": {
+      "proceedToPayment": "Avanzar al Pago",
+      "processing": "Comprobando Liquidez a través de Keycop...",
+      "payAmount": "Abonar {amount}",
+      "backToCart": "Modificar solicitud / Insertar código"
+    },
+    "errors": {
+      "declined": "El movimiento fue denegado por el banco emisor.",
+      "connection": "Se experimentó una falla de red con el procesador de pagos."
+    },
+    "metadata": {
+      "couponApplied": "Clave promocional introducida",
+      "standardSale": "Transacción electrónica común"
+    },
+    "form": {
+      "buyerTitle": "Datos del Comprador / Facturación",
+      "addressTitle": "Información de Entrega y Logística",
+      "paymentTitle": "Pasarela de Cobro Encriptada",
+      "firstName": "Nombre completo *",
+      "lastName": "Apellidos completos *",
+      "email": "Correo electrónico *",
+      "phone": "Teléfono Móvil (10 posiciones) *",
+      "company": "Razón Social / Sanatorio o Consultorio (Opcional)",
+      "streetAddress": "Vía Pública, Número Exterior e Interior *",
+      "streetAddressPlaceholder": "Avenida Universidad 450, Interior 4",
+      "neighborhood": "Asentamiento / Referencias de ubicación (Opcional)",
+      "neighborhoodPlaceholder": "Colonia Vértiz Narvarte",
+      "city": "Municipio o Demarcación *",
+      "state": "Estado / Provincia *",
+      "statePlaceholder": "Ciudad de México",
+      "postalCode": "Distrito Postal *",
+      "country": "Nación",
+      "mexico": "México (MX)",
+      "cardNumber": "Numeración de la Tarjeta (Visa / Mastercard) *",
+      "cardNumberPlaceholder": "4152 0000 0000 0000",
+      "cardHolderName": "Titular de la Tarjeta Bancaria *",
+      "cardHolderPlaceholder": "Tal como aparece impreso",
+      "expiryMonth": "Mes de Expiración (MM) *",
+      "expiryMonthPlaceholder": "05",
+      "expiryYear": "Año de Expiración (AA) *",
+      "expiryYearPlaceholder": "29",
+      "cvv": "Código de Verificación (CVV) *",
+      "cvvPlaceholder": "•••"
+    },
+    "security": {
+      "note": "Transacción resguardada con altos estándares"
+    },
+    "images": {
+      "octanoAlt": "Keycop",
+      "securePaymentAlt": "Cobro seguro"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Hallemos la opción ideal para tu establecimiento.",
+      "description": "Nuestros asesores te auxiliarán con cotizaciones, soporte de fábrica, stock de productos y un servicio meticuloso para tu consultorio."
+    },
+    "info": {
+      "visit": {
+        "title": "Acude a nuestras oficinas",
+        "subtitle": "Dirección central",
+        "address1": "Avenida Jaime Balmes 11,",
+        "address2": "Depto 15A Edificio A Piso 1",
+        "address3": "Colonia Polanco I Sección",
+        "address4": "Demarcación Miguel Hidalgo",
+        "address5": "Código Postal 11510, CDMX"
+      },
+      "call": {
+        "title": "Vía telefónica",
+        "subtitle": "Atención a tu medida"
+      },
+      "email": {
+        "title": "Correos",
+        "subtitle": "Respuesta rápida"
+      }
+    },
+    "form": {
+      "title": "Mándanos un mensaje",
+      "description": "Detállanos lo que requieres y nuestro personal te contactará con un presupuesto o la asesoría que ameritas.",
+      "fullName": "Nombre completo",
+      "fullNamePlaceholder": "Escribe tu nombre",
+      "email": "E-mail de contacto",
+      "emailPlaceholder": "usuario@correo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "¿De qué manera te apoyamos?",
+      "submit": "Enviar Datos",
+      "sending": "Enviando correspondencia..."
+    },
+    "success": {
+      "title": "¡Información enviada!",
+      "description": "Valoramos tu interés. Nuestros especialistas revisarán tu mensaje y te contactarán a la brevedad."
+    },
+    "errors": {
+      "unexpected": "Ocurrió un error inesperado al procesar tus datos."
+    },
+    "map": {
+      "title": "Nuestra localización",
+      "subtitle": "Polanco · CDMX",
+      "iframeTitle": "Mapa interactivo de CentroMédicoAvanza"
+    }
+  },
+  "about": {
+    "images": {
+      "medicalProfessionalAlt": "Profesional de la medicina"
+    },
+    "whyChooseUs": {
+      "title": "Donde el servicio superior brinda certeza",
+      "description1": "En el sector de la salud no cabe la improvisación. Cada recurso, insumo y aditamento empleado repercute directamente en la recuperación, eficacia y valoración clínica.",
+      "description2": "Somos un equipo dedicado al suministro de instrumental clínico y médico, enfocado en ofrecer soluciones fiables que se incorporan de manera ideal en hospitales, sanatorios y consultorios.",
+      "description3": "Nuestra misión excede el intercambio mercantil: anhelamos convertirnos en una base de certidumbre para nuestros compradores, facilitando sus procesos cotidianos con productos de primer nivel.",
+      "button": "Solicitar asesoría técnica"
+    },
+    "hero": {
+      "badge": "Acreditación que certifica cada uno de nuestros productos",
+      "title": "Acreditación que certifica cada uno de nuestros productos",
+      "description1": "Funcionamos como proveedores enfocados en surtir insumos hospitalarios y de diagnóstico, seleccionados bajo estrictos parámetros de resistencia y operatividad.",
+      "description2": "Comprendemos lo crucial que es contar con insumos confiables en entornos donde la rapidez es vital. Por ello, cimentamos nuestra operación en:",
+      "button": "Ver la Tienda"
+    },
+    "strategicPartner": {
+      "title": "Más que un mero proveedor, deseamos convertirnos en tu aliado estratégico.",
+      "description1": "Motivos para preferirnos: Pocas compañías entienden las exigencias del ramo de la salud. Nosotros sí.",
+      "description2": "Filtro especializado de herramientas: Seleccionamos únicamente insumos que cumplen cabalmente con las normas de uso y salud.",
+      "description3": "Compromiso con las entregas: Agilizamos los canales de envío para que cuentes con tus pedidos de forma puntual.",
+      "description4": "Soporte inmediato: Entendemos las emergencias sanitarias. Actuamos con celeridad y efectividad.",
+      "description5": "Fidelidad y consistencia: Construimos relaciones de largo plazo basadas en la seriedad y la calidad.",
+      "button": "Hablar con un Especialista"
+    },
+    "results": {
+      "title": "Nos enfocamos en tus objetivos, no solo en la comercialización",
+      "description1": "Sabemos que las instituciones no solo compran herramientas, sino el respaldo de que su clínica o sanatorio marche de manera fluida, ininterrumpida y protegida.",
+      "description2": "Por esta razón, nuestro servicio tiene como fin otorgar beneficios comprobables:",
+      "items": {
+        "item1": "Reducción de contratiempos logísticos",
+        "item2": "Mejora del control de stock interno",
+        "item3": "Absoluta certeza en el abastecimiento",
+        "item4": "Confianza plena en cada solicitud efectuada"
+      },
+      "description3": "Nos alineamos a tus metas cotidianas para constituir un colaborador que aporte valor concreto, desmarcándonos de la figura de un distribuidor tradicional.",
+      "button": "Hablar con un Especialista"
+    },
+    "contact": {
+      "title": "Estamos a tu disposición para ayudarte",
+      "description1": "Si buscas un proveedor comprometido, con conocimiento de la industria y procesos de distribución ágiles, estás en el lugar correcto.",
+      "phone": "Línea de contacto: +52 1 55 2583 6217",
+      "description2": "Atención directa para cotizaciones, dudas técnicas y pedidos especiales.",
+      "button": "Contáctanos"
+    }
+  },
+  "customPlan": {
+    "imageAlt": "Logotipo",
+    "hero": {
+      "badge": "Módulo de Cotizaciones Particulares y Cobros",
+      "title": "Módulo de Cotizaciones Particulares y Cobros",
+      "description": "Por favor, acceda a esta sección únicamente si cuenta con una clave de seguimiento provista por el personal de Medion MX."
+    },
+    "authorized": {
+      "title": "Convenio Particular Certificado",
+      "description": "Los montos introducidos en esta sección deben coincidir plenamente con la cifra final neta que pactó previamente con su ejecutivo."
+    },
+    "form": {
+      "quoteLabel": "Número de Seguimiento / Cotización Emitida",
+      "quotePlaceholder": "Por ejemplo: CMA-2026-894",
+      "amountLabel": "Monto Total (Con Impuestos Incluidos)"
+    },
+    "errors": {
+      "quoteRequired": "Resulta indispensable ingresar la clave de cotización brindada por su asesor.",
+      "invalidAmount": "La cifra global introducida debe ser mayor a $0.00 MXN."
+    },
+    "product": {
+      "name": "Orden Especial - Presupuesto #{quote}",
+      "description": "Bienes médicos validados previamente con el departamento de ventas bajo el número #{quote}."
+    },
+    "infoText": {
+      "before": "Al hacer clic en el botón inferior, se añadirá una partida personalizada a su carrito con el concepto de ",
+      "after": " preparada para ser pagada."
+    },
+    "buttons": {
+      "adding": "Agregando concepto particular...",
+      "addToCart": "Sumar al Carrito de Compra"
+    }
+  },
+  "store": {
+    "hero": {
+      "badge": "Equipamiento para profesionales",
+      "title": "Material médico avalado y con alta eficiencia",
+      "description": "Consulte consumibles para el área de la salud elegidos con criterios de durabilidad y confiabilidad para clínicas, sanatorios y consultorios."
+    },
+    "filters": {
+      "title": "Filtros específicos",
+      "subtitle": "Segmenta tus opciones",
+      "clear": "Limpiar",
+      "categories": "Categorías",
+      "allCategories": "Todas las áreas",
+      "priceRange": "Rango de costos",
+      "min": "Mín",
+      "max": "Máx"
+    },
+    "search": {
+      "placeholder": "Buscar insumos, categorías o material clínico...",
+      "button": "Buscar"
+    },
+    "sort": {
+      "name": "Orden alfabético (A-Z)",
+      "priceAsc": "Precio: menor a mayor",
+      "priceDesc": "Precio: mayor a menor",
+      "newest": "Ingresos más recientes"
+    },
+    "results": {
+      "showing": "Mostrando",
+      "of": "de un total de",
+      "products": "productos"
+    },
+    "empty": {
+      "title": "No se encontraron resultados",
+      "description": "Intenta modificando los criterios de búsqueda o restableciendo los filtros para visualizar opciones.",
+      "button": "Restablecer filtros"
+    },
+    "product": {
+      "noImage": "Sin foto disponible",
+      "new": "Nuevo",
+      "featured": "Destacado",
+      "price": "Precio",
+      "viewDetail": "Detalles"
+    },
+    "pagination": {
+      "previous": "Previo",
+      "next": "Siguiente"
+    },
+    "tax": "MXN + IVA"
+  },
+  "productDetail": {
+    "loadingTitle": "Cargando especificaciones",
+    "loadingDescription": "Estamos recopilando los datos técnicos de este artículo.",
+    "notFoundTitle": "No se localizó el artículo",
+    "notFoundDescription": "El material consultado no cuenta con stock o el enlace ingresado es incorrecto.",
+    "backToStore": "Regresar a la tienda",
+    "breadcrumbStore": "Tienda",
+    "noImage": "Imagen de muestra no disponible",
+    "new": "Nuevo",
+    "featured": "Destacado",
+    "price": "Precio",
+    "description": "Especificaciones del producto",
+    "featureQuality": "Respaldo médico",
+    "featureQualityDesc": "Insumos verificados mediante rigurosos controles de calidad y normativas sanitarias.",
+    "featureShipping": "Envío resguardado",
+    "featureShippingDesc": "Empaque y traslado profesional para asegurar la integridad de cada paquete.",
+    "featureSupport": "Atención especializada",
+    "featureSupportDesc": "Asistencia directa para centros hospitalarios, laboratorios y especialistas.",
+    "added": "Agregado exitosamente",
+    "addToCart": "Añadir a la cesta",
+    "cartQuantityText": "Has seleccionado",
+    "cartQuantityUnits": "unidad(es) de este material en tu carrito.",
+    "relatedTitle": "Productos sugeridos",
+    "relatedDescription": "Otras opciones dentro de la misma categoría de insumos.",
+    "viewAll": "Ver todo el stock",
+    "noRelatedTitle": "Sin opciones relacionadas",
+    "noRelatedDescription": "Por el momento no contamos con otros artículos en este rubro.",
+    "viewDetail": "Ver información",
+    "tax": "MXN + IVA"
+  },
+  "home": {
+    "hero": {
+      "title": "Donde el servicio experto transmite confianza",
+      "description": "Somos una empresa enfocada en la distribución de materiales médicos y hospitalarios, validados a través de estrictas revisiones de calidad y desempeño.",
+      "imageAlt": "Especialista médica de la salud"
+    },
+    "products": {
+      "title": "Calidad demostrada en cada producto",
+      "description": "Consumibles médicos y quirúrgicos seleccionados de forma estricta por su desempeño y altos estándares.",
+      "button": "Explorar Tienda"
+    },
+    "payment": {
+      "title": "Cobros personalizados",
+      "description": "Determinados equipos requieren un presupuesto a la medida debido a sus propiedades, volumen de adquisición o condiciones particulares.",
+      "contactButton": "Contáctanos",
+      "payButton": "Pagar",
+      "imageAlt": "Personal de servicio técnico"
+    },
+    "contact": {
+      "title": "Estamos listos para atenderte",
+      "description": "Si buscas un distribuidor serio, con enfoque profesional y dinámicos periodos de entrega, cuenta con nuestro apoyo.",
+      "phoneDescription": "Línea de atención para solicitar presupuestos, orientación y servicio postventa.",
+      "button": "Contáctanos",
+      "imageAlt": "Médico de guardia"
+    }
+  },
+  "features": {
+    "badge": "Opciones de salud especializadas",
+    "title": "Las herramientas que te ofrecemos",
+    "description": "Contamos con un catálogo diseñado para cubrir las distintas demandas en el ejercicio médico diario.",
+    "subtitle": "Nuestros insumos se enfocan en:",
+    "items": [
+      "Soportar los procesos sanitarios y el control diario",
+      "Garantizar condiciones de higiene, resguardo y seguimiento",
+      "Agilizar los procesos de los médicos y del personal de enfermería",
+      "Optimizar los tiempos de reacción y cuidado del paciente"
+    ],
+    "footer": "Cada elemento ha sido estructurado para integrarse sin problemas a tus actividades cotidianas."
+  },
+  "footer": {
+    "title": "Contáctanos",
+    "address": {
+      "title": "Sede principal",
+      "line1": "Avenida Jaime Balmes 11,",
+      "line2": "Depto 15A Edificio A Piso 1",
+      "line3": "Colonia Polanco I Sección, Demarcación Miguel Hidalgo",
+      "line4": "Código Postal 11510, Ciudad de México"
+    },
+    "support": {
+      "title": "Soporte al cliente",
+      "phone": "Central telefónica",
+      "email": "Correo electrónico",
+      "description": "Comunicación directa para cotizaciones, orientación técnica y estado de pedidos."
+    },
+    "payments": {
+      "title": "Canales de pago aceptados"
+    },
+    "legal": {
+      "terms": "Condiciones de Uso y Compra de Productos Médicos",
+      "privacy": "Aviso de Privacidad de Datos Personales",
+      "returns": "Política de Devoluciones, Cancelaciones y Reembolsos"
+    },
+    "copyright": "2026 © Todos los derechos reservados por Medion MX"
+  }
+}

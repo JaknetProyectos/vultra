@@ -1,0 +1,457 @@
+[
+    {
+        "url_origen": "https://medconfianza.com/producto/agarraderas-para-bosu/",
+        "titulo": "Agarraderas para Bosu",
+        "precio_numerico": 312.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-31.webp",
+        "descripcion": "Mejora tu estabilidad y control con nuestras agarraderas para Bosu, ¡Son el complemento perfecto para tus entrenamientos!"
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/banda-de-resistencia-5-5-m/",
+        "titulo": "Banda de Resistencia 5.5 m",
+        "precio_numerico": 952.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-33.webp",
+        "descripcion": "Banda de resistencia dura Sanctband de 5.5 m, ideal para mejorar fuerza, flexibilidad y resistencia en cualquier lugar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cama-plegable/",
+        "titulo": "Cama Plegable",
+        "precio_numerico": 5516.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-54.webp",
+        "descripcion": "La cama plegable de tratamiento con altura ajustable de 61 a 87 cm, dimensiones de 180×61 cm y con un grosor de 8 cm. Fabricada con estructura de madera y relleno de espuma de poliuretano, soporta hasta 150 kg. Su diseño portátil y cómodo la hace ideal para terapias a domicilio."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-de-prevendaje/",
+        "titulo": "Cinta de Prevendaje",
+        "precio_numerico": 166.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-17.webp",
+        "descripcion": "Cinta de Prevendaje Physiotape de  7 cm × 27 m, ideal para prevenir lesiones y brindar soporte muscular. Fabricada en espuma de poliuretano, es duradera, elástica y fácil de aplicar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-elastica-10x80-cm/",
+        "titulo": "Cinta Elástica 10×80 cm",
+        "precio_numerico": 304.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-14.webp",
+        "descripcion": "Cinta Elástica para Sujetar Electrodos de 10×80 cm, ideal para fijar electrodos de manera segura y cómoda. Material duradero, suave y reutilizable, en color azul para fácil identificación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-elastica-3x60-cm/",
+        "titulo": "Cinta Elástica 3×60 cm",
+        "precio_numerico": 92.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-14.webp",
+        "descripcion": "Cinta elástica para sujetar de 3×60 cm, ideal para fijar electrodos de manera segura y cómoda. Material duradero, suave y reutilizable, en color azul para fácil identificación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-elastica-8x60-cm/",
+        "titulo": "Cinta Elástica 8×60 cm",
+        "precio_numerico": 216.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-60.webp",
+        "descripcion": "Cinta Elástica 8×60 cm, ideal para fijar electrodos de manera segura y cómoda. Material duradero, suave y reutilizable, en color azul para fácil identificación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-vendaje-funcional-2/",
+        "titulo": "Cinta Vendaje Funcional",
+        "precio_numerico": 798.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-58.webp",
+        "descripcion": "Cinta para vendaje funcional, flexible y resistente, previene lesiones y acelera la recuperación, brindando soporte sin limitar el movimiento. (5 pzas)"
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/cinta-vendaje-funcional/",
+        "titulo": "Cinta Vendaje Funcional",
+        "precio_numerico": 159.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-57.webp",
+        "descripcion": "Cinta para vendaje funcional, flexible y resistente, previene lesiones y acelera la recuperación, brindando soporte sin limitar el movimiento."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-cervical/",
+        "titulo": "Compresa Cervical",
+        "precio_numerico": 423.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-6.webp",
+        "descripcion": "Alivia el dolor y la tensión en tu cuello con nuestra compresa cervical de 60 cm, diseñada para brindar comodidad y bienestar instantáneo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-electrica/",
+        "titulo": "Compresa Eléctrica",
+        "precio_numerico": 3081.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-55.webp",
+        "descripcion": "La compresa eléctrica perfecta para aliviar dolores musculares, calambres y molestias articulares con la máxima comodidad y eficacia, proporciona un calor terapéutico uniforme para un alivio rápido y duradero."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-estandar/",
+        "titulo": "Compresa Estándar",
+        "precio_numerico": 392.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-56.webp",
+        "descripcion": "La compresa estándar de 25×30 cm, alivia el dolor y la tensión en cualquier parte del cuerpo. Es resistente y cómoda, ideal para uso terapéutico intensivo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-fria-de-vinilo/",
+        "titulo": "Compresa Fría de Vinilo",
+        "precio_numerico": 428.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-5.webp",
+        "descripcion": "La compresa fría de vinilo es una opción práctica y eficaz para la terapia de frío en zonas específicas del cuerpo. Su diseño flexible y resistente la hace ideal tanto para el ámbito clínico como para el hogar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-hombro-rodilla/",
+        "titulo": "Compresa Hombro-Rodilla",
+        "precio_numerico": 514.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-7.webp",
+        "descripcion": "Compresa de hombro-rodilla de 25×30 cm, hipoalergénica y con relleno de bentonita, ideal para adaptarse a tratamientos de calor en el hombro o rodilla."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-lumbar-ch/",
+        "titulo": "Compresa Lumbar CH",
+        "precio_numerico": 475.2,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-9.webp",
+        "descripcion": "Compresa lumbar chica de 25×45 cm, hipoalergénica y con relleno de bentonita, ideal en tratamiento con calor, que alivian el dolor y le tensión en la zona lumbar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-lumbar-m/",
+        "titulo": "Compresa Lumbar M",
+        "precio_numerico": 591.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-9.webp",
+        "descripcion": "Compresa lumbar mediana de 25 x 60 cm, hipoalergénica y con relleno de bentonita, ideal para tratamientos de calor, que alivian el dolor y la tensión."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresa-xl/",
+        "titulo": "Compresa XL",
+        "precio_numerico": 769.2,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-10.webp",
+        "descripcion": "Compresa extra grande de 37×60 cm, garantiza que el calor llegue a cada zona afectada, ideal para aliviar la tensión muscular y mejorar la circulación, diseñada para cubrir áreas amplias del cuerpo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresero-de-2-compresas/",
+        "titulo": "Compresero de 2 compresas",
+        "precio_numerico": 8143.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-46.webp",
+        "descripcion": "El compresero de 2 compresas garantiza una distribución uniforme del calor en tus compresas y mantenlas siempre listas para tus terapias."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/compresero-para-4-compresas/",
+        "titulo": "Compresero para 4 compresas",
+        "precio_numerico": 15129.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-47.webp",
+        "descripcion": "Con el Compresero para 4 compresas garantiza una distribución uniforme del calor y mantenlas siempre listas para tus terapias."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/dr-aktive-para-hombro/",
+        "titulo": "Dr. Aktive para Hombro",
+        "precio_numerico": 3933.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-53.webp",
+        "descripcion": "Dr. Aktive para Hombro es un dispositivo de compresión fría ergonómico, ideal para tratar lesiones en el hombro como bursitis, tendinitis e hinchazón proporcionando alivio rápido y efectivo mediante geles fríos y compresión ajustable."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitador-de-balance/",
+        "titulo": "Ejercitador de Balance",
+        "precio_numerico": 832.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-32.webp",
+        "descripcion": "El ejercitador de balance es ideal para mejorar equilibrio, propiocepción y fuerza. Incluye un lado rugoso para estimulación y un lado plano para versatilidad. Ajustable según el nivel de desafío."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitador-de-mano-resistencia-alta/",
+        "titulo": "Ejercitador de Mano Resistencia Alta",
+        "precio_numerico": 555.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-21.webp",
+        "descripcion": "El ejercitador de mano resistencia alta es una herramienta para fortalecer y mejorar la flexibilidad de los dedos, ideal para rehabilitación y desarrollo equilibrado de la mano y el antebrazo con un nivel de resistencia alta."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitador-de-mano-resistencia-ligera/",
+        "titulo": "Ejercitador de Mano Resistencia Ligera",
+        "precio_numerico": 555.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-19.webp",
+        "descripcion": "El ejercitador de mano ligero es una herramienta para fortalecer y mejorar la flexibilidad de los dedos, ideal para rehabilitación y desarrollo equilibrado de la mano y el antebrazo con un nivel de resistencia ligera."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitador-de-mano-resistencia-media/",
+        "titulo": "Ejercitador de Mano Resistencia Media",
+        "precio_numerico": 555.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-20.webp",
+        "descripcion": "El ejercitador de mano resistencia media es una  herramienta para fortalecer y mejorar la flexibilidad de los dedos, ideal para rehabilitación y desarrollo equilibrado de la mano y el antebrazo con un nivel de resistencia media."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitador-de-pedales/",
+        "titulo": "Ejercitador de Pedales",
+        "precio_numerico": 6639.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-51.webp",
+        "descripcion": "Equipo con resistencia magnética, ideal para fortalecer músculos, mejorar la movilidad y estimular la circulación en extremidades superiores e inferiores."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ejercitadores-de-dedos-y-mano/",
+        "titulo": "Ejercitadores de Dedos y Mano",
+        "precio_numerico": 2156.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-22.webp",
+        "descripcion": "El kit Digi-Flex de 5 piezas de ejercitadores de dedos y mano, fortalece dedos, manos y antebrazos con resistencia progresiva y diseño versátil para ejercicios específicos o integrales."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/electrodo-de-mariposa-50x85-mm/",
+        "titulo": "Electrodo de Mariposa 50×85 mm",
+        "precio_numerico": 544.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-4.webp",
+        "descripcion": "Electrodo autoadhesivo de mariposa Longest de 50×85 mm, adhesión duradera, cómodos y compatibles con dispositivos de electroterapia."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/electroestimulador-mt-8000/",
+        "titulo": "Electroestimulador MT-8000",
+        "precio_numerico": 5520.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-42.webp",
+        "descripcion": "Electroestimulador portátil con dos canales y 4 tipos de corriente. Permite el control de intensidad. Cuenta con pantalla LCD  y es de fácil programación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/enfriador-de-compresas/",
+        "titulo": "Enfriador de Compresas",
+        "precio_numerico": 19818.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-48.webp",
+        "descripcion": "El enfriador de compresas esta diseñado para mantener las compresas frías y listas para usar, cuenta con una capacidad de 5,3 pies cúbicos. Contiene 12 compresas frías estándar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/entrenador-de-balance/",
+        "titulo": "Entrenador de Balance",
+        "precio_numerico": 679.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-65.webp",
+        "descripcion": "Entrenador de balance con 2 grados de dificultad, ideal para mejorar equilibrio, estabilidad y coordinación en rehabilitación y entrenamiento físico."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/equipo-mt2200/",
+        "titulo": "Equipo MT2200",
+        "precio_numerico": 57600.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-43.webp",
+        "descripcion": "Equipo de electroterapia avanzado con 2 canales independientes, 42 protocolos personalizables, y capacidad para guardar 80 configuraciones."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/equipo-ut2200/",
+        "titulo": "Equipo UT2200",
+        "precio_numerico": 55200.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-43.webp",
+        "descripcion": "El Ultrasonido Multifrecuencial Nutek UT2200 es un equipo de ultrasonido multifrecuencial que ofrece tratamientos analgésicos, regenerativos y relajantes."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/esponja-6x8-5-cm/",
+        "titulo": "Esponja 6×8.5 cm",
+        "precio_numerico": 106.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-11.webp",
+        "descripcion": "Esponja 6×8.5 cm para electrodos FIAB, óptima conducción, comodidad y seguridad. Duradera, lavable y reutilizable, perfecta para clínicas y uso doméstico."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/esponja-7x10-cm/",
+        "titulo": "Esponja 7×10 cm",
+        "precio_numerico": 120.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-12.webp",
+        "descripcion": "La esponja para electrodo de caucho Nu-Tek de 7×10 cm, facilita la colocación de electrodos en tratamientos de electroterapia, reduciendo la irritación y asegurando un contacto suave y seguro."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/esponja-8x12-cm/",
+        "titulo": "Esponja 8×12 cm",
+        "precio_numerico": 128.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-13.webp",
+        "descripcion": "Esponja para Electrodos Nu-Tek de 8×12 cm, óptima conducción, comodidad y seguridad. Duraderas, lavables y reutilizables, perfectas para clínicas y uso doméstico."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/gel-para-hombro-dr-aktive/",
+        "titulo": "Gel para Hombro Dr. Aktive",
+        "precio_numerico": 1815.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-2.webp",
+        "descripcion": "El repuesto de gel para hombro Dr. Aktive alivia el dolor y reduce la hinchazón con terapia de frío. Se adapta a cualquier hombro y se fija con velcro."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/gel-para-rodilla-dr-aktive/",
+        "titulo": "Gel para Rodilla Dr. Aktive",
+        "precio_numerico": 1412.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-1.webp",
+        "descripcion": "El repuesto de gel para rodilla Dr. Aktive alivia el dolor y reduce la hinchazón con terapia de frío. Se adapta a cualquier rodilla y se fija con velcro."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/gel-para-tobillo-dr-aktive/",
+        "titulo": "Gel para Tobillo Dr. Aktive",
+        "precio_numerico": 1412.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-3.webp",
+        "descripcion": "El repuesto de gel para tobillo Dr. Aktive alivia el dolor y reduce la hinchazón con terapia de frío. Se adapta a cualquier tobillo y se fija con velcro."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/goniometro/",
+        "titulo": "Goniómetro",
+        "precio_numerico": 132.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-64.webp",
+        "descripcion": "Goniómetro transparente de 30 cm, mide el rango de movimiento articular de 0 a 180°, hecho de plástico resistente y ligero, ideal para clínicas de rehabilitación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/inclinometro-asa/",
+        "titulo": "Inclinómetro ASA",
+        "precio_numerico": 2090.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-35.webp",
+        "descripcion": "Teléfono: +52 1 55 2583 6217Email: hello@medconfianza.comAtención directa para cotizaciones, asesoría y seguimiento."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/interruptor-de-paro-de-emergencia/",
+        "titulo": "Interruptor de Paro de Emergencia",
+        "precio_numerico": 487.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-34.webp",
+        "descripcion": "Interruptor de paro de emergencia para equipos Nu-Tek, garantiza seguridad y control rápido en situaciones críticas. Compatible, fácil de instalar y duradero."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/kit-bandas-de-resistencia-pro/",
+        "titulo": "Kit Bandas de Resistencia Pro",
+        "precio_numerico": 537.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-59.webp",
+        "descripcion": "El kit bandas de resistencia pro CanDo son ideales para rehabilitación, acondicionamiento físico y entrenamiento, ofreciendo una solución económica y efectiva para ejercitar tanto la parte superior como la inferior del cuerpo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/kit-bandas-de-resistencia/",
+        "titulo": "Kit Bandas de Resistencia",
+        "precio_numerico": 358.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-18.webp",
+        "descripcion": "Kit Bandas de Resistencia es un paquete con 5 bandas de resistencia, ideales para rehabilitación y entrenamiento con resistencia progresiva de extra suave hasta extra fuerte."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/kit-de-herramientas-para-masilla-terapeutica/",
+        "titulo": "Kit de Herramientas para Masilla Terapéutica",
+        "precio_numerico": 2151.6,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-25.webp",
+        "descripcion": "Cinco herramientas para masilla terapéutica, diseñadas para mejorar la funcionalidad en ejercicios de rehabilitación."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/kit-masillas-terapeuticas-2oz/",
+        "titulo": "Kit Masillas Terapéuticas 2oz",
+        "precio_numerico": 686.4,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-23.webp",
+        "descripcion": "Teléfono: +52 1 55 2583 6217Email: hello@medconfianza.comAtención directa para cotizaciones, asesoría y seguimiento."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/kit-masillas-terapeuticas-4oz/",
+        "titulo": "Kit Masillas Terapéuticas 4oz",
+        "precio_numerico": 1221.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-24.webp",
+        "descripcion": "Teléfono: +52 1 55 2583 6217Email: hello@medconfianza.comAtención directa para cotizaciones, asesoría y seguimiento."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/lentes-de-proteccion/",
+        "titulo": "Lentes de Protección",
+        "precio_numerico": 576.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-36.webp",
+        "descripcion": "Lentes de protección diseñados para garantizar una protección ocular óptima y comodidad durante procedimientos con láseres de alta intensidad."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/magnetoterapia-therafield-led/",
+        "titulo": "Magnetoterapia Therafield Led",
+        "precio_numerico": 17998.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-37.webp",
+        "descripcion": "El dispositivo de magnetoterapia portátil Therafield Led, diseñado para aliviar el dolor y promover la regeneración ósea mediante campos magnéticos. Ofrece programas preconfigurados, permite ajustes personalizados y permite conectar dos aplicadores a la vez."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/mstim-drop-lg-233/",
+        "titulo": "MStim Drop LG-233",
+        "precio_numerico": 8400.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-39.webp",
+        "descripcion": "El MStim Drop LG-233 corrige el pie caído y mejora la marcha mediante estimulación eléctrica, ideal para la rehabilitación de miembros inferiores. Con modos de trabajo, sensor inteligente y conexión inalámbrica, es compacto, portátil y cómodo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/paquete-de-parafina-de-6-libras/",
+        "titulo": "Paquete de Parafina de 6 Libras",
+        "precio_numerico": 1200.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-63.webp",
+        "descripcion": "Teléfono: +52 1 55 2583 6217Email: hello@medconfianza.comAtención directa para cotizaciones, asesoría y seguimiento."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/parafinero-therabath/",
+        "titulo": "Parafinero Therabath",
+        "precio_numerico": 11760.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-49.webp",
+        "descripcion": "El parafinero Therabath es ideal para rehabilitación mediante termoterapia, aliviando el dolor muscular y mejorando la circulación. Mantiene una temperatura segura entre 52.2 y 56.7 °C gracias a sus termostatos internos."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/parafinero-waxwel/",
+        "titulo": "Parafinero WaxWel",
+        "precio_numerico": 6106.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-50.webp",
+        "descripcion": "El parafinero WaxWel es un dispositivo que ofrece tratamientos de parafina eficaces y cómodos. Su diseño robusto y capacidad para uso continuo lo hacen ideal para clínicas y hogares."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cacahuate-50x100-cm/",
+        "titulo": "Pelota Cacahuate 50×100 cm",
+        "precio_numerico": 1639.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-62.webp",
+        "descripcion": "La Pelota Cacahuate CanDo ayuda a mejorar el equilibrio, la coordinación y la fuerza. En color naranja, con 50 cm de diámetro x 100 cm de largo."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cando-45-cm/",
+        "titulo": "Pelota CanDo 45 cm",
+        "precio_numerico": 694.8,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-26.webp",
+        "descripcion": "La pelota CanDo 45 cm de diámetro, mejora el equilibrio, la flexibilidad y la fuerza. Fabricada con material antideslizante y ABS extra grueso, soporta hasta 275 kg."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cando-55-cm/",
+        "titulo": "Pelota CanDo 55 cm",
+        "precio_numerico": 834.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-27.webp",
+        "descripcion": "La pelota CanDo 55 cm de diámetro, mejora el equilibrio, la flexibilidad y la fuerza. Fabricada con material antideslizante y ABS extra grueso, soporta hasta 275 kg."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cando-65-cm/",
+        "titulo": "Pelota CanDo 65 cm",
+        "precio_numerico": 972.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-28.webp",
+        "descripcion": "La pelota CanDo de 65 cm de diámetro es ideal para mejorar el equilibrio, la flexibilidad y la fuerza. Fabricada con material antideslizante y ABS extra grueso, soporta hasta 275 kg."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cando-75-cm/",
+        "titulo": "Pelota CanDo 75 cm",
+        "precio_numerico": 1179.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-29.webp",
+        "descripcion": "La pelota CanDo de 75 cm de diámetro, mejora el equilibrio, la flexibilidad y la fuerza. Fabricada con material antideslizante y ABS extra grueso, soporta hasta 275 kg."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/pelota-cando-85-cm/",
+        "titulo": "Pelota CanDo 85 cm",
+        "precio_numerico": 1318.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-30.webp",
+        "descripcion": "La pelota CanDo de 85 cm de diámetro es ideal para mejorar el equilibrio, la flexibilidad y la fuerza. Fabricada con material antideslizante y ABS extra grueso, soporta hasta 275 kg."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/physiotape-dinamico/",
+        "titulo": "Physiotape Dinámico",
+        "precio_numerico": 252.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-16.webp",
+        "descripcion": "Physiotape dinámico es una cinta elástica que proporciona soporte y estabilidad sin restringir el movimiento, ideal para la actividad física intensa. Duradera y cómoda, con adhesión prolongada."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/set-ejercitador-manos/",
+        "titulo": "Set Ejercitador Manos",
+        "precio_numerico": 750.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-61.webp",
+        "descripcion": "El set Ejercitador manos esta diseñados para fortalecer, mejorar la flexibilidad y optimizar la coordinación. Ideales para rehabilitación y el tratamiento de diversas afecciones, cuentan con tres niveles de resistencia para adaptarse a diferentes necesidades y progresos."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/superstim-v-pro/",
+        "titulo": "SuperStim V Pro",
+        "precio_numerico": 8280.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-40.webp",
+        "descripcion": "Electroestimulador portátil con dos canales independientes, permite elegir entre 5 tipos de ondas para tu tratamiento: TENS, EMS, IF, RUSAS y Microcorriente. Compacto y fácil de usar."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/traccion-lumbar/",
+        "titulo": "Tracción Lumbar",
+        "precio_numerico": 24147.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-52.webp",
+        "descripcion": "Equipo diseñado para aliviar el dolor de espalda, proporcionando tracción suave y ajustable. Es fácil de usar, seguro y portátil, ideal para tratamientos en casa."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/twin-stim-plus/",
+        "titulo": "Twin Stim Plus",
+        "precio_numerico": 7920.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-41.webp",
+        "descripcion": "Electroestimulador portátil de 4 canales con corrientes para alivio del dolor y estimulación muscular, que mejora la movilidad, el flujo sanguíneo y apoya la prevención de complicaciones postquirúrgicas."
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ultrasonido-ht-906/",
+        "titulo": "Ultrasonido HT-906",
+        "precio_numerico": 5400.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-38.webp",
+        "descripcion": "El HT-906 es un equipo portátil de ultrasonido terapéutico desarrollado para la intervención en patologías músculo-esqueléticas, proporcionando una herramienta eficiente y segura para analgesia y procesos de rehabilitación en contextos clínicos y domiciliarios. Permite la aplicación de ultrasonido terapéutico de forma controlada y personalizada, favoreciendo la analgesia, mejora de la circulación, relajación muscular y los procesos de […]"
+    },
+    {
+        "url_origen": "https://medconfianza.com/producto/ultrasonido-ut1041/",
+        "titulo": "Ultrasonido UT1041",
+        "precio_numerico": 43440.0,
+        "imagen_url": "https://medconfianza.com/wp-content/uploads/2026/04/PRODUCTO-45.webp",
+        "descripcion": "El ultrasonido multifrecuencial UT1041 ofrece terapias precisas con cabezales de 1 y 5 cm², memoria programable, es ideal para fisioterapia y rehabilitación."
+    }
+]

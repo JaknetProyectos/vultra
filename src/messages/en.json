@@ -1,0 +1,376 @@
+{
+  "header": {
+    "logoAlt": "Brand Emblem",
+    "titleAlt": "Heading Banner",
+    "cart": "Basket",
+    "openMenu": "Show navigation",
+    "closeMenu": "Hide navigation",
+    "nav": {
+      "home": "Main",
+      "about": "Who We Are",
+      "store": "Catalog",
+      "contact": "Get in Touch"
+    }
+  },
+  "cartPage": {
+    "breadcrumb": {
+      "home": "Main",
+      "summary": "1. Review Items",
+      "shippingPayment": "2. Dispatch & Payment Info"
+    },
+    "success": {
+      "title": "Transaction Completed Successfully!",
+      "description": "Your checkout has been approved. The preparation of your healthcare supplies has now commenced.",
+      "paymentReference": "Transaction ID:",
+      "paidAmount": "Total Settled:",
+      "transactionStatus": "Processing Status:",
+      "approved": "AUTHORIZED",
+      "backToCatalog": "Return to Catalog"
+    },
+    "empty": {
+      "title": "Your shopping basket is currently empty",
+      "description": "No clinical materials were detected in your active checkout instance.",
+      "goToStore": "Browse Catalog"
+    },
+    "order": {
+      "title": "Selected Items in Your Request",
+      "clear": "Remove Supplies"
+    },
+    "financial": {
+      "title": "Cost Breakdown",
+      "couponPlaceholder": "Promo code",
+      "applyCoupon": "Validate",
+      "appliedCoupon": "Voucher {code} (-{discount}%)",
+      "remove": "Delete",
+      "couponInvalid": "The promotional code entered is not valid or has reached its expiration date.",
+      "subtotal": "Items Subtotal:",
+      "discount": "Applied Deduction:",
+      "netTotal": "Final Amount Due:",
+      "tax": "TAX {tax}"
+    },
+    "actions": {
+      "proceedToPayment": "Advance to Secure Checkout",
+      "processing": "Confirming Balance via Keycop...",
+      "payAmount": "Settle {amount}",
+      "backToCart": "Edit your items / Insert promo code"
+    },
+    "errors": {
+      "declined": "The payment attempt was rejected by your financial institution.",
+      "connection": "A communication error occurred with the processing network."
+    },
+    "metadata": {
+      "couponApplied": "Active promotion applied",
+      "standardSale": "Regular digital purchase"
+    },
+    "form": {
+      "buyerTitle": "Client / Billing Information",
+      "addressTitle": "Delivery and Fulfillment Details",
+      "paymentTitle": "Protected Payment Gateway",
+      "firstName": "Given Name(s) *",
+      "lastName": "Family Name(s) *",
+      "email": "Electronic Mail *",
+      "phone": "Cell Phone (10 digits) *",
+      "company": "Organization / Clinic or Hospital Name (Optional)",
+      "streetAddress": "Street Name, Outer Number and Unit Number *",
+      "streetAddressPlaceholder": "Av. Universidad 450, Suite 4",
+      "neighborhood": "District / Cross Streets (Optional)",
+      "neighborhoodPlaceholder": "Vertiz Narvarte Neighborhood",
+      "city": "Municipality or City *",
+      "state": "State / Province *",
+      "statePlaceholder": "CDMX",
+      "postalCode": "Postal Code *",
+      "country": "Nation",
+      "mexico": "Mexico (MX)",
+      "cardNumber": "Card Digits (Visa / Mastercard) *",
+      "cardNumberPlaceholder": "4152 0000 0000 0000",
+      "cardHolderName": "Full Name of Cardholder *",
+      "cardHolderPlaceholder": "Exactly as displayed on the plastic",
+      "expiryMonth": "Expiration Month (MM) *",
+      "expiryMonthPlaceholder": "05",
+      "expiryYear": "Expiration Year (YY) *",
+      "expiryYearPlaceholder": "29",
+      "cvv": "Security Code (CVV) *",
+      "cvvPlaceholder": "•••"
+    },
+    "security": {
+      "note": "Safeguarded and Encrypted Checkout"
+    },
+    "images": {
+      "octanoAlt": "Keycop Platform",
+      "securePaymentAlt": "Safe transaction"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Let us discover the perfect fit for your medical center.",
+      "description": "Our staff is ready to assist you with estimations, technical advice, stock levels, and attentive service for your healthcare facility."
+    },
+    "info": {
+      "visit": {
+        "title": "Our Center",
+        "subtitle": "Headquarters",
+        "address1": "Avenida Jaime Balmes 11,",
+        "address2": "Suite 15A Building A Level 1",
+        "address3": "Polanco 1st Section",
+        "address4": "Miguel Hidalgo District",
+        "address5": "C.P. 11510, CDMX"
+      },
+      "call": {
+        "title": "Telephone",
+        "subtitle": "Tailored guidance"
+      },
+      "email": {
+        "title": "Messages",
+        "subtitle": "Immediate assistance"
+      }
+    },
+    "form": {
+      "title": "Drop us a line",
+      "description": "Share your requirements and our specialists will respond with a customized quote or professional advice.",
+      "fullName": "First and last name",
+      "fullNamePlaceholder": "Your complete name",
+      "email": "E-mail address",
+      "emailPlaceholder": "name@domain.com",
+      "message": "Inquiries",
+      "messagePlaceholder": "How can our team assist you?",
+      "submit": "Submit Details",
+      "sending": "Transmitting information..."
+    },
+    "success": {
+      "title": "Form submitted successfully!",
+      "description": "We appreciate you reaching out. Our team will analyze your comments and get back to you shortly."
+    },
+    "errors": {
+      "unexpected": "An unpredicted error occurred while processing your message."
+    },
+    "map": {
+      "title": "Where to find us",
+      "subtitle": "Polanco · Mexico City",
+      "iframeTitle": "Map view of CentroMédicoAvanza"
+    }
+  },
+  "about": {
+    "images": {
+      "medicalProfessionalAlt": "Healthcare expert"
+    },
+    "whyChooseUs": {
+      "title": "Where top tier performance brings peace of mind",
+      "description1": "In medical environments, guesswork is not an option. Every single supply, instrument, and apparatus deployed directly shapes patient care, efficiency, and diagnostic accuracy.",
+      "description2": "We are an enterprise specialized in supplying clinical and medical equipment, focused on providing secure alternatives that fit perfectly within sanatoriums, clinics, and doctor offices.",
+      "description3": "Our role extends far past commercial distribution: we aim to be a cornerstone of dependability for our patrons, streamlining their everyday workflows with premium quality instruments.",
+      "button": "Request expert consultation"
+    },
+    "hero": {
+      "badge": "Assurance backing each of our medical products",
+      "title": "Assurance backing each of our medical products",
+      "description1": "We operate as distributors dedicated to replenishing hospital and clinical provisions, selected through demanding benchmarks of durability and operation.",
+      "description2": "We know how vital it is to have reliable gear in critical situations where every moment matters. Because of this, we ground our service on:",
+      "button": "Explore Catalog"
+    },
+    "strategicPartner": {
+      "title": "Far beyond simple vendors, we aim to be your ideal commercial partner.",
+      "description1": "Why rely on us: Not all companies understand the strict demands of the medical field. We truly do.",
+      "description2": "Rigorous equipment curation: We filter out anything that doesn't fully satisfy regulatory and clinical parameters.",
+      "description3": "Focus on prompt logistics: We refine our delivery chains so you obtain your essential items right when needed.",
+      "description4": "Swift support turnaround: We recognize health emergencies. We respond with velocity and exactness.",
+      "description5": "Fidelity and steadiness: We cultivate enduring partnerships rooted in accountability and high standards.",
+      "button": "Connect with a Consultant"
+    },
+    "results": {
+      "title": "We focus on your objectives, not just making sales",
+      "description1": "We recognize that facilities are not just buying gear, but the certainty that their medical center will operate seamlessly, continuously, and safely.",
+      "description2": "For this reason, our management intends to deliver quantifiable advantages:",
+      "items": {
+        "item1": "Mitigation of unexpected operational risks",
+        "item2": "Enhanced flow in internal supply chains",
+        "item3": "Absolute certainty regarding materials handling",
+        "item4": "Complete confidence in every purchase order"
+      },
+      "description3": "We adapt to your daily targets to serve as a collaborator that introduces true utility, separating ourselves from ordinary suppliers.",
+      "button": "Connect with a Consultant"
+    },
+    "contact": {
+      "title": "Our team is prepared to guide you",
+      "description1": "If you are searching for an authoritative distributor with deep technical knowledge and dependable shipments, you have arrived at the right site.",
+      "phone": "Direct phone line: +52 1 55 2583 6217",
+      "description2": "Dedicated line for budgeting inquiries, general questions, and processing orders.",
+      "button": "Write to Us"
+    }
+  },
+  "customPlan": {
+    "imageAlt": "Brand Emblem",
+    "hero": {
+      "badge": "Dedicated Invoicing and Special Quotes Interface",
+      "title": "Dedicated Invoicing and Special Quotes Interface",
+      "description": "Please utilize this module exclusively if you possess a reference number provided by a representative from Medion MX."
+    },
+    "authorized": {
+      "title": "Direct Arrangement Confirmed",
+      "description": "The values entered into this form must precisely match the final net cost previously established with your representative."
+    },
+    "form": {
+      "quoteLabel": "Internal Reference Number / Official Quote",
+      "quotePlaceholder": "e.g., CMA-2026-894",
+      "amountLabel": "Grand Total (Tax Included)"
+    },
+    "errors": {
+      "quoteRequired": "It is essential to input the specific reference number given by your account executive.",
+      "invalidAmount": "The entered total must be an amount higher than $0.00 MXN."
+    },
+    "product": {
+      "name": "Custom Order - Estimate #{quote}",
+      "description": "Medical apparatus previously negotiated with the sales division under reference number #{quote}."
+    },
+    "infoText": {
+      "before": "By clicking the confirmation button below, a personalized entry will be added to your basket titled ",
+      "after": " set for final billing."
+    },
+    "buttons": {
+      "adding": "Injecting custom entry...",
+      "addToCart": "Add to Shopping Basket"
+    }
+  },
+  "store": {
+    "hero": {
+      "badge": "Medical supply catalog",
+      "title": "Certified medical apparatus with superior reliability",
+      "description": "Browse selected clinical disposables evaluated for resilience and safety within hospitals, health clinics, and doctor offices."
+    },
+    "filters": {
+      "title": "Advanced search features",
+      "subtitle": "Narrow down your options",
+      "clear": "Reset",
+      "categories": "Product Areas",
+      "allCategories": "All product areas",
+      "priceRange": "Cost parameters",
+      "min": "Minimum",
+      "max": "Maximum"
+    },
+    "search": {
+      "placeholder": "Look up clinical products, areas, or surgical instruments...",
+      "button": "Apply Filters"
+    },
+    "sort": {
+      "name": "Alphabetical order (A-Z)",
+      "priceAsc": "Cost: lower to higher",
+      "priceDesc": "Cost: higher to lower",
+      "newest": "Latest additions"
+    },
+    "results": {
+      "showing": "Displaying",
+      "of": "out of a total of",
+      "products": "available items"
+    },
+    "empty": {
+      "title": "No matches discovered",
+      "description": "Consider refining your search phrases or removing active parameters to view alternative items.",
+      "button": "Reset all filters"
+    },
+    "product": {
+      "noImage": "Visual representation unavailable",
+      "new": "Brand New",
+      "featured": "Top Pick",
+      "price": "Cost",
+      "viewDetail": "Explore Item"
+    },
+    "pagination": {
+      "previous": "Back",
+      "next": "Forward"
+    },
+    "tax": "MXN + TAX"
+  },
+  "productDetail": {
+    "loadingTitle": "Opening technical details",
+    "loadingDescription": "We are assembling the item specifications document.",
+    "notFoundTitle": "Item could not be found",
+    "notFoundDescription": "The requested model is out of stock or the link provided contains typographical errors.",
+    "backToStore": "Return to catalog",
+    "breadcrumbStore": "Catalog",
+    "noImage": "No picture available",
+    "new": "Brand New",
+    "featured": "Top Pick",
+    "price": "Cost",
+    "description": "Item specifications sheet",
+    "featureQuality": "Clinical verification",
+    "featureQualityDesc": "Materials validated through demanding medical and quality assurance procedures.",
+    "featureShipping": "Secured distribution",
+    "featureShippingDesc": "Specialized sorting and transit methods to shield every parcel.",
+    "featureSupport": "Guidance from professionals",
+    "featureSupportDesc": "Individualized support lines for diagnostic centers, laboratories, and clinicians.",
+    "added": "Successfully added to your order",
+    "addToCart": "Add to basket",
+    "cartQuantityText": "You have allocated",
+    "cartQuantityUnits": "piece(s) of this specific supply inside your shopping basket.",
+    "relatedTitle": "Comparable products",
+    "relatedDescription": "Alternative choices belonging to the identical line of materials.",
+    "viewAll": "Display entire inventory",
+    "noRelatedTitle": "No comparable suggestions available",
+    "noRelatedDescription": "At this moment, we do not host separate options within this exact category.",
+    "viewDetail": "Review details",
+    "tax": "MXN + TAX"
+  },
+  "home": {
+    "hero": {
+      "title": "Where professional expertise delivers peace of mind",
+      "description": "We are an enterprise devoted to wholesaling medical and clinic solutions, chosen under meticulous operational and functional protocols.",
+      "imageAlt": "Certified female healthcare specialist"
+    },
+    "products": {
+      "title": "Quality proven in every piece of equipment",
+      "description": "Clinical and ward disposables filtered thoroughly based on practical utility and elite benchmarks.",
+      "button": "Browse Catalog"
+    },
+    "payment": {
+      "title": "Tailored financial solutions",
+      "description": "Certain devices demand a custom quote due to their scale, bulk quantity requests, or explicit configurations.",
+      "contactButton": "Message Us",
+      "payButton": "Remit Payment",
+      "imageAlt": "Customer care representative"
+    },
+    "contact": {
+      "title": "We are here to support your operation",
+      "description": "If you require a dedicated distributor with technical expertise and prompt service turnarounds, count on us.",
+      "phoneDescription": "Direct connection for estimates, professional evaluation, and post-purchase follow-up.",
+      "button": "Message Us",
+      "imageAlt": "Medical doctor on staff"
+    }
+  },
+  "features": {
+    "badge": "Specialized clinical alternatives",
+    "title": "The answers we bring to you",
+    "description": "We maintain a portfolio crafted to resolve diverse requirements in standard medical practice.",
+    "subtitle": "Our systems are engineered to:",
+    "items": [
+      "Support healthcare assignments and day-to-day coordination",
+      "Maintain standards of cleanliness, safety, and operational monitoring",
+      "Accelerate the duties of clinicians and nursing personnel",
+      "Refine response parameters and patient oversight protocols"
+    ],
+    "footer": "Every element is built to assimilate smoothly into your regular routines."
+  },
+  "footer": {
+    "title": "Write to us",
+    "address": {
+      "title": "Corporate Location",
+      "line1": "Avenida Jaime Balmes 11,",
+      "line2": "Suite 15A Building A Level 1",
+      "line3": "Polanco 1st Section, Miguel Hidalgo District",
+      "line4": "Postal Code 11510, Mexico City"
+    },
+    "support": {
+      "title": "Client Care Services",
+      "phone": "Telephone line",
+      "email": "Electronic mail",
+      "description": "Direct communication channels for budgeting, technical support, and order tracking."
+    },
+    "payments": {
+      "title": "Accepted Settlement Formats"
+    },
+    "legal": {
+      "terms": "Terms of Use and Purchase of Medical Products",
+      "privacy": "Personal Data Privacy Notice",
+      "returns": "Returns, Cancellations, and Refunds Policy"
+    },
+    "copyright": "2026 © All rights retained by Medion MX"
+  }
+}
