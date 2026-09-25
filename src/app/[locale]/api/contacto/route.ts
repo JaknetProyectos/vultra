@@ -7,9 +7,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Configuración de variables globales
 const BRAND_NAME = "Vultra";
 const BRAND_URL = "https://vultra.com.mx";
-const BRAND_LOGO = "https://vexora.com.mx/title.png";
+const BRAND_LOGO = "https://vultra.com.mx/title.png";
 const BRAND_BANNER = "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-const SUPPORT_EMAIL = "atencion@mark-vera.com";
+const SUPPORT_EMAIL = "atencion@vultra.com.mx";
 const SENDER_EMAIL = `${BRAND_NAME} <${SUPPORT_EMAIL}>`;
 const PRIMARY_COLOR = "#7052ff";
 const BG_GRADIENT_START = "#7052ff";
