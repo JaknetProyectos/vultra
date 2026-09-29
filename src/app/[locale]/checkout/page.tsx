@@ -17,7 +17,8 @@ import {
     Loader2,
     ShieldCheck,
     Sparkles,
-    FileText
+    FileText,
+    ShoppingBag
 } from "lucide-react";
 import { EmailItem } from "@/types/email-item";
 import { ConfirmRequestBody } from "../api/checkout/route";
@@ -40,6 +41,7 @@ export default function CheckoutPage() {
     const router = useRouter();
     const { items, total: subtotal, clearCart } = useCart();
     const [loading, setLoading] = useState(false);
+    const [successOrderId, setSuccessOrderId] = useState<string | null>(null); // Estado para orden exitosa
     const t = useTranslations("checkoutPage");
 
     // Estado de Cupones
@@ -72,7 +74,7 @@ export default function CheckoutPage() {
         notes: "",
     });
 
-    // Cálculo de Descuentos y Total Final
+    // Cálculo de Descuentos, IVA y Total Final
     const discountAmount = useMemo(() => {
         if (!appliedCoupon) return 0;
         if (appliedCoupon.type === "percent") {
@@ -81,9 +83,17 @@ export default function CheckoutPage() {
         return Math.min(appliedCoupon.value, subtotal);
     }, [subtotal, appliedCoupon]);
 
-    const finalTotal = useMemo(() => {
+    const subtotalAfterDiscount = useMemo(() => {
         return Math.max(0, subtotal - discountAmount);
     }, [subtotal, discountAmount]);
+
+    const ivaAmount = useMemo(() => {
+        return subtotalAfterDiscount * 0.16; // 16% de IVA
+    }, [subtotalAfterDiscount]);
+
+    const finalTotal = useMemo(() => {
+        return subtotalAfterDiscount + ivaAmount;
+    }, [subtotalAfterDiscount, ivaAmount]);
 
     // Manejo de cambios en los inputs
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -198,6 +208,9 @@ export default function CheckoutPage() {
             });
 
             toast.success(t("toasts.paymentSuccess", { orderId: payResult.orderId }));
+            
+            // Mostrar pantalla de éxito y limpiar carrito
+            setSuccessOrderId(payResult.orderId);
             clearCart();
 
         } catch (error: any) {
@@ -207,6 +220,35 @@ export default function CheckoutPage() {
         }
     };
 
+    // 1. Renderizar vista de Éxito si hay un ID de orden
+    if (successOrderId) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-[#7052ff] via-[#8266ff] to-[#613be7] flex flex-col items-center justify-center p-6">
+                <div className="bg-white/90 mx-3 mt-16 backdrop-blur-xl border border-white/50 rounded-3xl p-10 max-w-md w-full text-center shadow-2xl transition-all scale-100 animate-in zoom-in-95 duration-500">
+                    <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                        <CheckCircle2 className="w-10 h-10 text-emerald-500" />
+                    </div>
+                    <h2 className="text-3xl font-black text-slate-900 mb-3">{t("success.title")}</h2>
+                    <p className="text-slate-600 mb-8 text-sm leading-relaxed">{t("success.description")}</p>
+                    
+                    <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 mb-8 shadow-sm">
+                        <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">{t("success.orderIdLabel")}</p>
+                        <p className="text-xl font-mono font-black text-slate-800 break-all">{successOrderId}</p>
+                    </div>
+
+                    <Link
+                        href="/"
+                        className="inline-flex items-center justify-center gap-2 w-full px-8 py-4 bg-gradient-to-r from-[#7f32f3] to-[#a033ff] hover:from-[#6e22df] hover:to-[#8e22ee] text-white font-bold rounded-2xl shadow-lg shadow-purple-900/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                    >
+                        <ShoppingBag className="w-5 h-5" />
+                        {t("success.continueShopping")}
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
+    // 2. Renderizar carrito vacío (solo si no hay successOrderId)
     if (items.length === 0) {
         return (
             <div className="min-h-screen bg-gradient-to-br from-[#7052ff] via-[#8266ff] to-[#613be7] flex flex-col items-center justify-center p-6">
@@ -246,9 +288,8 @@ export default function CheckoutPage() {
 
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-                    {/* Formulario Principal */}
+                    {/* Formulario Principal - Sin cambios, código condensado por espacio pero asume que es el mismo que tenías */}
                     <div className="lg:col-span-2 space-y-6">
-
                         {/* 1. Datos Personales */}
                         <div className="bg-white/70 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-xl space-y-5 transition-all hover:shadow-2xl hover:bg-white/75">
                             <div className="flex items-center gap-3 border-b border-purple-100/60 pb-3">
@@ -257,7 +298,6 @@ export default function CheckoutPage() {
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900">{t("contactSection.title")}</h3>
                             </div>
-
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">{t("contactSection.firstName")} *</label>
@@ -290,7 +330,6 @@ export default function CheckoutPage() {
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900">{t("addressSection.title")}</h3>
                             </div>
-
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="sm:col-span-2">
                                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">{t("addressSection.street")} *</label>
@@ -331,7 +370,6 @@ export default function CheckoutPage() {
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900">{t("paymentSection.title")}</h3>
                             </div>
-
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div className="sm:col-span-3">
                                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">{t("paymentSection.cardName")} *</label>
@@ -418,7 +456,7 @@ export default function CheckoutPage() {
                                 )}
                             </div>
 
-                            {/* Totales */}
+                            {/* Totales con IVA */}
                             <div className="space-y-3 border-t border-purple-100/60 pt-4 text-sm">
                                 <div className="flex justify-between text-slate-600 font-medium">
                                     <span>{t("subtotal")}</span>
@@ -430,6 +468,10 @@ export default function CheckoutPage() {
                                         <span>- {formatPrice(discountAmount)} MXN</span>
                                     </div>
                                 )}
+                                <div className="flex justify-between text-slate-500 font-medium">
+                                    <span>{t("iva")}</span>
+                                    <span>{formatPrice(ivaAmount)} MXN</span>
+                                </div>
                                 <div className="flex justify-between items-baseline border-t border-purple-100/60 pt-3">
                                     <span className="text-base font-bold text-slate-900">{t("totalToPay")}</span>
                                     <span className="text-2xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -438,7 +480,7 @@ export default function CheckoutPage() {
                                 </div>
                             </div>
 
-                            {/* Botón Final de Pago iOS Gradient */}
+                            {/* Botón Final de Pago */}
                             <button
                                 type="submit"
                                 disabled={loading}
@@ -462,24 +504,11 @@ export default function CheckoutPage() {
                             </p>
 
                             <div className="flex flex-row justify-center items-center gap-6 pt-2 opacity-80">
-                                <Image
-                                    src="/logo-keycop.webp"
-                                    alt="etomin"
-                                    width={120}
-                                    height={30}
-                                    className="object-contain"
-                                />
-                                <Image
-                                    src="/secure-payment.png"
-                                    alt="secure"
-                                    width={150}
-                                    height={20}
-                                    className="object-contain"
-                                />
+                                <Image src="/logo-keycop.webp" alt="etomin" width={120} height={30} className="object-contain" />
+                                <Image src="/secure-payment.png" alt="secure" width={150} height={20} className="object-contain" />
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

@@ -1,65 +1,72 @@
 {
   "cartPage": {
-    "emptyTitle": "Your shopping cart is empty",
-    "emptyDescription": "Looks like you haven't selected any design or consulting packages yet. Find inspiration and start reimagining your space today!",
-    "exploreServices": "Browse Services",
-    "title": "Shopping Cart",
-    "itemsSelected": "You have chosen {count} {itemLabel}",
+    "emptyTitle": "Your cart is currently empty",
+    "emptyDescription": "It looks like you haven't added any design or consulting services to your cart yet. Get inspired and transform your spaces today!",
+    "exploreServices": "Explore Services",
+    "title": "Your Shopping Cart",
+    "itemsSelected": "You selected {count} {itemLabel}",
     "service": "service",
     "services": "services",
     "badgeInteriorism": "Vultra",
-    "defaultServiceTitle": "Bespoke Service",
-    "variantLabel": "Option / Tier",
+    "defaultServiceTitle": "Tailored Service",
+    "variantLabel": "Plan / Option",
     "assignedTo": "Assigned to",
-    "decreaseQuantity": "Lower quantity",
-    "increaseQuantity": "Raise quantity",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
     "subtotal": "Subtotal",
-    "removeService": "Delete service",
-    "summaryTitle": "Order Breakdown",
-    "taxesFees": "Estimated Taxes & Fees",
-    "calculatedAtCheckout": "Calculated during checkout",
-    "estimatedTotal": "Estimated Total",
-    "proceedToCheckout": "Continue to Payment",
-    "securityNotice": "Encrypted and safe checkout. Coupon codes can be applied in the next step."
+    "removeService": "Remove service",
+    "summaryTitle": "Order Summary",
+    "taxesFees": "Taxes & Fees",
+    "calculatedAtCheckout": "Calculated at payment step",
+    "estimatedTotal": "Estimated Amount",
+    "proceedToCheckout": "Proceed to Checkout",
+    "securityNotice": "Secure transaction process. You can apply your discount coupon in the next step."
   },
   "checkoutPage": {
-    "emptyTitle": "No items ready for payment",
-    "emptyDescription": "Please head back to your cart and add design services before attempting checkout.",
-    "returnToCart": "Back to Shopping Cart",
-    "secureBadge": "256-Bit Encrypted Payment",
+    "iva": "VAT (16%)",
+    "success": {
+      "title": "Payment Successful!",
+      "description": "Your order has been processed successfully and we have sent a receipt to your email.",
+      "orderIdLabel": "Your Order ID:",
+      "continueShopping": "Return to store"
+    },
+    "emptyTitle": "No items to process",
+    "emptyDescription": "Return to the cart and add services prior to making your payment.",
+    "returnToCart": "Return to Cart",
+    "secureBadge": "256-Bit Secure Processing",
     "optional": "Optional",
-    "defaultServiceTitle": "Design Package",
-    "summaryTitle": "Order Overview",
-    "qtyLabel": "Qty",
-    "couponLabel": "Have a promo code?",
-    "couponPlaceholder": "e.g., PRO10",
-    "applyCoupon": "Apply Code",
-    "couponAppliedBadge": "Promo code {code} active",
-    "removeCoupon": "Remove Code",
+    "defaultServiceTitle": "Service",
+    "summaryTitle": "Order Summary",
+    "qtyLabel": "Qty.",
+    "couponLabel": "Do you have a promo code?",
+    "couponPlaceholder": "Sample: PRO10",
+    "applyCoupon": "Validate",
+    "couponAppliedBadge": "Coupon {code} applied successfully",
+    "removeCoupon": "Delete",
     "subtotal": "Subtotal",
-    "discount": "Savings",
-    "totalToPay": "Final total",
-    "processingPayment": "Processing transaction...",
+    "discount": "Discount",
+    "totalToPay": "Total due",
+    "processingPayment": "Processing your payment...",
     "payButton": "Pay {amount} MXN",
-    "termsNotice": "By completing this order, you confirm acceptance of our terms and privacy guidelines.",
-    "notesLabel": "Project directions or specifications",
-    "notesPlaceholder": "Add custom guidelines for your designer or architect...",
+    "termsNotice": "By clicking, you confirm agreement with our terms and policies.",
+    "notesLabel": "Project instructions",
+    "notesPlaceholder": "Relevant notes for your architect or designer...",
     "contactSection": {
-      "title": "Contact Details",
+      "title": "Contact Information",
       "firstName": "First Name",
       "lastName": "Last Name",
       "email": "Email Address",
-      "phone": "Phone Number",
-      "company": "Company Name",
-      "companyPlaceholder": "Your business or studio name"
+      "phone": "Phone",
+      "company": "Company",
+      "companyPlaceholder": "Name of your studio or company"
     },
     "addressSection": {
-      "title": "Billing Address",
-      "street": "Street Address",
-      "suite": "Apartment, Suite, or District",
+      "title": "Address",
+      "street": "Street & Number",
+      "suite": "Neighborhood, Unit or Apt.",
       "city": "City",
-      "state": "State / Region",
-      "zip": "Postal / ZIP Code",
+      "state": "State / Province",
+      "zip": "Postal Code",
       "country": "Country",
       "countries": {
         "MX": "Mexico (MX)",
@@ -68,22 +75,22 @@
       }
     },
     "paymentSection": {
-      "title": "Payment Method",
+      "title": "Payment Information",
       "cardName": "Cardholder Name",
-      "cardNamePlaceholder": "Name exactly as printed on card",
+      "cardNamePlaceholder": "Name as shown on card",
       "cardNumber": "Card Number",
-      "cardMonth": "Expiry Month (MM)",
-      "cardYear": "Expiry Year (YY)",
-      "cvv": "Security Code (CVV)"
+      "cardMonth": "Exp. Month (MM)",
+      "cardYear": "Exp. Year (YY)",
+      "cvv": "CVV"
     },
     "toasts": {
-      "enterCoupon": "Please enter a promotional code",
-      "couponApplied": "Promo code \"{code}\" applied successfully",
-      "invalidCoupon": "The code you entered is invalid or expired",
-      "emptyCart": "Your shopping cart contains no items",
-      "paymentDeclined": "The payment transaction was declined.",
-      "paymentSuccess": "Payment complete. Reference #{orderId}",
-      "paymentError": "An error occurred while processing your request"
+      "enterCoupon": "Enter a promotional code",
+      "couponApplied": "Coupon \"{code}\" entered successfully",
+      "invalidCoupon": "The code is invalid or expired",
+      "emptyCart": "Your cart contains no items",
+      "paymentDeclined": "Payment was not authorized.",
+      "paymentSuccess": "Payment confirmed. Order #{orderId}",
+      "paymentError": "An error occurred while processing the order"
     }
   },
   "header": {
@@ -93,65 +100,65 @@
     "openMenu": "Open menu",
     "packages": "Packages",
     "nav": {
-      "home": "HOME",
+      "home": "MAIN",
       "about": "ABOUT US",
-      "services": "SERVICES",
+      "services": "OFFERING",
       "contact": "INFORMATION"
     },
     "services": {
       "title": "Services",
-      "description": "Explore our catalog of solutions."
+      "description": "Discover our catalog of solutions."
     }
   },
   "hero": {
     "badge": "We Are Vultra",
     "title": {
-      "first": "Smart",
+      "first": "Intelligent",
       "highlight": "development",
-      "last": "for software and applications"
+      "last": "for software and mobile apps"
     },
-    "description": "We create modern, scalable digital solutions designed to automate processes, optimize operations, and accelerate your growth.",
-    "imageAlt": "Software development team working"
+    "description": "We build modern, scalable digital solutions designed to automate workflows, streamline operations, and boost your growth.",
+    "imageAlt": "Software development team at work"
   },
   "servicesSection": {
-    "badge": "What We Offer",
-    "title": "Our Services",
+    "badge": "What we offer",
+    "title": "Our services",
     "viewAll": "View All Services",
-    "viewService": "View service",
+    "viewService": "Explore service",
     "previous": "Previous",
     "next": "Next"
   },
   "whyUs": {
-    "badge": "What Sets Us Apart",
-    "title": "What Sets Us Apart",
-    "description": "We have a team of professionals with extensive experience in software development.",
+    "badge": "What sets us apart",
+    "title": "What sets us apart",
+    "description": "We count on a highly experienced professional team in software engineering.",
     "cta": "About Us",
     "distinguishingFeatures": [
-      "Continuous support",
-      "We maintain your operating systems",
-      "Solutions designed to scale with your business."
+      "Ongoing support",
+      "We keep your systems operational",
+      "Solutions designed to scale alongside your business."
     ],
     "imageAlt": "Happy Vultra team"
   },
   "pricing": {
-    "badge": "Our Offer",
+    "badge": "Our Pricing",
     "title": "PACKAGES",
     "popular": "Popular",
-    "moreInfo": "More Information",
+    "moreInfo": "More Details",
     "viewAll": "View All Packages",
     "tax": "+ VAT"
   },
   "ctaSection": {
-    "badge": "Digital Transformation",
-    "title": "Become a Digital Company",
-    "description": "We strive to understand and meet each client's technological needs by offering personalized services and exceptional results.",
+    "badge": "Digital transformation",
+    "title": "Transform into a digital business",
+    "description": "We are dedicated to understanding and satisfying each client's tech requirements through tailored services and outstanding outcomes.",
     "button": "Our Services",
-    "imageAlt": "Professional with laptop"
+    "imageAlt": "Professional using a laptop"
   },
   "footer": {
     "about": {
       "badge": "About us",
-      "description": "We develop custom software and applications focused on performance, automation, and scalability."
+      "description": "We build custom software and applications focusing on efficiency, automation, and scalability."
     },
     "titles": {
       "navigation": "Navigation",
@@ -163,48 +170,48 @@
       "about": "About Us",
       "services": "Our Services",
       "packages": "Packages",
-      "contact": "Contact Us"
+      "contact": "Get in Touch"
     },
     "services": {
-      "mobileApps": "Mobile Apps",
-      "customSoftware": "Custom Software",
+      "mobileApps": "Mobile applications",
+      "customSoftware": "Bespoke software",
       "systemIntegration": "System Integration",
-      "techConsulting": "Technology Consulting",
+      "techConsulting": "Tech Consulting",
       "automation": "Automation",
       "support": "Support & Maintenance"
     },
     "legal": {
       "privacy": "PRIVACY NOTICE",
       "terms": "TERMS AND CONDITIONS",
-      "refunds": "RETURNS AND REFUNDS POLICY"
+      "refunds": "RETURN AND REFUND POLICY"
     },
     "contact": {
-      "address": "Avenida Río Mixcoac 39 Floor 1 Office 103, Col. Insurgentes Mixcoac, Benito Juárez, Mexico City."
+      "address": "Río Mixcoac Avenue 39 Floor 1 Suite 103, Col. Insurgentes Mixcoac, Benito Juárez, CDMX."
     },
-    "paymentsAlt": "Payment methods",
+    "paymentsAlt": "Accepted payment methods",
     "copyright": "Vultra © {year}. All rights reserved."
   },
   "contactPage": {
     "banner": {
-      "title": "Contact Us",
-      "breadcrumb": "Contact Us"
+      "title": "Get in Touch",
+      "breadcrumb": "Get in Touch"
     },
     "info": {
-      "badge": "Let's Talk",
-      "title": "Get in Touch!",
-      "description": "Feel free to contact us for more information and discover how we can help you achieve your goals. We look forward to your message!"
+      "badge": "Let's Connect",
+      "title": "Contact Us!",
+      "description": "Feel free to reach out to us for further details and discover how we can assist you in reaching your milestones. We look forward to your message!"
     },
     "form": {
-      "name": "Name",
-      "phone": "Phone",
+      "name": "Full Name",
+      "phone": "Phone Number",
       "email": "Email Address",
-      "message": "Write your message",
-      "submit": "Send",
-      "sending": "Sending..."
+      "message": "Type your message",
+      "submit": "Submit",
+      "sending": "Submitting..."
     },
     "messages": {
-      "success": "Thank you for your message! We will contact you soon.",
-      "error": "An error occurred while sending the form."
+      "success": "Thank you for reaching out! We will get back to you shortly.",
+      "error": "An issue occurred while submitting the form."
     }
   },
   "aboutPage": {
@@ -216,67 +223,67 @@
       {
         "icon": "Lightbulb",
         "title": "Innovation",
-        "description": "We constantly seek new ways to improve and exceed expectations."
+        "description": "We continuously explore new ways to advance and surpass expectations."
       },
       {
         "icon": "Award",
         "title": "Quality",
-        "description": "We are committed to delivering solutions that meet the highest standards."
+        "description": "We are dedicated to delivering solutions that adhere to the highest standards."
       },
       {
         "icon": "Users",
         "title": "Integrity",
-        "description": "We act with honesty and transparency in all our interactions."
+        "description": "We conduct ourselves with complete honesty and openness in every interaction."
       },
       {
         "icon": "Heart",
         "title": "Commitment",
-        "description": "Absolute dedication to customer satisfaction."
+        "description": "Total dedication to fulfilling customer satisfaction."
       }
     ],
     "about": {
-      "imageAlt": "Vultra Team",
-      "badge": "About Us",
+      "imageAlt": "The Vultra Team",
+      "badge": "Who We Are",
       "title": "We Are Vultra",
-      "description": "We have the ability to understand and solve complex technological problems. We focus on delivering customized solutions that truly add value to your business. Our experience and dedication allow us to deliver high-quality, high-performance products.",
+      "description": "We possess the expertise to comprehend and resolve complex technology challenges. We concentrate on providing tailored solutions that bring genuine value to your business. Our track record and commitment empower us to deliver top-quality, high-performing products.",
       "features": {
-        "custom": "Custom Solutions",
-        "performance": "High Performance"
+        "custom": "Tailored solutions",
+        "performance": "High performance"
       }
     },
     "values": {
-      "badge": "What Guides Us",
+      "badge": "Our Principles",
       "title": "OUR VALUES"
     }
   },
   "customPackagePage": {
     "hero": {
-      "badge": "Custom Product",
-      "title": "Product Details"
+      "badge": "Tailored product",
+      "title": "Product Overview"
     },
     "breadcrumb": {
       "home": "Home",
       "services": "Services",
       "packages": "Packages",
-      "current": "Custom Package"
+      "current": "Tailored Package"
     },
     "product": {
-      "name": "Custom Package",
-      "imageAlt": "Custom package"
+      "name": "Tailored Package",
+      "imageAlt": "Customized package"
     },
     "description": {
-      "contactAdvisor": "Contact an advisor.",
-      "instructions": "To request a quote for a custom package, contact an advisor. Enter your custom package details to complete the corresponding payment."
+      "contactAdvisor": "Speak with an advisor.",
+      "instructions": "To get a quotation for a custom package, speak with an advisor. Provide your package details below to proceed with the corresponding payment."
     },
     "form": {
-      "badge": "Special Package",
-      "folioLabel": "Package Reference",
-      "folioPlaceholder": "Ex. AB-2026-001",
-      "amountLabel": "Amount to Pay",
+      "badge": "Custom Plan",
+      "folioLabel": "Package Folio",
+      "folioPlaceholder": "e.g. AB-2026-001",
+      "amountLabel": "Amount Due",
       "addToCart": "Add to Cart"
     },
     "total": {
-      "label": "Final Total"
+      "label": "Total Amount"
     }
   },
   "packages": {
@@ -286,25 +293,25 @@
     },
     "main": {
       "badge": "Our Packages",
-      "title": "Packages for every business size",
-      "featured": "Featured",
+      "title": "Plans suited for any company size",
+      "featured": "Recommended",
       "packageLabel": "Package {number}",
       "tax": "+ VAT"
     },
     "buttons": {
       "added": "Added",
-      "startNow": "Start Now"
+      "startNow": "Get Started Now"
     },
     "consulting": {
-      "title": "Do you have a quick technology question and don’t know who to ask?",
-      "description": "With our individual consulting services, get a clear answer in minutes. Perfect for solving urgent problems or making fast decisions without wasting time or money."
+      "title": "Have an urgent technology question and need expert guidance?",
+      "description": "Through our one-on-one advisory services, gain straightforward answers within minutes. Perfect for resolving pressing issues or making swift decisions without losing time or money."
     },
     "cta": {
-      "imageAlt": "Professional",
-      "badge": "Need more capacity?",
-      "title": "We have a custom-made package for you",
-      "description": "Contact us and one of our advisors will create a tailored package to meet your company’s needs",
-      "button": "Custom Package"
+      "imageAlt": "IT Specialist",
+      "badge": "Require greater scale?",
+      "title": "We provide custom-tailored package solutions",
+      "description": "Reach out and one of our advisors will design a custom plan specifically built around your company's requirements.",
+      "button": "Tailored Package"
     }
   },
   "services": {
@@ -314,47 +321,47 @@
     },
     "service": {
       "badge": "Service",
-      "readMore": "Read More"
+      "readMore": "Learn More"
     },
     "cta": {
-      "badge": "Boost your business",
-      "title": "Become a digital company",
-      "description": "We strive to understand and meet each client's technological needs, offering personalized services and exceptional results.",
-      "button": "View Packages",
-      "imageAlt": "Professional"
+      "badge": "Empower your business",
+      "title": "Transform into a digital business",
+      "description": "We strive to understand and meet each client's tech requirements through tailored services and outstanding outcomes.",
+      "button": "Explore Packages",
+      "imageAlt": "IT Professional"
     }
   },
   "serviceDetail": {
     "hero": {
-      "tag": "Technology service"
+      "tag": "Tech Solution"
     },
     "breadcrumb": {
       "home": "Home",
       "services": "Our services"
     },
     "feature": {
-      "placeholderLabel": "FeatureImage",
-      "placeholderDescription": "Add featured image here"
+      "placeholderLabel": "FeaturedImage",
+      "placeholderDescription": "Insert the main image here"
     },
     "aside": {
       "title": "Our services",
-      "subtitle": "Explore the rest of the available services."
+      "subtitle": "Discover other available services."
     },
     "description": {
-      "title": "Description",
-      "subtitle": "Clear overview of the service and the value it provides."
+      "title": "Overview",
+      "subtitle": "Clear summary of the service and the value it brings."
     },
     "benefits": {
-      "title": "Benefits",
-      "subtitle": "Results and advantages you get from this service."
+      "title": "Advantages",
+      "subtitle": "Outcomes and benefits you gain with this service."
     },
     "process": {
-      "title": "How we do it",
-      "subtitle": "Work process explained in expandable steps."
+      "title": "Our Approach",
+      "subtitle": "Workflow broken down into collapsible steps."
     },
     "notFound": {
       "title": "Service not found",
-      "description": "The service you are looking for is not available or does not exist. Review the services list to continue.",
+      "description": "The service you are looking for is currently unavailable or missing. Please check our services list to proceed.",
       "button": "View services"
     }
   },
@@ -362,53 +369,53 @@
     "contactEmail": {
       "internalHeroPretitle": "Incoming Lead",
       "internalHeroTitle": "New message received",
-      "internalHeroSubtitle": "A request was received from the website contact form. Review the information and follow up.",
+      "internalHeroSubtitle": "A submission was submitted through the website contact form. Review the details and follow up accordingly.",
       "labelName": "Name",
       "labelEmail": "Email",
-      "clientMessageTitle": "Client message",
-      "internalFollowUpNotice": "Reply directly to this email or write to {email} to follow up on the lead.",
-      "userHeroPretitle": "Message received",
-      "userHeroTitle": "Thank you for contacting us",
-      "userHeroSubtitle": "Your request has been successfully recorded. Our team will review it and reply as soon as possible.",
+      "clientMessageTitle": "Customer message",
+      "internalFollowUpNotice": "Reply directly to this email or send a message to {email} to manage the lead.",
+      "userHeroPretitle": "Submission received",
+      "userHeroTitle": "Thank you for reaching out",
+      "userHeroSubtitle": "Your inquiry was logged successfully. Our team will review it and reply as soon as possible.",
       "userGreeting": "Hello, {name}.",
-      "userBodyText": "We have received your message. Soon one of our specialists will get in touch with you through the email you provided.",
+      "userBodyText": "We have received your message. Shortly, one of our specialists will get in touch with you using the email address you submitted.",
       "labelRegisteredEmail": "Registered email",
       "labelSite": "Website",
-      "buttonBackToSite": "Back to website",
+      "buttonBackToSite": "Return to website",
       "internalSubject": "New lead: {name}",
-      "userSubject": "We have received your request - {brandName}",
+      "userSubject": "We have received your inquiry - {brandName}",
       "footerTagline": "{brandName} · Custom software and app development.",
       "footerRights": "© {year} · {brandName}. All rights reserved."
     },
     "checkoutEmail": {
-      "customerError": "Incomplete confirmation data.",
-      "customerSubject": "Purchase Confirmation - Order #{orderId}",
-      "businessSubject": "New Sale - Order #{orderId}",
-      "customerHeroPretitle": "Purchase Receipt",
+      "customerError": "Incomplete confirmation details.",
+      "customerSubject": "Purchase Receipt - Order #{orderId}",
+      "businessSubject": "New Order Placed - Order #{orderId}",
+      "customerHeroPretitle": "Proof of Purchase",
       "customerHeroTitle": "Thank you for your payment!",
-      "customerHeroSubtitle": "Hello {name}. We have successfully processed your order and are getting everything ready for you.",
+      "customerHeroSubtitle": "Hello {name}. We have successfully processed your order and are currently preparing everything for you.",
       "labelOrderNumber": "Order number",
       "labelDate": "Date",
-      "labelShippingAddress": "Shipping address",
-      "buttonBackToStore": "Back to store",
-      "businessHeroPretitle": "New Sale",
-      "businessHeroTitle": "Payment successfully recorded",
-      "businessHeroSubtitle": "A new purchase has been recorded on the platform. Review the billing and shipping details below.",
+      "labelShippingAddress": "Delivery address",
+      "buttonBackToStore": "Return to store",
+      "businessHeroPretitle": "New Sale Recorded",
+      "businessHeroTitle": "Payment successfully logged",
+      "businessHeroSubtitle": "A new order has been completed on the portal. Check the billing and delivery information below.",
       "labelCustomer": "Customer",
       "labelEmail": "Email",
       "labelPhone": "Phone",
       "labelOrder": "Order",
       "labelCustomerAddress": "Customer Address",
-      "labelAdditionalNotes": "Additional notes",
-      "tableConcept": "Item",
+      "labelAdditionalNotes": "Extra notes",
+      "tableConcept": "Item Description",
       "tableQuantity": "Qty.",
       "tableTotal": "Total",
-      "tableTotalPaid": "Total paid: {amount} MXN",
+      "tableTotalPaid": "Total amount paid: {amount} MXN",
       "currencyFormat": "{price} MXN",
-      "footerSupport": "If you have questions about this charge, contact us at",
+      "footerSupport": "If you have any questions regarding this charge, contact us at",
       "footerRights": "All rights reserved.",
-      "successMessage": "Emails sent successfully.",
-      "errorMessage": "Payment was successful but failed to send confirmation email."
+      "successMessage": "Emails delivered successfully.",
+      "errorMessage": "The payment went through successfully, but the confirmation email failed to send."
     }
   }
 }

@@ -10,7 +10,7 @@ const BRAND_NAME = "Vultra";
 const BRAND_URL = "https://vultra.com.mx";
 const BRAND_LOGO = "https://vultra.com.mx/title.png";
 const BRAND_BANNER = "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-const SUPPORT_EMAIL = "atencion@vultra.com.mx";
+const SUPPORT_EMAIL = "atencion@mark-vera.com";
 const SENDER_EMAIL = `${BRAND_NAME} <${SUPPORT_EMAIL}>`;
 const PRIMARY_COLOR = "#7052ff";
 const BG_GRADIENT_START = "#7052ff";
@@ -251,11 +251,10 @@ function infoGrid(items: { label: string; value: string; href?: string }[]) {
           >
             ${escapeHtml(item.label)}
           </p>
-          ${
-            item.href
-              ? `<a href="${escapeHtml(item.href)}" style="font-size: 14px; line-height: 1.4; color: #0f172a; text-decoration: none; font-weight: 600; display: block; word-break: break-word;">${escapeHtml(item.value)}</a>`
-              : `<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #0f172a; font-weight: 600; word-break: break-word;">${escapeHtml(item.value)}</p>`
-          }
+          ${item.href
+          ? `<a href="${escapeHtml(item.href)}" style="font-size: 14px; line-height: 1.4; color: #0f172a; text-decoration: none; font-weight: 600; display: block; word-break: break-word;">${escapeHtml(item.value)}</a>`
+          : `<p style="margin: 0; font-size: 14px; line-height: 1.4; color: #0f172a; font-weight: 600; word-break: break-word;">${escapeHtml(item.value)}</p>`
+        }
         </div>
       </td>
     `
@@ -358,26 +357,26 @@ export async function POST(req: NextRequest) {
       concept: t("tableConcept"),
       quantity: t("tableQuantity"),
       total: t("tableTotal"),
-      totalPaid: t("tableTotalPaid", { amount: "" }),
+      totalPaid: t("tableTotalPaid", { amount: formatPrice(amount) }),
       currencyFormat: t("currencyFormat", { price: "{price}" }),
     };
 
     const customerHTML = shell(`
       ${heroBlock(
-        t("customerHeroPretitle"),
-        t("customerHeroTitle"),
-        t("customerHeroSubtitle", { name: customer.nombre })
-      )}
+      t("customerHeroPretitle"),
+      t("customerHeroTitle"),
+      t("customerHeroSubtitle", { name: customer.nombre })
+    )}
 
       ${sectionStart()}
         ${infoGrid([
-          { label: t("labelOrderNumber"), value: `#${orderId}` },
-          { label: t("labelDate"), value: new Date().toLocaleDateString(locale === "en" ? "en-US" : "es-MX", { year: 'numeric', month: 'long', day: 'numeric' }) },
-        ])}
+      { label: t("labelOrderNumber"), value: `#${orderId}` },
+      { label: t("labelDate"), value: new Date().toLocaleDateString(locale === "en" ? "en-US" : "es-MX", { year: 'numeric', month: 'long', day: 'numeric' }) },
+    ])}
         
         ${infoGrid([
-          { label: t("labelShippingAddress"), value: clientAddress },
-        ])}
+      { label: t("labelShippingAddress"), value: clientAddress },
+    ])}
 
         ${itemsTable(items, amount, tableLabels)}
 
@@ -404,21 +403,21 @@ export async function POST(req: NextRequest) {
 
     const businessHTML = shell(`
       ${heroBlock(
-        t("businessHeroPretitle"),
-        t("businessHeroTitle"),
-        t("businessHeroSubtitle")
-      )}
+      t("businessHeroPretitle"),
+      t("businessHeroTitle"),
+      t("businessHeroSubtitle")
+    )}
 
       ${sectionStart()}
         ${infoGrid([
-          { label: t("labelCustomer"), value: clientName },
-          { label: t("labelEmail"), value: customer.email, href: `mailto:${customer.email}` },
-        ])}
+      { label: t("labelCustomer"), value: clientName },
+      { label: t("labelEmail"), value: customer.email, href: `mailto:${customer.email}` },
+    ])}
         
         ${infoGrid([
-          { label: t("labelPhone"), value: customer.telefono },
-          { label: t("labelOrder"), value: `#${orderId}` },
-        ])}
+      { label: t("labelPhone"), value: customer.telefono },
+      { label: t("labelOrder"), value: `#${orderId}` },
+    ])}
 
         <div style="margin-top: 16px; padding: 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
           <p style="margin: 0 0 8px 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: ${PRIMARY_COLOR};">

@@ -1,62 +1,69 @@
 {
   "cartPage": {
-    "emptyTitle": "El carrito está vacío",
-    "emptyDescription": "Aún no has sumado ningún servicio de diseño o consultoría a tu carrito. ¡Inspírate y dale nueva vida a tus espacios!",
-    "exploreServices": "Ver Servicios",
-    "title": "Tu Carrito de Compras",
-    "itemsSelected": "Seleccionaste {count} {itemLabel}",
+    "emptyTitle": "Tu carrito se encuentra vacío",
+    "emptyDescription": "Aún no has añadido ningún servicio de diseño o asesoría a tu carrito. ¡Inspírate y dale una nueva cara a tus espacios!",
+    "exploreServices": "Explorar Servicios",
+    "title": "Tu Carrito de Compra",
+    "itemsSelected": "Elegiste {count} {itemLabel}",
     "service": "servicio",
     "services": "servicios",
     "badgeInteriorism": "Vultra",
-    "defaultServiceTitle": "Servicio a la medida",
-    "variantLabel": "Opción / Plan",
-    "assignedTo": "Asignado a",
-    "decreaseQuantity": "Restar cantidad",
-    "increaseQuantity": "Sumar cantidad",
+    "defaultServiceTitle": "Servicio personalizado",
+    "variantLabel": "Plan / Opción",
+    "assignedTo": "Asignado para",
+    "decreaseQuantity": "Disminuir cantidad",
+    "increaseQuantity": "Aumentar cantidad",
     "subtotal": "Subtotal",
-    "removeService": "Quitar servicio",
-    "summaryTitle": "Detalle del pedido",
-    "taxesFees": "Cargos e Impuestos",
-    "calculatedAtCheckout": "Se calcula al pagar",
-    "estimatedTotal": "Monto estimado",
-    "proceedToCheckout": "Continuar al Pago",
-    "securityNotice": "Proceso de compra seguro. Podrás ingresar tu cupón en el siguiente paso."
+    "removeService": "Eliminar servicio",
+    "summaryTitle": "Resumen del pedido",
+    "taxesFees": "Impuestos y Cargos",
+    "calculatedAtCheckout": "Calculado en la pantalla de pago",
+    "estimatedTotal": "Total estimado",
+    "proceedToCheckout": "Ir al Pago",
+    "securityNotice": "Compra 100% segura. Podrás aplicar tu cupón en la siguiente etapa."
   },
   "checkoutPage": {
-    "emptyTitle": "Sin elementos para procesar",
-    "emptyDescription": "Regresa al carrito y añade servicios antes de realizar el pago.",
-    "returnToCart": "Regresar al Carrito",
-    "secureBadge": "Procesamiento Seguro 256-bit",
+    "iva": "IVA (16%)",
+    "success": {
+      "title": "¡Pago Exitoso!",
+      "description": "Tu orden ha sido procesada correctamente y hemos enviado un recibo a tu correo electrónico.",
+      "orderIdLabel": "ID de tu Orden:",
+      "continueShopping": "Volver a la tienda"
+    },
+    "emptyTitle": "No hay elementos para procesar",
+    "emptyDescription": "Regresa al carrito e incluye servicios antes de realizar el pago.",
+    "returnToCart": "Volver al Carrito",
+    "secureBadge": "Procesamiento Seguro de 256 bits",
     "optional": "Opcional",
     "defaultServiceTitle": "Servicio",
     "summaryTitle": "Resumen de la Orden",
     "qtyLabel": "Cant.",
-    "couponLabel": "¿Cuentas con un cupón?",
+    "couponLabel": "¿Tienes un código promocional?",
     "couponPlaceholder": "Ejemplo: PRO10",
-    "applyCoupon": "Validar",
-    "couponAppliedBadge": "Se aplicó el cupón {code}",
-    "removeCoupon": "Eliminar",
+    "applyCoupon": "Aplicar",
+    "couponAppliedBadge": "Se ha aplicado el cupón {code}",
+    "removeCoupon": "Quitar",
     "subtotal": "Subtotal",
     "discount": "Descuento",
-    "totalToPay": "Monto final",
-    "processingPayment": "Procesando la transacción...",
-    "payButton": "Abonar {amount} MXN",
-    "termsNotice": "Al hacer clic confirmas la aceptación de nuestras políticas y condiciones.",
-    "notesLabel": "Instrucciones del proyecto",
-    "notesPlaceholder": "Notas relevantes para tu diseñador o arquitecto...",
+    "totalToPay": "Total a pagar",
+    "processingPayment": "Procesando la orden...",
+    "payButton": "Pagar {amount} MXN",
+    "termsNotice": "Al hacer clic confirmas la aceptación de nuestros términos y condiciones.",
+    "notesLabel": "Indicaciones del proyecto",
+    "notesPlaceholder": "Comentarios o notas relevantes para tu arquitecto o diseñador...",
     "contactSection": {
-      "title": "Información de Contacto",
+      "title": "Datos de Contacto",
       "firstName": "Nombre",
       "lastName": "Apellidos",
-      "email": "Dirección de Correo",
+      "email": "Correo Electrónico",
       "phone": "Teléfono",
-      "company": "Empresa",
-      "companyPlaceholder": "Nombre de tu estudio o empresa"
+      "company": "Compañía",
+      "companyPlaceholder": "Nombre de tu empresa o despacho"
     },
     "addressSection": {
-      "title": "Domicilio",
+      "title": "Dirección de Entrega",
       "street": "Calle y Número",
-      "suite": "Colonia, Interior o Depto.",
+      "suite": "Colonia, N° interior o Depto.",
       "city": "Ciudad",
       "state": "Estado / Provincia",
       "zip": "Código Postal",
@@ -68,105 +75,105 @@
       }
     },
     "paymentSection": {
-      "title": "Datos del Pago",
+      "title": "Información del Pago",
       "cardName": "Titular de la tarjeta",
-      "cardNamePlaceholder": "Nombre grabado en el plástico",
-      "cardNumber": "Número de tarjeta",
-      "cardMonth": "Mes Exp. (MM)",
-      "cardYear": "Año Exp. (AA)",
+      "cardNamePlaceholder": "Nombre que figura en la tarjeta",
+      "cardNumber": "Número de la tarjeta",
+      "cardMonth": "Mes Venc. (MM)",
+      "cardYear": "Año Venc. (AA)",
       "cvv": "CVV"
     },
     "toasts": {
-      "enterCoupon": "Introduce un código promocional",
-      "couponApplied": "Cupón \"{code}\" ingresado con éxito",
-      "invalidCoupon": "El código es incorrecto o venció",
-      "emptyCart": "Tu carrito no contiene elementos",
-      "paymentDeclined": "El pago no fue autorizado.",
-      "paymentSuccess": "Pago confirmado. Orden #{orderId}",
-      "paymentError": "Surgió un error al procesar la orden"
+      "enterCoupon": "Ingresa un código promocional",
+      "couponApplied": "Cupón \"{code}\" aplicado con éxito",
+      "invalidCoupon": "El código es no válido o expiró",
+      "emptyCart": "Tu carrito no tiene artículos",
+      "paymentDeclined": "La transacción fue rechazada.",
+      "paymentSuccess": "Pago exitoso. Orden #{orderId}",
+      "paymentError": "Ocurrió un problema al procesar la orden"
     }
   },
   "header": {
-    "logoAlt": "Logo de Vultra",
+    "logoAlt": "Logotipo de Vultra",
     "titleAlt": "Título de Vultra",
     "cart": "Carrito",
-    "openMenu": "Abrir menú",
+    "openMenu": "Desplegar menú",
     "packages": "Paquetes",
     "nav": {
-      "home": "PRINCIPAL",
-      "about": "CONÓCENOS",
-      "services": "OFERTA",
-      "contact": "INFORMACIÓN"
+      "home": "INICIO",
+      "about": "NOSOTROS",
+      "services": "SERVICIOS",
+      "contact": "CONTACTO"
     },
     "services": {
       "title": "Servicios",
-      "description": "Explora nuestro catálogo de soluciones."
+      "description": "Descubre nuestro portafolio de soluciones."
     }
   },
   "hero": {
-    "badge": "Somos Vultra",
+    "badge": "Conoce Vultra",
     "title": {
       "first": "Desarrollo",
       "highlight": "inteligente",
-      "last": "para software y aplicaciones"
+      "last": "de software y aplicaciones"
     },
-    "description": "Creamos soluciones digitales modernas, escalables y diseñadas para automatizar procesos, optimizar operaciones y acelerar tu crecimiento.",
-    "imageAlt": "Equipo de desarrollo de software trabajando"
+    "description": "Creamos soluciones digitales avanzadas, escalables y orientadas a automatizar procesos, optimizar la operación e impulsar tu crecimiento.",
+    "imageAlt": "Equipo informático trabajando en desarrollo de software"
   },
   "servicesSection": {
     "badge": "Lo que ofrecemos",
     "title": "Nuestros servicios",
-    "viewAll": "Ver Todos Los Servicios",
-    "viewService": "Ver servicio",
+    "viewAll": "Ver Todos los Servicios",
+    "viewService": "Conocer servicio",
     "previous": "Anterior",
     "next": "Siguiente"
   },
   "whyUs": {
-    "badge": "Lo que nos distingue",
-    "title": "Lo que nos distingue",
-    "description": "Contamos con un equipo de profesionales de vasta experiencia en el desarrollo de software.",
+    "badge": "Lo que nos diferencia",
+    "title": "Por qué elegirnos",
+    "description": "Disponemos de un equipo profesional con amplia trayectoria en el desarrollo informático.",
     "cta": "Sobre Nosotros",
-    "imageAlt": "Equipo feliz de Vultra",
+    "imageAlt": "Integrantes del equipo Vultra",
     "distinguishingFeatures": [
-      "Soporte continuo",
-      "Mantenemos tus sistemas operativos",
-      "Soluciones diseñadas para escalar con tu negocio."
+      "Asistencia y soporte permanente",
+      "Aseguramos la operatividad de tus sistemas",
+      "Soluciones preparadas para crecer junto con tu negocio."
     ]
   },
   "pricing": {
     "badge": "Nuestra Oferta",
     "title": "PAQUETES",
-    "popular": "Popular",
-    "moreInfo": "Más Información",
-    "viewAll": "Ver Todos Los Paquetes",
+    "popular": "Más Popular",
+    "moreInfo": "Más Detalles",
+    "viewAll": "Ver Todos los Paquetes",
     "tax": "+ IVA"
   },
   "ctaSection": {
-    "badge": "Transformación digital",
-    "title": "Conviértete en una empresa digital",
-    "description": "Nos esforzamos por entender y satisfacer las necesidades tecnológicas de cada cliente, ofreciendo servicios personalizados y resultados excepcionales.",
+    "badge": "Evolución digital",
+    "title": "Lleva tu empresa al entorno digital",
+    "description": "Nos dedicamos a comprender y satisfacer los requerimientos tecnológicos de cada negocio, ofreciendo atención a la medida y resultados sobresalientes.",
     "button": "Nuestros Servicios",
-    "imageAlt": "Profesional con laptop"
+    "imageAlt": "Profesional trabajando con laptop"
   },
   "footer": {
     "about": {
-      "badge": "Sobre nosotros",
-      "description": "Desarrollamos software y aplicaciones personalizadas con enfoque en rendimiento, automatización y escalabilidad."
+      "badge": "Acerca de nosotros",
+      "description": "Creamos software y aplicaciones personalizadas enfocadas en el rendimiento, la automatización y la escalabilidad."
     },
     "titles": {
       "navigation": "Navegación",
       "services": "Servicios",
-      "legal": "Legal",
+      "legal": "Aspectos Legales",
       "contact": "Contacto"
     },
     "navigation": {
       "about": "Nosotros",
       "services": "Nuestros servicios",
       "packages": "Paquetes",
-      "contact": "Contáctanos"
+      "contact": "Contacto"
     },
     "services": {
-      "mobileApps": "Apps móviles",
+      "mobileApps": "Aplicaciones móviles",
       "customSoftware": "Software a medida",
       "systemIntegration": "Integración de Sistemas",
       "techConsulting": "Consultoría Tecnológica",
@@ -179,20 +186,20 @@
       "refunds": "POLÍTICA DE DEVOLUCIONES Y REEMBOLSOS"
     },
     "contact": {
-      "address": "Avenida Río Mixcoac 39 Piso 1 Despacho 103, Col. Insurgentes Mixcoac, Benito Juárez, CDMX."
+      "address": "Av. Río Mixcoac 39 Piso 1 Despacho 103, Col. Insurgentes Mixcoac, Benito Juárez, CDMX."
     },
-    "paymentsAlt": "Métodos de pago",
+    "paymentsAlt": "Formas de pago",
     "copyright": "Vultra © {year}. Todos los derechos reservados."
   },
   "contactPage": {
     "banner": {
-      "title": "Contáctanos",
-      "breadcrumb": "Contáctanos"
+      "title": "Contacto",
+      "breadcrumb": "Contacto"
     },
     "info": {
-      "badge": "Hablemos",
-      "title": "¡Contáctanos!",
-      "description": "No dudes en ponerte en contacto con nosotros para obtener más información y descubrir cómo podemos ayudarte a alcanzar tus objetivos. ¡Esperamos tu mensaje!"
+      "badge": "Escríbenos",
+      "title": "¡Ponte en contacto!",
+      "description": "No dudes en escribirnos para recibir mayores informes y conocer cómo podemos guiarte hacia el logro de tus metas. ¡Esperamos tu mensaje!"
     },
     "form": {
       "name": "Nombre",
@@ -203,8 +210,8 @@
       "sending": "Enviando..."
     },
     "messages": {
-      "success": "¡Gracias por tu mensaje! Te contactaremos pronto.",
-      "error": "Ocurrió un error al enviar el formulario."
+      "success": "¡Agradecemos tu mensaje! Nos pondremos en contacto muy pronto.",
+      "error": "Surgió un inconveniente al enviar el formulario."
     }
   },
   "aboutPage": {
@@ -216,67 +223,67 @@
       {
         "icon": "Lightbulb",
         "title": "Innovación",
-        "description": "Constantemente buscamos nuevas formas de mejorar y superar las expectativas."
+        "description": "Exploramos de manera constante alternativas para optimizar y rebasar cualquier expectativa."
       },
       {
         "icon": "Award",
         "title": "Calidad",
-        "description": "Nos comprometemos a entregar soluciones que cumplen con los más altos estándares."
+        "description": "Asumimos el compromiso de brindar soluciones regidas por los estándares más elevados."
       },
       {
         "icon": "Users",
         "title": "Integridad",
-        "description": "Actuamos con honestidad y transparencia en todas nuestras interacciones."
+        "description": "Nos conducimos con absoluta honestidad y transparencia en cada relación."
       },
       {
         "icon": "Heart",
         "title": "Compromiso",
-        "description": "Dedicación absoluta a la satisfacción de nuestros clientes."
+        "description": "Entrega plena hacia la satisfacción total de nuestros clientes."
       }
     ],
     "about": {
-      "imageAlt": "Equipo Vultra",
-      "badge": "Sobre Nosotros",
+      "imageAlt": "Equipo de Vultra",
+      "badge": "Nuestra Empresa",
       "title": "Somos Vultra",
-      "description": "Tenemos la capacidad para entender y resolver problemas tecnológicos complejos. Nos enfocamos en ofrecer soluciones personalizadas que realmente agreguen valor a tu negocio. Nuestra experiencia y dedicación nos permiten entregar productos de alta calidad y rendimiento.",
+      "description": "Contamos con el conocimiento para entender y resolver desafíos tecnológicos complejos. Nos enfocamos en proporcionar soluciones a medida que aporten valor real a tu empresa. Nuestra experiencia y profesionalismo nos permiten ofrecer desarrollos de alto rendimiento y calidad superior.",
       "features": {
         "custom": "Soluciones personalizadas",
         "performance": "Alto rendimiento"
       }
     },
     "values": {
-      "badge": "Lo que nos guía",
+      "badge": "Nuestros pilares",
       "title": "NUESTROS VALORES"
     }
   },
   "customPackagePage": {
     "hero": {
-      "badge": "Producto personalizado",
+      "badge": "Solución a la medida",
       "title": "Detalles del Producto"
     },
     "breadcrumb": {
       "home": "Inicio",
       "services": "Servicios",
       "packages": "Paquetes",
-      "current": "Paquete a la medida"
+      "current": "Paquete personalizado"
     },
     "product": {
       "name": "Paquete a la medida",
-      "imageAlt": "Paquete personalizado"
+      "imageAlt": "Imagen del paquete personalizado"
     },
     "description": {
-      "contactAdvisor": "Contacta a un asesor.",
-      "instructions": "Para cotizar un paquete a la medida contacta a un asesor. Escribe los datos de tu paquete a la medida para realizar el pago correspondiente."
+      "contactAdvisor": "Consulta a un asesor.",
+      "instructions": "Para obtener una cotización a la medida ponte en contacto con un asesor. Ingresa los datos correspondientes a tu paquete para realizar el pago."
     },
     "form": {
-      "badge": "Paquete especial",
+      "badge": "Plan especial",
       "folioLabel": "Folio del paquete",
       "folioPlaceholder": "Ej. AB-2026-001",
       "amountLabel": "Monto a pagar",
       "addToCart": "Agregar al carrito"
     },
     "total": {
-      "label": "Final total"
+      "label": "Monto total"
     }
   },
   "packages": {
@@ -286,24 +293,24 @@
     },
     "main": {
       "badge": "Nuestros Paquetes",
-      "title": "Paquetes para cada tamaño de empresa",
-      "featured": "Destacado",
+      "title": "Planes adaptados a cada tamaño de empresa",
+      "featured": "Recomendado",
       "packageLabel": "Paquete {number}",
       "tax": "+ IVA"
     },
     "buttons": {
       "added": "Agregado",
-      "startNow": "Empieza Ahora"
+      "startNow": "Comenzar Ahora"
     },
     "consulting": {
-      "title": "¿Tienes una duda rápida sobre tecnología y no sabes a quién acudir?",
-      "description": "Con nuestros servicios de consultoría individual, obtén una respuesta clara en minutos. Ideal para resolver problemas urgentes o tomar decisiones rápidas sin perder tiempo ni dinero."
+      "title": "¿Requieres resolver una duda tecnológica urgente y buscas orientación experta?",
+      "description": "Mediante nuestros servicios de consultoría individual, obtendrás respuestas concretas en cuestión de minutos. La opción idónea para solucionar urgencias o tomar decisiones claves sin perder tiempo ni dinero."
     },
     "cta": {
-      "imageAlt": "Profesional",
-      "badge": "¿Necesitas más capacidad?",
-      "title": "Tenemos un paquete hecho a la medida",
-      "description": "Contáctanos y uno de nuestros asesores te hará un paquete a la medida para cubrir las necesidades de tu compañía",
+      "imageAlt": "Especialista de tecnología",
+      "badge": "¿Buscas una solución de mayor alcance?",
+      "title": "Contamos con un paquete hecho totalmente a la medida",
+      "description": "Comunícate con nosotros y un especialista formulará un plan adaptado puntualmente a las necesidades de tu empresa.",
       "button": "Paquete A Medida"
     }
   },
@@ -314,67 +321,67 @@
     },
     "service": {
       "badge": "Servicio",
-      "readMore": "Leer Más"
+      "readMore": "Conocer Más"
     },
     "cta": {
-      "badge": "Impulsa tu empresa",
-      "title": "Conviértete en una empresa digital",
+      "badge": "Potencia tu empresa",
+      "title": "Lleva tu empresa al entorno digital",
       "description": "Nos esforzamos por entender y satisfacer las necesidades tecnológicas de cada cliente, ofreciendo servicios personalizados y resultados excepcionales.",
-      "button": "Ver Paquetes",
-      "imageAlt": "Profesional"
+      "button": "Explorar Paquetes",
+      "imageAlt": "Profesional de tecnología"
     }
   },
   "serviceDetail": {
     "hero": {
-      "tag": "Servicio tecnológico"
+      "tag": "Solución tecnológica"
     },
     "breadcrumb": {
       "home": "Inicio",
       "services": "Nuestros servicios"
     },
     "feature": {
-      "placeholderLabel": "FeatureImage",
-      "placeholderDescription": "Agrega aquí la imagen destacada"
+      "placeholderLabel": "ImagenDestacada",
+      "placeholderDescription": "Coloca aquí la imagen principal"
     },
     "aside": {
       "title": "Nuestros servicios",
-      "subtitle": "Explora el resto de servicios disponibles."
+      "subtitle": "Conoce las demás opciones disponibles."
     },
     "description": {
       "title": "Descripción",
-      "subtitle": "Resumen claro del servicio y del valor que aporta."
+      "subtitle": "Visión clara sobre este servicio y la propuesta de valor que brinda."
     },
     "benefits": {
       "title": "Beneficios",
-      "subtitle": "Resultados y ventajas que obtienes con este servicio."
+      "subtitle": "Ventajas y resultados directos tras contratar este servicio."
     },
     "process": {
-      "title": "Cómo lo hacemos",
-      "subtitle": "Proceso de trabajo explicado en pasos desplegables."
+      "title": "Metodología de trabajo",
+      "subtitle": "Explicación detallada de nuestro proceso paso a paso."
     },
     "notFound": {
-      "title": "Servicio no encontrado",
-      "description": "El servicio que buscas no está disponible o no existe. Revisa la lista de servicios para continuar.",
+      "title": "Servicio no localizado",
+      "description": "El servicio que buscas no está disponible o no existe. Consulta el catálogo para continuar.",
       "button": "Ver servicios"
     }
   },
   "Emails": {
     "contactEmail": {
-      "internalHeroPretitle": "Lead Entrante",
-      "internalHeroTitle": "Nuevo mensaje recibido",
-      "internalHeroSubtitle": "Se recibió una solicitud desde el formulario de contacto del sitio web. Revisa la información y da seguimiento.",
+      "internalHeroPretitle": "Nuevo Prospecto",
+      "internalHeroTitle": "Mensaje entrante recibido",
+      "internalHeroSubtitle": "Se registró una solicitud desde el formulario de contacto del portal web. Revisa los detalles para darle seguimiento.",
       "labelName": "Nombre",
       "labelEmail": "Correo",
-      "clientMessageTitle": "Mensaje del cliente",
-      "internalFollowUpNotice": "Responde directamente a este correo o escribe a {email} para dar seguimiento al prospecto.",
-      "userHeroPretitle": "Mensaje recibido",
-      "userHeroTitle": "Gracias por contactarnos",
-      "userHeroSubtitle": "Tu solicitud quedó registrada correctamente. Nuestro equipo la revisará y te responderemos a la brevedad.",
+      "clientMessageTitle": "Contenido del mensaje",
+      "internalFollowUpNotice": "Responde directamente a este correo o escribe a {email} para darle atención al prospecto.",
+      "userHeroPretitle": "Solicitud recibida",
+      "userHeroTitle": "Gracias por comunicarte con nosotros",
+      "userHeroSubtitle": "Tu solicitud ha sido registrada con éxito. Nuestro equipo la revisará para darte respuesta muy pronto.",
       "userGreeting": "Hola, {name}.",
-      "userBodyText": "Hemos recibido tu mensaje. En breve uno de nuestros especialistas se pondrá en contacto contigo a través del correo que nos compartiste.",
+      "userBodyText": "Recibimos tu mensaje. En breve uno de nuestros especialistas se comunicará contigo a través de la dirección de correo proporcionada.",
       "labelRegisteredEmail": "Correo registrado",
-      "labelSite": "Sitio",
-      "buttonBackToSite": "Volver al sitio web",
+      "labelSite": "Sitio Web",
+      "buttonBackToSite": "Regresar al sitio web",
       "internalSubject": "Nuevo prospecto: {name}",
       "userSubject": "Hemos recibido tu solicitud - {brandName}",
       "footerTagline": "{brandName} · Desarrollo de software y aplicaciones a medida.",
@@ -383,17 +390,17 @@
     "checkoutEmail": {
       "customerError": "Datos de confirmación incompletos.",
       "customerSubject": "Confirmación de compra - Orden #{orderId}",
-      "businessSubject": "Nueva Venta - Orden #{orderId}",
-      "customerHeroPretitle": "Comprobante de compra",
-      "customerHeroTitle": "¡Gracias por tu pago!",
-      "customerHeroSubtitle": "Hola {name}. Hemos procesado exitosamente tu orden y estamos preparando todo para ti.",
-      "labelOrderNumber": "Número de orden",
+      "businessSubject": "Nueva Venta Registrada - Orden #{orderId}",
+      "customerHeroPretitle": "Recibo de pago",
+      "customerHeroTitle": "¡Muchas gracias por tu compra!",
+      "customerHeroSubtitle": "Hola {name}. Tu pedido ha sido procesado con éxito y estamos alistando todo para ti.",
+      "labelOrderNumber": "Número de pedido",
       "labelDate": "Fecha",
-      "labelShippingAddress": "Dirección de envío",
-      "buttonBackToStore": "Volver a la tienda",
-      "businessHeroPretitle": "Nueva Venta",
-      "businessHeroTitle": "Pago registrado exitosamente",
-      "businessHeroSubtitle": "Se ha registrado una nueva compra en la plataforma. Revisa los detalles de facturación y envío a continuación.",
+      "labelShippingAddress": "Dirección de entrega",
+      "buttonBackToStore": "Ir a la tienda",
+      "businessHeroPretitle": "Venta Confirmada",
+      "businessHeroTitle": "Pago registrado con éxito",
+      "businessHeroSubtitle": "Se completó una nueva compra dentro de la plataforma. Revisa la información de facturación y despacho a continuación.",
       "labelCustomer": "Cliente",
       "labelEmail": "Correo",
       "labelPhone": "Teléfono",
@@ -403,12 +410,12 @@
       "tableConcept": "Concepto",
       "tableQuantity": "Cant.",
       "tableTotal": "Total",
-      "tableTotalPaid": "Total pagado: {amount} MXN",
+      "tableTotalPaid": "Monto total pagado: {amount} MXN",
       "currencyFormat": "{price} MXN",
-      "footerSupport": "Si tienes dudas sobre este cargo, contáctanos en",
+      "footerSupport": "Si requieres ayuda con este cargo, escríbenos a",
       "footerRights": "Todos los derechos reservados.",
-      "successMessage": "Correos enviados exitosamente.",
-      "errorMessage": "El pago fue exitoso pero falló el envío del correo de confirmación."
+      "successMessage": "Notificaciones enviadas con éxito.",
+      "errorMessage": "El pago fue exitoso, pero ocurrió un problema al remitir el correo de confirmación."
     }
   }
 }
