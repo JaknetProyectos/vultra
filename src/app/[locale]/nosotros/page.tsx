@@ -22,6 +22,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { getOptimizedUrl } from "@/lib/images";
+import ContactForm from "@/components/ContactForm";
 
 // Map icon strings to components
 const iconMap = {
@@ -231,6 +232,8 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
+
+      <ContactForm />
 
       {/* Why Us */}
       <WhyUs />

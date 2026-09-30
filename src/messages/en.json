@@ -192,6 +192,7 @@
     "copyright": "Vultra © {year}. All rights reserved."
   },
   "contactPage": {
+    "moreinfoabout": "Information Request: I would like more details regarding your software development process, methodology, and previous project results.",
     "banner": {
       "title": "Get in Touch",
       "breadcrumb": "Get in Touch"
